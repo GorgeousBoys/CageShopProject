@@ -22,3 +22,8 @@ git add .
 git commit -m "your message here"
 git push
 ```
+
+Before your implement a new feature, make sure you must create your own branch for avoid conflict each other
+```
+git branch -M "your-feature"
+```
