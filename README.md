@@ -27,3 +27,14 @@ Before you are about to implement a brand new feature, make sure you must create
 ```
 git branch -M "your-feature"
 ```
+
+# Environment
+We are going to construct Cross-platform .NET Application by using C#. Using SQL Server and C#.
+
+# Roadmap
+
+[x] Create a database
+[] Create a repository on github
+[] Tasks seperated on each team
+[] Testing
+[] Prepare presentation and demo to our teacher
