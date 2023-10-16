@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace BusinessObject.Models
+{
+    public partial class Order
+    {
+        public Order()
+        {
+            Feedbacks = new HashSet<Feedback>();
+            OrderDetails = new HashSet<OrderDetail>();
+        }
+
+        public int OrderId { get; set; }
+        public int? UserId { get; set; }
+        public string? OrderStatus { get; set; }
+        public decimal? OrderPrice { get; set; }
+        public DateTime? OrderDate { get; set; }
+        public string? OrderAdress { get; set; }
+        public string? OrderName { get; set; }
+        public string? OrderPhone { get; set; }
+        public string? Payment { get; set; }
+
+        public virtual User? User { get; set; }
+        public virtual ICollection<Feedback> Feedbacks { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+    }
+}
