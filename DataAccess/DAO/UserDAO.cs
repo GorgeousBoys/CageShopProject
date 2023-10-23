@@ -35,7 +35,7 @@ namespace DataAccess.DAO
 
             try
             {
-                var context = new CageShopUniContext();
+                var context = new CageShopUni_Context();
                 // Lay tat ca Users trong database
                 users = context.Users;
             }
@@ -63,7 +63,7 @@ namespace DataAccess.DAO
 
             try
             {
-                var context = new CageShopUniContext();
+                var context = new CageShopUni_Context();
                 var user = context.Users.SingleOrDefault(u => u.UserName == username);
 
                 if (user != null && user.Role != null)
