@@ -7,7 +7,8 @@ namespace BusinessObject.Models
     {
         public Discount()
         {
-            Cages = new HashSet<Cage>();
+            Accessories = new HashSet<Accessory>();
+            Products = new HashSet<Product>();
         }
 
         public int DiscountId { get; set; }
@@ -17,6 +18,7 @@ namespace BusinessObject.Models
         public decimal? Discount1 { get; set; }
         public string? DiscountStatus { get; set; }
 
-        public virtual ICollection<Cage> Cages { get; set; }
+        public virtual ICollection<Accessory> Accessories { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

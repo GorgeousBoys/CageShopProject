@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository
 {
-    public class IUserRepository
+    public interface IUserRepository 
     {
+        public IEnumerable<User> GetAllUser();
         public User Login(string username, string password);
+        public string getUserRole(string username);
     }
 }

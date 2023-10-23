@@ -7,13 +7,15 @@ namespace BusinessObject.Models
     {
         public Category()
         {
-            Cages = new HashSet<Cage>();
+            Accessories = new HashSet<Accessory>();
+            Products = new HashSet<Product>();
         }
 
         public int CategoryId { get; set; }
         public string? CategoryName { get; set; }
         public string? Description { get; set; }
 
-        public virtual ICollection<Cage> Cages { get; set; }
+        public virtual ICollection<Accessory> Accessories { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

@@ -8,7 +8,6 @@ namespace BusinessObject.Models
         public User()
         {
             Feedbacks = new HashSet<Feedback>();
-            Orders = new HashSet<Order>();
         }
 
         public int UserId { get; set; }
@@ -21,9 +20,9 @@ namespace BusinessObject.Models
         public DateTime? DoB { get; set; }
         public string? Status { get; set; }
         public int? RoleId { get; set; }
+        public string? Gender { get; set; }
 
         public virtual Role? Role { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
     }
 }

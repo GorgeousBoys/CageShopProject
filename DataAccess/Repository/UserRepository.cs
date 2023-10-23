@@ -15,6 +15,11 @@ namespace DataAccess.Repository
             return UserDAO.Instance.GetAllMember();
         }
 
+        public string getUserRole(string username)
+        {
+            return UserDAO.Instance.getUserRole(username);
+        }
+
         public User Login(string username, string password)
         {
             return UserDAO.Instance.Login(username, password);

@@ -19,9 +19,10 @@ namespace BusinessObject.Models
         public string? OrderAdress { get; set; }
         public string? OrderName { get; set; }
         public string? OrderPhone { get; set; }
-        public string? Payment { get; set; }
+        public int? PaymentId { get; set; }
+        public string? Note { get; set; }
 
-        public virtual User? User { get; set; }
+        public virtual PaymentMethod? Payment { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
