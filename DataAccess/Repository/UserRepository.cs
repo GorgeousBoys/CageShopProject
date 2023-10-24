@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace DataAccess.Repository
 {
     public class UserRepository : IUserRepository
+
     {
         public IEnumerable<User> GetAllUser()
         {
@@ -23,6 +24,13 @@ namespace DataAccess.Repository
         public User Login(string username, string password)
         {
             return UserDAO.Instance.Login(username, password);
+        }
+
+        public void registerShopKeeperAccount(User user) => UserDAO.Instance.registerShopKeeperAccount(user);
+
+        public User getUserByUserId(int id)
+        {
+            return UserDAO.Instance.getUserByUserId(id);
         }
     }
 }
