@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CageShopWinApp", "ZooManagementWinApp\CageShopWinApp.csproj", "{3CFE83C8-C395-4DC9-9851-29E365746A9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{20948A78-7015-456A-ABB8-DF400B014F90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3CFE83C8-C395-4DC9-9851-29E365746A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CFE83C8-C395-4DC9-9851-29E365746A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CFE83C8-C395-4DC9-9851-29E365746A9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20948A78-7015-456A-ABB8-DF400B014F90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20948A78-7015-456A-ABB8-DF400B014F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20948A78-7015-456A-ABB8-DF400B014F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20948A78-7015-456A-ABB8-DF400B014F90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
