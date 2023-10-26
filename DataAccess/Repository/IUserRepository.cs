@@ -12,5 +12,8 @@ namespace DataAccess.Repository
         public IEnumerable<User> GetAllUser();
         public User Login(string username, string password);
         public string getUserRole(string username);
+        public void registerShopKeeperAccount (User user);
+
+        public User getUserByUserId(int id);
     }
 }

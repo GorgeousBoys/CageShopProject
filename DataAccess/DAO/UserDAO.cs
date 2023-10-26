@@ -1,6 +1,7 @@
 ﻿using BusinessObject.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -28,6 +29,7 @@ namespace DataAccess.DAO
                 }
             }
         }
+
 
         public IEnumerable<User> GetAllMember()
         {
@@ -77,6 +79,46 @@ namespace DataAccess.DAO
             }
 
             return roleName;
+        }
+
+        // register ShopKeeper's account
+        public void registerShopKeeperAccount(User user)
+        {
+            var context = new CageShopUniContext();
+
+            // set role là Shopkeeper
+            // trên winform kh có phần để user nhập role
+            user.RoleId = 3;
+            user.Role.RoleName = "Shopkeeper";
+            // check input
+            if (user ==null)
+            {
+                throw new Exception("Member is undefined!!");
+            }
+
+            //  check database
+            if (getUserByUserId(user.UserId) == null )
+            {
+                context.Users.Add(user);
+                context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("User is existed!!");
+            }
+        }
+
+        public User getUserByUserId(int id)
+        {
+            try
+            {
+                var context = new CageShopUniContext();
+                return context.Users.SingleOrDefault(u => u.UserId == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
