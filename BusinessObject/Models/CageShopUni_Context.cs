@@ -31,7 +31,7 @@ namespace BusinessObject.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=MSI\\SQLEXPRESS;User ID=sa;Password=12345;Database=CageShopUni_ala;Trusted_Connection=False;");
+                optionsBuilder.UseSqlServer("Server=(local);User ID=sa;Password=12345;Database=CageShopUni_ala;Trusted_Connection=False;");
             }
         }
 
