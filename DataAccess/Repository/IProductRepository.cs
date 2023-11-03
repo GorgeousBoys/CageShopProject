@@ -20,5 +20,6 @@ namespace DataAccess.Repository
         IEnumerable<Product> FilterByMaterial(string material);
         IEnumerable<Product> FilterBySize(string size);
         IEnumerable<Product> FilterByStatus(int status);
+        IEnumerable<Product> FilterByBar(bool check);
     }
 }

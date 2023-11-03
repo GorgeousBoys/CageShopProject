@@ -147,5 +147,16 @@ namespace DataAccess.DAO
             filterProducts = context.Products.Where(x => x.CageStatus == status).ToList();
             return filterProducts;
         }
+
+        public List<Product> FilterByBar(bool check)
+        {
+            using CageShopUni_Context context = new();
+            var filterProducts = new List<Product>();
+            if (check == false)
+                filterProducts = context.Products.OrderByDescending(p => p.Bar).ToList();
+            else
+                filterProducts = context.Products.OrderBy(p => p.Bar).ToList();
+            return filterProducts;
+        }
     }
 }

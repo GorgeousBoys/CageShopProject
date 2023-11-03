@@ -12,12 +12,12 @@ namespace Test
             //TestAddProduct();
             //TestDeleteProduct();
             //TestUpdateProduct();
-            var products = productRepository.FilterByStatus(0);
+            var products = productRepository.FilterByBar(false);
             foreach (var product in products)
             {
                 Console.WriteLine($"CageID: {product.CageId}, CageName: {product.CageName}, Price: {product.Price}," +
                     $" CategoryID: {product.CategoryId}, Quantity: {product.Quantity}," +
-                    $" Material: {product.Material}, Size: {product.Size}, Status: {product.CageStatus}");
+                    $" Material: {product.Material}, Size: {product.Size}, Bar:{product.Bar}, Status: {product.CageStatus}");
             }
         }
 

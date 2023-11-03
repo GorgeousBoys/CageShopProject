@@ -31,5 +31,7 @@ namespace DataAccess.Repository
         public IEnumerable<Product> FilterBySize(string size) => ProductDAO.Instance.FilterBySize(size);
 
         public IEnumerable<Product> FilterByStatus(int status) => ProductDAO.Instance.FilterByStatus(status);
+
+        public IEnumerable<Product> FilterByBar(bool check) => ProductDAO.Instance.FilterByBar(check);
     }
 }
