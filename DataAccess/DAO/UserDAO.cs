@@ -84,7 +84,7 @@ namespace DataAccess.DAO
         // register ShopKeeper's account
         public void registerShopKeeperAccount(User user)
         {
-            var context = new CageShopUniContext();
+            var context = new CageShopUni_Context();
 
             // set role là Shopkeeper
             // trên winform kh có phần để user nhập role
@@ -112,7 +112,7 @@ namespace DataAccess.DAO
         {
             try
             {
-                var context = new CageShopUniContext();
+                var context = new CageShopUni_Context();
                 return context.Users.SingleOrDefault(u => u.UserId == id);
             }
             catch (Exception ex)
