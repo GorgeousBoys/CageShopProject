@@ -11,7 +11,6 @@ namespace Test
         {
             //TestAddProduct();
             //TestDeleteProduct();
-<<<<<<< Updated upstream
             //TestUpdateProduct();
             var products = productRepository.FilterByBar(false);
             foreach (var product in products)
@@ -19,13 +18,12 @@ namespace Test
                 Console.WriteLine($"CageID: {product.CageId}, CageName: {product.CageName}, Price: {product.Price}," +
                     $" CategoryID: {product.CategoryId}, Quantity: {product.Quantity}," +
                     $" Material: {product.Material}, Size: {product.Size}, Bar:{product.Bar}, Status: {product.CageStatus}");
-=======
             TestUpdateProduct();
-            var products = productRepository.GetProducts();
-            foreach (var product in products)
+            var _products = productRepository.GetProducts();
+            foreach (var product2 in _products)
             {
-                Console.WriteLine($"CageID: {product.CageId}, CageName: {product.CageName}");
->>>>>>> Stashed changes
+                Console.WriteLine($"CageID: {product2.CageId}, CageName: {product2.CageName}");
+
             }
         }
 
