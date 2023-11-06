@@ -14,5 +14,12 @@ namespace DataAccess.Repository
         void AddProduct(Product product);
         void UpdateProduct(Product product);
         void DeleteProduct(Product product);
+        IEnumerable<Product> FilterByPrice(bool check);
+        IEnumerable<Product> FilterByCategory(string categoryName);
+        IEnumerable<Product> FilterByQuantity(bool check);
+        IEnumerable<Product> FilterByMaterial(string material);
+        IEnumerable<Product> FilterBySize(string size);
+        IEnumerable<Product> FilterByStatus(int status);
+        IEnumerable<Product> FilterByBar(bool check);
     }
 }

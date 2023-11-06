@@ -19,5 +19,19 @@ namespace DataAccess.Repository
         public void DeleteProduct(Product product) => ProductDAO.Instance.DeleteProduct(product);
 
         public void UpdateProduct(Product product) => ProductDAO.Instance.UpdateProduct(product);
+        
+        public IEnumerable<Product> FilterByPrice(bool check) => ProductDAO.Instance.FilterByPrice(check);
+
+        public IEnumerable<Product> FilterByCategory(string categoryName) => ProductDAO.Instance.FilterByCategory(categoryName);
+
+        public IEnumerable<Product> FilterByQuantity(bool check) => ProductDAO.Instance.FilterByQuantity(check);
+
+        public IEnumerable<Product> FilterByMaterial(string material) => ProductDAO.Instance.FilterByMaterial(material);
+
+        public IEnumerable<Product> FilterBySize(string size) => ProductDAO.Instance.FilterBySize(size);
+
+        public IEnumerable<Product> FilterByStatus(int status) => ProductDAO.Instance.FilterByStatus(status);
+
+        public IEnumerable<Product> FilterByBar(bool check) => ProductDAO.Instance.FilterByBar(check);
     }
 }

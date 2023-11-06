@@ -1,4 +1,6 @@
 ﻿using BusinessObject.Models;
+using System.Data.Entity;
+using System.Drawing;
 
 namespace DataAccess.DAO
 {
@@ -87,6 +89,74 @@ namespace DataAccess.DAO
             {
                 throw new Exception("No Product with the CageID exist");
             }
+        }
+
+        public List<Product> FilterByPrice(bool check)
+        {
+            using CageShopUni_Context context = new();
+            var filterProducts = new List<Product>();
+            if (check == false)
+                filterProducts = context.Products.OrderByDescending(p => p.Price).ToList();
+            else
+                filterProducts = context.Products.OrderBy(p => p.Price).ToList();
+            return filterProducts;
+        }
+
+        public List<Product> FilterByCategory(string categoryName)
+        {
+            using CageShopUni_Context context = new();
+            var filterProducts = new List<Product>();
+
+            filterProducts = context.Products.Where(x => x.Category.CategoryName == categoryName)
+                .Include(c => c.Category)
+                .ToList();
+            return filterProducts;
+        }
+
+        public List<Product> FilterByQuantity(bool check)
+        {
+            using CageShopUni_Context context = new();
+            var filterProducts = new List<Product>();
+            if (check == false)
+                filterProducts = context.Products.OrderByDescending(p => p.Quantity).ToList();
+            else
+                filterProducts = context.Products.OrderBy(p => p.Quantity).ToList();
+            return filterProducts;
+        }
+
+        public List<Product> FilterByMaterial(string materialName)
+        {
+            using CageShopUni_Context context = new();
+            var filterProducts = new List<Product>();
+            filterProducts = context.Products.Where(x => x.Material == materialName).ToList();
+            return filterProducts;
+        }
+
+        public List<Product> FilterBySize(string size)
+        {
+            using CageShopUni_Context context = new();
+            var filterProducts = new List<Product>();
+            filterProducts = context.Products.Where(x => x.Size == size).ToList();
+            return filterProducts;
+        }
+
+        public List<Product> FilterByStatus(int status)
+        {
+            using CageShopUni_Context context = new();
+            var filterProducts = new List<Product>();
+            filterProducts = context.Products.Where(x => x.CageStatus == status).ToList();
+            return filterProducts;
+        }
+
+        public List<Product> FilterByBar(bool check)
+        {
+            using CageShopUni_Context context = new();
+            var filterProducts = new List<Product>();
+            if (check == false)
+                filterProducts = context.Products.OrderByDescending(p => p.Bar).ToList();
+            else
+                filterProducts = context.Products.OrderBy(p => p.Bar).ToList();
+            return filterProducts;
         }
     }
 }
