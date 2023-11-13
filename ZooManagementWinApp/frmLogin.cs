@@ -1,4 +1,4 @@
-﻿using DataAccess.Repository;
+﻿using Repository.Repository;
 
 namespace SalesWinApp
 {

@@ -34,19 +34,11 @@ namespace BusinessObject.Models
             {
                 IConfigurationRoot configuration = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsettings.json")
+                    .AddJsonFile("appsettings.json", true, true)
                     .Build();
 
-                string connectionString = configuration.GetConnectionString("CageShopDB");
-
-                if (!string.IsNullOrEmpty(connectionString))
-                {
-                    optionsBuilder.UseSqlServer(connectionString);
-                }
-                else
-                {
-                    throw new InvalidOperationException("No connection string found in appsettings.json");
-                }
+                string _connectionString = configuration.GetConnectionString("CageShopDB");
+                optionsBuilder.UseSqlServer(_connectionString);
             }
         }
 

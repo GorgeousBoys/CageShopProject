@@ -1,6 +1,4 @@
-﻿using DataAccess.Repository;
-
-namespace SalesWinApp
+﻿namespace SalesWinApp
 {
     public partial class frmOrderDetail : Form
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Repository
+namespace Repository.Repository
 {
     public interface IUserRepository 
     {
@@ -13,10 +13,6 @@ namespace DataAccess.Repository
         public User Login(string username, string password);
         public string getUserRole(string username);
         public void registerShopKeeperAccount (User user);
-<<<<<<< Updated upstream:DataAccess/Repository/IUserRepository.cs
-
-=======
->>>>>>> Stashed changes:Repository/Repository/IUserRepository.cs
         public User getUserByUserId(int id);
     }
 }

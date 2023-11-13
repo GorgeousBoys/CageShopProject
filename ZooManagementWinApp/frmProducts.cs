@@ -1,13 +1,12 @@
 using BusinessObject;
 using BusinessObject.Models;
-using DataAccess;
-using DataAccess.Repository;
+using Repository.Repository;
 
 namespace SalesWinApp
 {
     public partial class frmProducts : Form
     {
-        ProductRepository productRepository = new ProductRepository();
+        IProductRepository productRepository = new ProductRepository();
         BindingSource source;
 
         public frmProducts()

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Repository
+namespace Repository.Repository
 {
-    internal interface IProductRepository
+    public interface IProductRepository
     {
         IEnumerable<Product> GetProducts();
         Product FindByID(int id);

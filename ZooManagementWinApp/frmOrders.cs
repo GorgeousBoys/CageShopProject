@@ -1,5 +1,4 @@
 using BusinessObject;
-using DataAccess.Repository;
 using System.Data;
 
 namespace SalesWinApp

@@ -29,11 +29,6 @@ namespace DataAccess.DAO
                 }
             }
         }
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
         public IEnumerable<User> GetAllMember()
         {
             IEnumerable<User> users = null;
@@ -110,10 +105,6 @@ namespace DataAccess.DAO
                 throw new Exception("User is existed!!");
             }
         }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
         public User getUserByUserId(int id)
         {
             try

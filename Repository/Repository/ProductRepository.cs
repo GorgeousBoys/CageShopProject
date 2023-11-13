@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Repository
+namespace Repository.Repository
 {
     public class ProductRepository : IProductRepository
     {
@@ -35,6 +35,12 @@ namespace DataAccess.Repository
         {
             material = material.ToLower();
             return GetProducts().Where(product => product.Material?.ToLower() == material);
+        }
+
+        public IEnumerable<Product> FilterByBar(string bar)
+        {
+            bar = bar.ToLower();
+            return GetProducts().Where(product => product.Bar?.ToLower() == bar);
         }
     }
 }

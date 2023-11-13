@@ -1,9 +1,6 @@
 ﻿using BusinessObject.Models;
-<<<<<<< Updated upstream
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Drawing;
-=======
->>>>>>> Stashed changes
 
 namespace DataAccess.DAO
 {
@@ -26,11 +23,6 @@ namespace DataAccess.DAO
             }
         }
 
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
         public List<Product> GetProducts()
         {
             List<Product> products = null;
@@ -96,7 +88,6 @@ namespace DataAccess.DAO
                 throw new Exception("No Product with the CageID exist");
             }
         }
-<<<<<<< Updated upstream
 
         public List<Product> FilterByPrice(bool check)
         {
@@ -165,7 +156,5 @@ namespace DataAccess.DAO
                 filterProducts = context.Products.OrderBy(p => p.Bar).ToList();
             return filterProducts;
         }
-=======
->>>>>>> Stashed changes
     }
 }
