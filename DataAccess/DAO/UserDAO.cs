@@ -50,9 +50,8 @@ namespace DataAccess.DAO
         // Người dùng nhập username và password
         public User Login(string username, string password)
         {
-            IEnumerable<User> userList = GetAllMember();
-            User user = userList.SingleOrDefault(us => us.UserName.Equals(username) && us.UserPassword.Equals(password));
-            return user;
+           var db = new CageShopUni_Context();
+            return db.Users.SingleOrDefault(u => u.UserName.Equals(username) && u.UserPassword.Equals(password));
         }
 
         // Hàm này để lấy role nếu người dùng nhập username

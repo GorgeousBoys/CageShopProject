@@ -16,13 +16,12 @@ namespace SalesWinApp
             {
                 "Price", "Quantity"
             };
-            comboBox1.DataSource = options;
-            comboBox1.SelectedIndex = 0;
+
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-           // String name = txtSearch.Text;
-           // dgvProductList.DataSource = productRepository.(x=> x.ProductName.Contains(name)).ToList();
+            // String name = txtSearch.Text;
+            // dgvProductList.DataSource = productRepository.(x=> x.ProductName.Contains(name)).ToList();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -54,7 +53,7 @@ namespace SalesWinApp
             {
                 if (product != null)
                 {
-                    product.CageId = int.Parse(mtxtProductID.Text);
+                    product.CageId = int.Parse(mtxtCageID.Text);
                     productRepository.UpdateProduct(product);
                     LoadProductList();
                     MessageBox.Show("Update product successfully");
@@ -74,11 +73,11 @@ namespace SalesWinApp
         {
             try
             {
-                var productID = int.Parse(mtxtProductID.Text);
+                var productID = int.Parse(mtxtCageID.Text);
 
                 productRepository.DeleteProduct(productRepository.FindByID(productID));
                 LoadProductList();
-                mtxtProductID.Clear();
+                mtxtCageID.Clear();
                 MessageBox.Show("Delete product successfully");
             }
             catch (Exception ex)
@@ -101,12 +100,12 @@ namespace SalesWinApp
         {
             if (e.RowIndex >= 0 && e.RowIndex < dgvProductList.Rows.Count - 1)
             {
-                mtxtProductID.Text = dgvProductList.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+                mtxtCageID.Text = dgvProductList.Rows[e.RowIndex].Cells["CageID"].Value.ToString();
                 mtxtCategoryID.Text = dgvProductList.Rows[e.RowIndex].Cells["CategoryID"].Value.ToString();
-                txtProductName.Text = dgvProductList.Rows[e.RowIndex].Cells["ProductName"].Value.ToString();
-                txtWeight.Text = dgvProductList.Rows[e.RowIndex].Cells["Weight"].Value.ToString();
-                mtxtUnitPrice.Text = dgvProductList.Rows[e.RowIndex].Cells["UnitPrice"].Value.ToString();
-                mtxtUnitInStock.Text = dgvProductList.Rows[e.RowIndex].Cells["UnitInStock"].Value.ToString();
+                txtCageName.Text = dgvProductList.Rows[e.RowIndex].Cells["ProductName"].Value.ToString();
+                txtQuantity.Text = dgvProductList.Rows[e.RowIndex].Cells["Weight"].Value.ToString();
+                mtxtPrice.Text = dgvProductList.Rows[e.RowIndex].Cells["UnitPrice"].Value.ToString();
+                mtxtDIscountID.Text = dgvProductList.Rows[e.RowIndex].Cells["UnitInStock"].Value.ToString();
             }
         }
 
@@ -118,10 +117,10 @@ namespace SalesWinApp
                 product = new Product
                 {
                     CategoryId = int.Parse(mtxtCategoryID.Text),
-                    CageName = txtProductName.Text,
-                    Material = txtWeight.Text,
-                    Price = decimal.Parse(mtxtUnitPrice.Text),
-                    CageStatus = int.Parse(mtxtUnitInStock.Text)
+                    CageName = txtCageName.Text,
+                    Material = txtQuantity.Text,
+                    Price = decimal.Parse(mtxtPrice.Text),
+                    CageStatus = int.Parse(mtxtDIscountID.Text)
                 };
             }
             catch (Exception ex)
@@ -156,29 +155,6 @@ namespace SalesWinApp
             }
         }
 
-        private void btnPrice_Click(object sender, EventArgs e)
-        {
-            /*if (comboBox1.SelectedIndex == 0)
-            {
-                int num1 = int.Parse(txt1.Text);
-                int num2 = int.Parse(txt2.Text);
-                dgvProductList.DataSource = productRepository.Search(x => x.UnitPrice >= num1 && x.UnitPrice <= num2).ToList();
 
-            }
-            else
-            {
-                int num1 = int.Parse(txt1.Text);
-                int num2 = int.Parse(txt2.Text);
-                dgvProductList.DataSource = productRepository.Search(x=> x.UnitInStock>= num1 && x.UnitInStock <= num2).ToList();
-            }*/
-        }
-
-        private void txt1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-        }
     }
 }

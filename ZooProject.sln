@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObject", "BusinessO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{25503603-4FD0-4592-848B-562B805EE5B0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesWinApp", "ZooManagementWinApp\SalesWinApp.csproj", "{3CFE83C8-C395-4DC9-9851-29E365746A9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZooWinApp", "ZooManagementWinApp\ZooWinApp.csproj", "{3CFE83C8-C395-4DC9-9851-29E365746A9C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{20948A78-7015-456A-ABB8-DF400B014F90}"
 EndProject

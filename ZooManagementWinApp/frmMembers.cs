@@ -1,21 +1,23 @@
 ﻿using BusinessObject;
+using BusinessObject.Models;
+using Repository.Repository;
 
 namespace SalesWinApp
 {
     public partial class frmMembers : Form
     {
-       /* IMemberRepository memberRepository = new MemberRepository();
+        IUserRepository memberRepository = new UserRepository();
         IOrderRepository orderRepository = new OrderRepository();
         BindingSource source;
-        public Member checkMember { get; set; }*/
+        public User checkMember { get; set; }
         public frmMembers()
         {
             InitializeComponent();
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            /* var member = GetMemberObject();
-             try
+            /* var member = GetMemberObject;
+              try
              {
                  if (member != null)
                  {
@@ -39,41 +41,41 @@ namespace SalesWinApp
              {
                  MessageBox.Show(ex.Message, "Add Member");
              }*/
-         }
+        }
 
-         private void btnUpdate_Click(object sender, EventArgs e)
-         {
-             /*var member = GetMemberObject();
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            /*var member = GetMemberObject();
 
-             try
-             {
-                 if (member!=null && txtGmail.Text!=null)
-                 {
-                     if (memberRepository.CheckEmailDeplicate(member.Email))
-                     {
-                         member.MemberId = int.Parse(txtMemberID.Text);
-                         memberRepository.UpdateMember(member);
-                         LoadMemberList();
-                         MessageBox.Show("Update member successfully");
-                     }
-                     else
-                     {
-                         throw new Exception("Update member fail. Duplicated email!");
-                     } 
-                 }
-                 else
-                 {
-                     throw new Exception("Update member fail. Fill in the blank information box!");
-                 }
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message, "Update Member");
-             }*/
-         }
+            try
+            {
+                if (member!=null && txtGmail.Text!=null)
+                {
+                    if (memberRepository.CheckEmailDeplicate(member.Email))
+                    {
+                        member.MemberId = int.Parse(txtMemberID.Text);
+                        memberRepository.UpdateMember(member);
+                        LoadMemberList();
+                        MessageBox.Show("Update member successfully");
+                    }
+                    else
+                    {
+                        throw new Exception("Update member fail. Duplicated email!");
+                    } 
+                }
+                else
+                {
+                    throw new Exception("Update member fail. Fill in the blank information box!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Update Member");
+            }*/
+        }
 
-         private void btnDelete_Click(object sender, EventArgs e)
-         {
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
             /* try
              {
                  var memberID = int.Parse(txtMemberID.Text);
@@ -87,88 +89,93 @@ namespace SalesWinApp
              {
                  MessageBox.Show("Delete member fail. Select a member beside to delete!");
              }*/
-         }
+        }
 
-         private void frmMembers_Load(object sender, EventArgs e)
-         {
-           /*  LoadMemberList();
-             if (!checkMember.Email.Equals("admin@fstore.com"))
-             {
-                 btnAdd.Enabled = false;
-                 btnDelete.Enabled = false;
-             }*/
-         }
+        private void frmMembers_Load(object sender, EventArgs e)
+        {
+            LoadMemberList();
+            if (!checkMember.Email.Equals("admin@gmail.com"))
+            {
+                btnAdd.Enabled = false;
+                btnDelete.Enabled = false;
+            }
+        }
 
-         private void btnBack_Click(object sender, EventArgs e) => Close();
-         private void dgvMemberList_CellClick(object sender, DataGridViewCellEventArgs e)
-         {
-             /*if (e.RowIndex >= 0 && e.RowIndex < dgvMemberList.Rows.Count - 1)
-             {
-                 txtMemberID.Text = dgvMemberList.Rows[e.RowIndex].Cells["MemberID"].Value.ToString();
-                 txtGmail.Text = dgvMemberList.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                 txtCompany.Text = dgvMemberList.Rows[e.RowIndex].Cells["CompanyName"].Value.ToString();
-                 txtCity.Text = dgvMemberList.Rows[e.RowIndex].Cells["City"].Value.ToString();
-                 txtCountry.Text = dgvMemberList.Rows[e.RowIndex].Cells["Country"].Value.ToString();
-                 txtPassword.Text = dgvMemberList.Rows[e.RowIndex].Cells["Password"].Value.ToString();
-             }*/
-         }
+        private void btnBack_Click(object sender, EventArgs e) => Close();
+        private void dgvMemberList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvMemberList.Rows.Count - 1)
+            {
+                txtUserId.Text = dgvMemberList.Rows[e.RowIndex].Cells["UserID"].Value.ToString();
+                txtEmail.Text = dgvMemberList.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                txtDob.Text = dgvMemberList.Rows[e.RowIndex].Cells["Dob"].Value.ToString();
+                txtAddress.Text = dgvMemberList.Rows[e.RowIndex].Cells["Address"].Value.ToString();
+                txtPhone.Text = dgvMemberList.Rows[e.RowIndex].Cells["Phone"].Value.ToString();
+                txtPassword.Text = dgvMemberList.Rows[e.RowIndex].Cells["UserPassword"].Value.ToString();
+                txtStatus.Text = dgvMemberList.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+                txtUsername.Text = dgvMemberList.Rows[e.RowIndex].Cells["UserName"].Value.ToString();
+                txtGender.Text = dgvMemberList.Rows[e.RowIndex].Cells["Gender"].Value.ToString();
+                txtRoleId.Text = dgvMemberList.Rows[e.RowIndex].Cells["RoleID"].Value.ToString();
+            }
+        }
 
-       /*  private Member GetMemberObject()
-         {
-             Member member = null;
-             try
-             {
-                 if (!txtGmail.Text.Equals("") || !txtPassword.Text.Equals(""))
-                 {
-                     member = new Member
-                     {
-                         Email = txtGmail.Text,
-                         CompanyName = txtCompany.Text,
-                         City = txtCity.Text,
-                         Country = txtCountry.Text,
-                         Password = txtPassword.Text,
-                     };
-                 }
-                 else throw new Exception("Email and Password can not be null!");
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message, "Get member");
-             }
-             return member;
-         }
+        /*private User GetMemberObject()
+        {
+            User member = null;
+            try
+            {
+                if (!txtGmail.Text.Equals("") || !txtPassword.Text.Equals(""))
+                {
+                    member = new User
+                    {
+                        Email = txtGmail.Text,
 
-         private void LoadMemberList()
-         {
-             try
-             {
-                 var members = new List<Member>();
-                 if (checkMember.Email.Equals("admin@fstore.com"))
-                 {
-                     members = (List<Member>)memberRepository.GetMembers();
-                 }
-                 else
-                 {
-                     members.Add(checkMember);
-                 }
-                 source = new BindingSource();
-                 source.DataSource = members;
+                         = txtCompany.Text,
+                        City = txtCity.Text,
+                        Country = txtCountry.Text,
+                        Password = txtPassword.Text,
+                    };
+                }
+                else throw new Exception("Email and Password can not be null!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get member");
+            }
+            return member;
+        }*/
 
-                 dgvMemberList.DataSource = null;
-                 dgvMemberList.DataSource = source;
+        private void LoadMemberList()
+        {
+            try
+            {
+                var members = new List<User>();
+                if (checkMember.Email.Equals("admin@fstore.com"))
+                {
+                    members = (List<User>)memberRepository.GetAllUser();
+                }
+                else
+                {
+                    members.Add(checkMember);
+                }
+                source = new BindingSource();
+                source.DataSource = members;
 
-                 dgvMemberList.Columns[0].Width = (int)(dgvMemberList.Width * 0.1);
-                 dgvMemberList.Columns[1].Width = (int)(dgvMemberList.Width * 0.19);
-                 dgvMemberList.Columns[2].Width = (int)(dgvMemberList.Width * 0.163);
-                 dgvMemberList.Columns[3].Width = (int)(dgvMemberList.Width * 0.163);
-                 dgvMemberList.Columns[4].Width = (int)(dgvMemberList.Width * 0.163);
-                 dgvMemberList.Columns[5].Width = (int)(dgvMemberList.Width * 0.163);
-                 dgvMemberList.Columns[6].Width = (int)(dgvMemberList.Width * 0);
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message, "Load member list");
-             }
-         }*/
+                dgvMemberList.DataSource = null;
+                dgvMemberList.DataSource = source;
+
+                dgvMemberList.Columns[0].Width = (int)(dgvMemberList.Width * 0.1);
+                dgvMemberList.Columns[1].Width = (int)(dgvMemberList.Width * 0.19);
+                dgvMemberList.Columns[2].Width = (int)(dgvMemberList.Width * 0.163);
+                dgvMemberList.Columns[3].Width = (int)(dgvMemberList.Width * 0.163);
+                dgvMemberList.Columns[4].Width = (int)(dgvMemberList.Width * 0.163);
+                dgvMemberList.Columns[5].Width = (int)(dgvMemberList.Width * 0.163);
+                dgvMemberList.Columns[6].Width = (int)(dgvMemberList.Width * 0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load member list");
+            }
         }
     }
+}

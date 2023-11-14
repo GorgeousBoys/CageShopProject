@@ -1,14 +1,16 @@
 using BusinessObject;
 using System.Data;
+using Repository.Repository;
+using BusinessObject.Models;
 
 namespace SalesWinApp
 {
     public partial class frmOrders : Form
     {
-        /*IOrderRepository orderRepository = new OrderRepository();
-        IMemberRepository memberRepository = new MemberRepository();
+        IOrderRepository orderRepository = new OrderRepository();
+        IUserRepository memberRepository = new UserRepository();
         BindingSource source;
-        public Member checkMember { get; set; }*/
+        public User checkMember { get; set; }
         public frmOrders()
         {
             InitializeComponent();

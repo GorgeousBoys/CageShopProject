@@ -13,11 +13,10 @@ namespace SalesWinApp
         //UI Design Basic, Create file basic for code, Connect Database, 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string email = txtGmail.Text;
+          
+                string username = txtUsername.Text;
                 string password = txtPassword.Text;
-                var checkMember = memberRepository.Login(email, password);
+                var checkMember = memberRepository.Login(username, password);
                 if (checkMember != null)
                 {
                     MessageBox.Show("Login successfully");
@@ -27,14 +26,9 @@ namespace SalesWinApp
                 }
                 else
                 {
-                    throw new Exception("Invalid email or password. Try again");
+                    MessageBox.Show("Invalid username or password");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Login");
-            }
-
+       
         }
 
         private void btnClose_Click(object sender, EventArgs e) => Close();

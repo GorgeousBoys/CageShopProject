@@ -39,8 +39,8 @@ namespace Repository.Repository
 
         public IEnumerable<Product> FilterByBar(string bar)
         {
-            bar = bar.ToLower();
-            return GetProducts().Where(product => product.Bar?.ToLower() == bar);
+            
+            return GetProducts().Where(product => product.Bar == int.Parse(bar));
         }
     }
 }

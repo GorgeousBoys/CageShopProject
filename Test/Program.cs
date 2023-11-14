@@ -12,7 +12,7 @@ namespace Test
             //TestAddProduct();
             //TestDeleteProduct();
             //TestUpdateProduct();
-            var products = productRepository.FilterByBar(false);
+            var products = productRepository.FilterByBar("what");
             foreach (var product in products)
             {
                 Console.WriteLine($"CageID: {product.CageId}, CageName: {product.CageName}, Price: {product.Price}," +

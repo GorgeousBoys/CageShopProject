@@ -14,16 +14,16 @@ namespace SalesWinApp
 
         private void memberManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*frmMembers f = new frmMembers();
+            frmMembers f = new frmMembers();
             f.MdiParent = this;
             f.StartPosition = FormStartPosition.CenterScreen;
             f.checkMember = user;
-            f.Show();*/
+            f.Show();
         }
 
         private void productManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (user.Email.Equals("admin@fstore.com"))
+            if (user.Email.Equals("admin@gmail.com"))
             {
                 frmProducts f = new frmProducts();
                 f.MdiParent = this;
@@ -38,11 +38,11 @@ namespace SalesWinApp
         }
         private void orderManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           /* frmOrders f = new frmOrders();
-            f.MdiParent = this;
-            f.StartPosition = FormStartPosition.CenterScreen;
-            f.Check = user;
-            f.Show();*/
+             frmOrders f = new frmOrders();
+             f.MdiParent = this;
+             f.StartPosition = FormStartPosition.CenterScreen;
+             f.checkMember = user;
+             f.Show();
         }
     }
 }

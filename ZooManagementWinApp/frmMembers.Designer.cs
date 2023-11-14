@@ -28,249 +28,355 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.lbTitle = new System.Windows.Forms.Label();
-            this.gbDetailInfo = new System.Windows.Forms.GroupBox();
-            this.txtCountry = new System.Windows.Forms.TextBox();
-            this.txtCompany = new System.Windows.Forms.TextBox();
-            this.txtCity = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtGmail = new System.Windows.Forms.TextBox();
-            this.txtMemberID = new System.Windows.Forms.TextBox();
-            this.lbCity = new System.Windows.Forms.Label();
-            this.lbCountry = new System.Windows.Forms.Label();
-            this.lbCompany = new System.Windows.Forms.Label();
-            this.lbPassword = new System.Windows.Forms.Label();
-            this.lbGmail = new System.Windows.Forms.Label();
-            this.lbMemberID = new System.Windows.Forms.Label();
-            this.gbGeneralInfo = new System.Windows.Forms.GroupBox();
-            this.dgvMemberList = new System.Windows.Forms.DataGridView();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.gbDetailInfo.SuspendLayout();
-            this.gbGeneralInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMemberList)).BeginInit();
-            this.SuspendLayout();
+            btnAdd = new Button();
+            btnUpdate = new Button();
+            btnDelete = new Button();
+            lbTitle = new Label();
+            gbDetailInfo = new GroupBox();
+            txtGender = new TextBox();
+            txtRoleId = new TextBox();
+            txtUsername = new TextBox();
+            picUser = new PictureBox();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            txtStatus = new TextBox();
+            label1 = new Label();
+            txtPhone = new TextBox();
+            txtDob = new TextBox();
+            txtAddress = new TextBox();
+            txtPassword = new TextBox();
+            txtEmail = new TextBox();
+            txtUserId = new TextBox();
+            lbCity = new Label();
+            lbCountry = new Label();
+            lbCompany = new Label();
+            lbPassword = new Label();
+            lbGmail = new Label();
+            lbMemberID = new Label();
+            gbGeneralInfo = new GroupBox();
+            dgvMemberList = new DataGridView();
+            btnBack = new Button();
+            gbDetailInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picUser).BeginInit();
+            gbGeneralInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMemberList).BeginInit();
+            SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAdd.Location = new System.Drawing.Point(822, 27);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(45, 44);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdd.ForeColor = SystemColors.ControlDarkDark;
+            btnAdd.Location = new Point(67, 517);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(94, 44);
+            btnAdd.TabIndex = 1;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnUpdate.Location = new System.Drawing.Point(822, 77);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(45, 44);
-            this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            btnUpdate.ForeColor = SystemColors.ControlDarkDark;
+            btnUpdate.Location = new Point(330, 517);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(101, 44);
+            btnUpdate.TabIndex = 2;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnDelete
             // 
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnDelete.Location = new System.Drawing.Point(822, 127);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(45, 44);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            btnDelete.ForeColor = SystemColors.ControlDarkDark;
+            btnDelete.Location = new Point(196, 517);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(97, 44);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // lbTitle
             // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTitle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbTitle.Location = new System.Drawing.Point(363, 9);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(311, 38);
-            this.lbTitle.TabIndex = 5;
-            this.lbTitle.Text = "Member Management";
+            lbTitle.AutoSize = true;
+            lbTitle.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lbTitle.ForeColor = SystemColors.ControlText;
+            lbTitle.Location = new Point(622, -2);
+            lbTitle.Name = "lbTitle";
+            lbTitle.Size = new Size(311, 38);
+            lbTitle.TabIndex = 5;
+            lbTitle.Text = "Member Management";
             // 
             // gbDetailInfo
             // 
-            this.gbDetailInfo.Controls.Add(this.txtCountry);
-            this.gbDetailInfo.Controls.Add(this.txtCompany);
-            this.gbDetailInfo.Controls.Add(this.txtCity);
-            this.gbDetailInfo.Controls.Add(this.btnDelete);
-            this.gbDetailInfo.Controls.Add(this.txtPassword);
-            this.gbDetailInfo.Controls.Add(this.txtGmail);
-            this.gbDetailInfo.Controls.Add(this.txtMemberID);
-            this.gbDetailInfo.Controls.Add(this.btnUpdate);
-            this.gbDetailInfo.Controls.Add(this.btnAdd);
-            this.gbDetailInfo.Controls.Add(this.lbCity);
-            this.gbDetailInfo.Controls.Add(this.lbCountry);
-            this.gbDetailInfo.Controls.Add(this.lbCompany);
-            this.gbDetailInfo.Controls.Add(this.lbPassword);
-            this.gbDetailInfo.Controls.Add(this.lbGmail);
-            this.gbDetailInfo.Controls.Add(this.lbMemberID);
-            this.gbDetailInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.gbDetailInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.gbDetailInfo.Location = new System.Drawing.Point(12, 64);
-            this.gbDetailInfo.Name = "gbDetailInfo";
-            this.gbDetailInfo.Size = new System.Drawing.Size(880, 177);
-            this.gbDetailInfo.TabIndex = 7;
-            this.gbDetailInfo.TabStop = false;
-            this.gbDetailInfo.Text = "Detail Information";
+            gbDetailInfo.Controls.Add(txtGender);
+            gbDetailInfo.Controls.Add(txtRoleId);
+            gbDetailInfo.Controls.Add(txtUsername);
+            gbDetailInfo.Controls.Add(picUser);
+            gbDetailInfo.Controls.Add(label5);
+            gbDetailInfo.Controls.Add(label4);
+            gbDetailInfo.Controls.Add(label3);
+            gbDetailInfo.Controls.Add(label2);
+            gbDetailInfo.Controls.Add(txtStatus);
+            gbDetailInfo.Controls.Add(label1);
+            gbDetailInfo.Controls.Add(txtPhone);
+            gbDetailInfo.Controls.Add(txtDob);
+            gbDetailInfo.Controls.Add(txtAddress);
+            gbDetailInfo.Controls.Add(txtPassword);
+            gbDetailInfo.Controls.Add(txtEmail);
+            gbDetailInfo.Controls.Add(txtUserId);
+            gbDetailInfo.Controls.Add(lbCity);
+            gbDetailInfo.Controls.Add(lbCountry);
+            gbDetailInfo.Controls.Add(lbCompany);
+            gbDetailInfo.Controls.Add(lbPassword);
+            gbDetailInfo.Controls.Add(lbGmail);
+            gbDetailInfo.Controls.Add(lbMemberID);
+            gbDetailInfo.FlatStyle = FlatStyle.Popup;
+            gbDetailInfo.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            gbDetailInfo.Location = new Point(21, 39);
+            gbDetailInfo.Name = "gbDetailInfo";
+            gbDetailInfo.Size = new Size(855, 433);
+            gbDetailInfo.TabIndex = 7;
+            gbDetailInfo.TabStop = false;
+            gbDetailInfo.Text = "Detail Information";
             // 
-            // txtCountry
+            // txtGender
             // 
-            this.txtCountry.Location = new System.Drawing.Point(502, 38);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(291, 27);
-            this.txtCountry.TabIndex = 31;
+            txtGender.Location = new Point(502, 247);
+            txtGender.Name = "txtGender";
+            txtGender.Size = new Size(291, 27);
+            txtGender.TabIndex = 41;
             // 
-            // txtCompany
+            // txtRoleId
             // 
-            this.txtCompany.Location = new System.Drawing.Point(502, 139);
-            this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(291, 27);
-            this.txtCompany.TabIndex = 13;
+            txtRoleId.Location = new Point(105, 250);
+            txtRoleId.Name = "txtRoleId";
+            txtRoleId.Size = new Size(289, 27);
+            txtRoleId.TabIndex = 40;
             // 
-            // txtCity
+            // txtUsername
             // 
-            this.txtCity.Location = new System.Drawing.Point(502, 91);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(291, 27);
-            this.txtCity.TabIndex = 12;
+            txtUsername.Location = new Point(502, 198);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(291, 27);
+            txtUsername.TabIndex = 39;
+            // 
+            // picUser
+            // 
+            picUser.Location = new Point(105, 293);
+            picUser.Name = "picUser";
+            picUser.Size = new Size(386, 119);
+            picUser.TabIndex = 38;
+            picUser.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(22, 257);
+            label5.Name = "label5";
+            label5.Size = new Size(49, 20);
+            label5.TabIndex = 37;
+            label5.Text = "RoleId";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(21, 333);
+            label4.Name = "label4";
+            label4.Size = new Size(63, 20);
+            label4.TabIndex = 36;
+            label4.Text = "UserIMG";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(424, 250);
+            label3.Name = "label3";
+            label3.Size = new Size(54, 20);
+            label3.TabIndex = 35;
+            label3.Text = "Gender";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(411, 201);
+            label2.Name = "label2";
+            label2.Size = new Size(76, 20);
+            label2.TabIndex = 34;
+            label2.Text = "UserName";
+            // 
+            // txtStatus
+            // 
+            txtStatus.Location = new Point(108, 198);
+            txtStatus.Name = "txtStatus";
+            txtStatus.Size = new Size(286, 27);
+            txtStatus.TabIndex = 33;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(23, 198);
+            label1.Name = "label1";
+            label1.Size = new Size(48, 20);
+            label1.TabIndex = 32;
+            label1.Text = "Status";
+            // 
+            // txtPhone
+            // 
+            txtPhone.Location = new Point(502, 38);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(291, 27);
+            txtPhone.TabIndex = 31;
+            // 
+            // txtDob
+            // 
+            txtDob.Location = new Point(502, 139);
+            txtDob.Name = "txtDob";
+            txtDob.Size = new Size(291, 27);
+            txtDob.TabIndex = 13;
+            // 
+            // txtAddress
+            // 
+            txtAddress.Location = new Point(502, 91);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(291, 27);
+            txtAddress.TabIndex = 12;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(108, 139);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(286, 27);
-            this.txtPassword.TabIndex = 8;
+            txtPassword.Location = new Point(108, 139);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(286, 27);
+            txtPassword.TabIndex = 8;
             // 
-            // txtGmail
+            // txtEmail
             // 
-            this.txtGmail.Location = new System.Drawing.Point(108, 89);
-            this.txtGmail.Name = "txtGmail";
-            this.txtGmail.Size = new System.Drawing.Size(286, 27);
-            this.txtGmail.TabIndex = 7;
+            txtEmail.Location = new Point(108, 89);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(286, 27);
+            txtEmail.TabIndex = 7;
             // 
-            // txtMemberID
+            // txtUserId
             // 
-            this.txtMemberID.Location = new System.Drawing.Point(108, 38);
-            this.txtMemberID.Name = "txtMemberID";
-            this.txtMemberID.ReadOnly = true;
-            this.txtMemberID.Size = new System.Drawing.Size(286, 27);
-            this.txtMemberID.TabIndex = 6;
+            txtUserId.Location = new Point(108, 38);
+            txtUserId.Name = "txtUserId";
+            txtUserId.ReadOnly = true;
+            txtUserId.Size = new Size(286, 27);
+            txtUserId.TabIndex = 6;
             // 
             // lbCity
             // 
-            this.lbCity.AutoSize = true;
-            this.lbCity.Location = new System.Drawing.Point(424, 97);
-            this.lbCity.Name = "lbCity";
-            this.lbCity.Size = new System.Drawing.Size(35, 20);
-            this.lbCity.TabIndex = 5;
-            this.lbCity.Text = "City";
+            lbCity.AutoSize = true;
+            lbCity.Location = new Point(424, 97);
+            lbCity.Name = "lbCity";
+            lbCity.Size = new Size(58, 20);
+            lbCity.TabIndex = 5;
+            lbCity.Text = "Address";
             // 
             // lbCountry
             // 
-            this.lbCountry.AutoSize = true;
-            this.lbCountry.Location = new System.Drawing.Point(424, 46);
-            this.lbCountry.Name = "lbCountry";
-            this.lbCountry.Size = new System.Drawing.Size(60, 20);
-            this.lbCountry.TabIndex = 4;
-            this.lbCountry.Text = "Country";
+            lbCountry.AutoSize = true;
+            lbCountry.Location = new Point(424, 46);
+            lbCountry.Name = "lbCountry";
+            lbCountry.Size = new Size(49, 20);
+            lbCountry.TabIndex = 4;
+            lbCountry.Text = "Phone";
             // 
             // lbCompany
             // 
-            this.lbCompany.AutoSize = true;
-            this.lbCompany.Location = new System.Drawing.Point(424, 145);
-            this.lbCompany.Name = "lbCompany";
-            this.lbCompany.Size = new System.Drawing.Size(71, 20);
-            this.lbCompany.TabIndex = 3;
-            this.lbCompany.Text = "Company";
+            lbCompany.AutoSize = true;
+            lbCompany.Location = new Point(424, 145);
+            lbCompany.Name = "lbCompany";
+            lbCompany.Size = new Size(36, 20);
+            lbCompany.TabIndex = 3;
+            lbCompany.Text = "Dob";
             // 
             // lbPassword
             // 
-            this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(14, 146);
-            this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(70, 20);
-            this.lbPassword.TabIndex = 2;
-            this.lbPassword.Text = "Password";
+            lbPassword.AutoSize = true;
+            lbPassword.Location = new Point(14, 146);
+            lbPassword.Name = "lbPassword";
+            lbPassword.Size = new Size(70, 20);
+            lbPassword.TabIndex = 2;
+            lbPassword.Text = "Password";
             // 
             // lbGmail
             // 
-            this.lbGmail.AutoSize = true;
-            this.lbGmail.Location = new System.Drawing.Point(14, 96);
-            this.lbGmail.Name = "lbGmail";
-            this.lbGmail.Size = new System.Drawing.Size(48, 20);
-            this.lbGmail.TabIndex = 1;
-            this.lbGmail.Text = "Gmail";
+            lbGmail.AutoSize = true;
+            lbGmail.Location = new Point(14, 96);
+            lbGmail.Name = "lbGmail";
+            lbGmail.Size = new Size(45, 20);
+            lbGmail.TabIndex = 1;
+            lbGmail.Text = "Email";
             // 
             // lbMemberID
             // 
-            this.lbMemberID.AutoSize = true;
-            this.lbMemberID.Location = new System.Drawing.Point(14, 46);
-            this.lbMemberID.Name = "lbMemberID";
-            this.lbMemberID.Size = new System.Drawing.Size(80, 20);
-            this.lbMemberID.TabIndex = 0;
-            this.lbMemberID.Text = "Member ID";
+            lbMemberID.AutoSize = true;
+            lbMemberID.Location = new Point(14, 46);
+            lbMemberID.Name = "lbMemberID";
+            lbMemberID.Size = new Size(80, 20);
+            lbMemberID.TabIndex = 0;
+            lbMemberID.Text = "Member ID";
             // 
             // gbGeneralInfo
             // 
-            this.gbGeneralInfo.Controls.Add(this.dgvMemberList);
-            this.gbGeneralInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.gbGeneralInfo.Location = new System.Drawing.Point(12, 247);
-            this.gbGeneralInfo.Name = "gbGeneralInfo";
-            this.gbGeneralInfo.Size = new System.Drawing.Size(940, 281);
-            this.gbGeneralInfo.TabIndex = 8;
-            this.gbGeneralInfo.TabStop = false;
-            this.gbGeneralInfo.Text = "General Information";
+            gbGeneralInfo.Controls.Add(dgvMemberList);
+            gbGeneralInfo.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            gbGeneralInfo.Location = new Point(942, 54);
+            gbGeneralInfo.Name = "gbGeneralInfo";
+            gbGeneralInfo.Size = new Size(411, 507);
+            gbGeneralInfo.TabIndex = 8;
+            gbGeneralInfo.TabStop = false;
+            gbGeneralInfo.Text = "General Information";
             // 
             // dgvMemberList
             // 
-            this.dgvMemberList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMemberList.Location = new System.Drawing.Point(0, 32);
-            this.dgvMemberList.Name = "dgvMemberList";
-            this.dgvMemberList.ReadOnly = true;
-            this.dgvMemberList.RowHeadersWidth = 51;
-            this.dgvMemberList.RowTemplate.Height = 29;
-            this.dgvMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMemberList.Size = new System.Drawing.Size(934, 249);
-            this.dgvMemberList.TabIndex = 0;
-            this.dgvMemberList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMemberList_CellClick);
+            dgvMemberList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMemberList.Location = new Point(6, 26);
+            dgvMemberList.Name = "dgvMemberList";
+            dgvMemberList.ReadOnly = true;
+            dgvMemberList.RowHeadersWidth = 51;
+            dgvMemberList.RowTemplate.Height = 29;
+            dgvMemberList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMemberList.Size = new Size(399, 458);
+            dgvMemberList.TabIndex = 0;
+            dgvMemberList.CellClick += dgvMemberList_CellClick;
             // 
             // btnBack
             // 
-            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnBack.Location = new System.Drawing.Point(898, 119);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(54, 94);
-            this.btnBack.TabIndex = 27;
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            btnBack.ForeColor = SystemColors.ControlDarkDark;
+            btnBack.Location = new Point(473, 517);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(88, 44);
+            btnBack.TabIndex = 27;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // frmMembers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 538);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.gbGeneralInfo);
-            this.Controls.Add(this.gbDetailInfo);
-            this.Controls.Add(this.lbTitle);
-            this.Name = "frmMembers";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmMembers_Load);
-            this.gbDetailInfo.ResumeLayout(false);
-            this.gbDetailInfo.PerformLayout();
-            this.gbGeneralInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMemberList)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1415, 624);
+            Controls.Add(btnBack);
+            Controls.Add(gbGeneralInfo);
+            Controls.Add(gbDetailInfo);
+            Controls.Add(btnDelete);
+            Controls.Add(lbTitle);
+            Controls.Add(btnAdd);
+            Controls.Add(btnUpdate);
+            Name = "frmMembers";
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += frmMembers_Load;
+            gbDetailInfo.ResumeLayout(false);
+            gbDetailInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picUser).EndInit();
+            gbGeneralInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvMemberList).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -287,12 +393,22 @@
         private Label lbPassword;
         private Label lbGmail;
         private Label lbMemberID;
-        private TextBox txtCompany;
-        private TextBox txtCity;
+        private TextBox txtDob;
+        private TextBox txtAddress;
         private DataGridView dgvMemberList;
         private Button btnBack;
-        private TextBox txtCountry;
-        private TextBox txtGmail;
-        private TextBox txtMemberID;
+        private TextBox txtPhone;
+        private TextBox txtEmail;
+        private TextBox txtUserId;
+        private TextBox txtStatus;
+        private Label label1;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private PictureBox picUser;
+        private TextBox txtUsername;
+        private TextBox txtGender;
+        private TextBox txtRoleId;
     }
 }
