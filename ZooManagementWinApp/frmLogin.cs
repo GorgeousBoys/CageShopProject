@@ -37,10 +37,11 @@ namespace ZooWinApp
                 if (checkMember != null)
                 {
                     MessageBox.Show("Login successfully", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
                     frmMain frmMain1 = new frmMain();
                     frmMain1.user = checkMember;
                     frmMain1.ShowDialog();
-                    this.Close();
+                    
                 }
                 else
                 {

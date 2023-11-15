@@ -93,11 +93,17 @@ namespace SalesWinApp
 
         private void frmMembers_Load(object sender, EventArgs e)
         {
-            LoadMemberList();
-            if (!checkMember.Email.Equals("admin@gmail.com"))
+            try
             {
-                btnAdd.Enabled = false;
-                btnDelete.Enabled = false;
+                var result = memberRepository.GetAllUser().ToList(); // Materialize the query by calling ToList()
+                dgvMemberList.DataSource = null;
+                dgvMemberList.DataSource = result;
+
+                // Rest of your code...
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Loading Members");
             }
         }
 
@@ -150,7 +156,7 @@ namespace SalesWinApp
             try
             {
                 var members = new List<User>();
-                if (checkMember.Email.Equals("admin@fstore.com"))
+                if (checkMember.RoleId == 3)
                 {
                     members = (List<User>)memberRepository.GetAllUser();
                 }

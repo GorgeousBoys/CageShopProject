@@ -1,5 +1,6 @@
 ﻿using BusinessObject;
 using BusinessObject.Models;
+using ZooWinApp;
 
 namespace SalesWinApp
 {
@@ -14,11 +15,19 @@ namespace SalesWinApp
 
         private void memberManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMembers f = new frmMembers();
+            if (user.Email.Equals("admin@gmail.com"))
+            {
+                frmMembers f = new frmMembers();
             f.MdiParent = this;
             f.StartPosition = FormStartPosition.CenterScreen;
             f.checkMember = user;
             f.Show();
+            }
+            else
+            {
+                productManagementToolStripMenuItem.Enabled = false;
+                MessageBox.Show("Your role does not support this function", "Normal user role");
+            }
         }
 
         private void productManagementToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,11 +47,11 @@ namespace SalesWinApp
         }
         private void orderManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             frmOrders f = new frmOrders();
-             f.MdiParent = this;
-             f.StartPosition = FormStartPosition.CenterScreen;
-             f.checkMember = user;
-             f.Show();
+            frmOrders f = new frmOrders();
+            f.MdiParent = this;
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.checkMember = user;
+            f.Show();
         }
     }
 }
