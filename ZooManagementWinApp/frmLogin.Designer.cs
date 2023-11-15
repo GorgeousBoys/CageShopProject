@@ -47,7 +47,7 @@
             label5.ForeColor = Color.FromArgb(116, 86, 174);
             label5.Location = new Point(91, 500);
             label5.Name = "label5";
-            label5.Size = new Size(132, 23);
+            label5.Size = new Size(101, 17);
             label5.TabIndex = 23;
             label5.Text = "Create Account";
             label5.Click += label5_Click;
@@ -57,7 +57,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(70, 462);
             label4.Name = "label4";
-            label4.Size = new Size(193, 23);
+            label4.Size = new Size(150, 17);
             label4.TabIndex = 22;
             label4.Text = "Don't Have an Account";
             // 
@@ -96,7 +96,7 @@
             checkbxShowPas.FlatStyle = FlatStyle.Flat;
             checkbxShowPas.Location = new Point(159, 304);
             checkbxShowPas.Name = "checkbxShowPas";
-            checkbxShowPas.Size = new Size(144, 27);
+            checkbxShowPas.Size = new Size(113, 21);
             checkbxShowPas.TabIndex = 19;
             checkbxShowPas.Text = "Show Pasword";
             checkbxShowPas.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             txtPassword.Location = new Point(41, 234);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '•';
-            txtPassword.Size = new Size(247, 27);
+            txtPassword.Size = new Size(247, 21);
             txtPassword.TabIndex = 16;
             // 
             // label3
@@ -118,7 +118,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(41, 214);
             label3.Name = "label3";
-            label3.Size = new Size(84, 23);
+            label3.Size = new Size(66, 17);
             label3.TabIndex = 15;
             label3.Text = "Password";
             // 
@@ -129,7 +129,7 @@
             txtUsername.Font = new Font("MS UI Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             txtUsername.Location = new Point(41, 163);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(247, 27);
+            txtUsername.Size = new Size(247, 21);
             txtUsername.TabIndex = 14;
             // 
             // label2
@@ -137,7 +137,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(41, 143);
             label2.Name = "label2";
-            label2.Size = new Size(89, 23);
+            label2.Size = new Size(69, 17);
             label2.TabIndex = 13;
             label2.Text = "Username";
             // 
@@ -148,13 +148,13 @@
             label1.ForeColor = Color.FromArgb(116, 86, 174);
             label1.Location = new Point(41, 42);
             label1.Name = "label1";
-            label1.Size = new Size(194, 34);
+            label1.Size = new Size(155, 27);
             label1.TabIndex = 12;
             label1.Text = "Get Started";
             // 
             // frmLogin
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(330, 554);
             Controls.Add(label5);
