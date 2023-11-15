@@ -19,6 +19,6 @@ namespace Repository.Repository
         IEnumerable<Product> FilterByPrice(decimal minPrice, decimal maxPrice);
         IEnumerable<Product> SearchByDescriptionKeyword(string keyword);
         IEnumerable<Product> FilterByMaterial(string material);
-
+        IEnumerable<Product> FilterByBar(string bar);
     }
 }

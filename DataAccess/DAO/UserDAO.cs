@@ -81,29 +81,51 @@ namespace DataAccess.DAO
         // register ShopKeeper's account
         public void registerShopKeeperAccount(User user)
         {
-            var context = new CageShopUni_Context();
+            // Check input
+            if (user == null)
+            {
+                throw new ArgumentNullException(nameof(user), "User is undefined!!");
+            }
 
-            // set role là Shopkeeper
-            // trên winform kh có phần để user nhập role
+            // set role to Shopkeeper
             user.RoleId = 3;
-            user.Role.RoleName = "Shopkeeper";
-            // check input
-            if (user ==null)
-            {
-                throw new Exception("Member is undefined!!");
-            }
 
-            //  check database
-            if (getUserByUserId(user.UserId) == null )
+            using (var context = new CageShopUni_Context())
             {
-                context.Users.Add(user);
-                context.SaveChanges();
-            }
-            else
-            {
-                throw new Exception("User is existed!!");
+                try
+                {
+                    // Check if the user with the same ID already exists in the database
+                    if (getUserByUserId(user.UserId) == null)
+                    {
+                        // Check if the Role property is not null
+                        if (user.Role != null)
+                        {
+                            // Attach the Role entity to the context
+                            context.Attach(user.Role);
+                        }
+
+                        // Add the user to the context
+                        context.Users.Add(user);
+
+                        // Save changes
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        throw new Exception("User already exists!!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception or handle it appropriately
+                    Console.WriteLine($"Registration failed: {ex.Message}");
+                    throw;
+                }
             }
         }
+
+
+
         public User getUserByUserId(int id)
         {
             try
@@ -115,6 +137,32 @@ namespace DataAccess.DAO
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public void AddUser(User user)
+        {
+            using var context = new CageShopUni_Context();
+            context.Users.Add(user);
+            context.SaveChanges();
+        }
+
+        public void UpdateUser(User user)
+        {
+            using var context = new CageShopUni_Context();
+            context.Users.Update(user);
+            context.SaveChanges();
+        }
+
+        public void DeleteUser(User user)
+        {
+            using var context = new CageShopUni_Context();
+            context.Users.Remove(user);
+            context.SaveChanges();
+        }
+        public User FindByID(int id)
+        {
+            using var context = new CageShopUni_Context();
+            return context.Users.SingleOrDefault(user => user.UserId == id);
         }
     }
 }

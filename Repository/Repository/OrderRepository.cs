@@ -19,5 +19,6 @@ namespace Repository.Repository
         public IEnumerable<Order> GetOrders() => OrderDAO.Instance.GetOrders();
 
         public void UpdateOrder(Order order) => OrderDAO.Instance.UpdateOrder(order);
+
     }
 }

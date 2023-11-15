@@ -28,5 +28,14 @@ namespace Repository.Repository
         {
             return UserDAO.Instance.getUserByUserId(id);
         }
+
+        public void AddUser(User user) => UserDAO.Instance.AddUser(user);
+        public void UpdateUser(User user) => UserDAO.Instance.UpdateUser(user);
+        
+
+        public User FindByID(int id) => UserDAO.Instance.FindByID(id);
+
+        public void DeleteUser(User user) => UserDAO.Instance.DeleteUser(user);
+
     }
 }

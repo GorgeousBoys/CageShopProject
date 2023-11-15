@@ -14,5 +14,11 @@ namespace Repository.Repository
         public string getUserRole(string username);
         public void registerShopKeeperAccount (User user);
         public User getUserByUserId(int id);
+
+        void AddUser(User user);
+        void UpdateUser(User user);
+        void DeleteUser(User user);
+
+        User FindByID(int id);
     }
 }
