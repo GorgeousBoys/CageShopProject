@@ -31,6 +31,7 @@
             gbGeneralInfo = new GroupBox();
             dgvProductList = new DataGridView();
             gbDetailInfo = new GroupBox();
+            btnClear = new Button();
             txtCageStatus = new TextBox();
             label5 = new Label();
             label4 = new Label();
@@ -91,6 +92,7 @@
             // 
             // gbDetailInfo
             // 
+            gbDetailInfo.Controls.Add(btnClear);
             gbDetailInfo.Controls.Add(txtCageStatus);
             gbDetailInfo.Controls.Add(label5);
             gbDetailInfo.Controls.Add(label4);
@@ -121,6 +123,17 @@
             gbDetailInfo.TabIndex = 9;
             gbDetailInfo.TabStop = false;
             gbDetailInfo.Text = "Detail Information";
+            // 
+            // btnClear
+            // 
+            btnClear.ForeColor = SystemColors.ControlDarkDark;
+            btnClear.Location = new Point(25, 504);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(99, 46);
+            btnClear.TabIndex = 40;
+            btnClear.Text = "CLEAR";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // txtCageStatus
             // 
@@ -310,10 +323,11 @@
             // btnDelete
             // 
             btnDelete.ForeColor = SystemColors.ControlDarkDark;
-            btnDelete.Location = new Point(298, 554);
+            btnDelete.Location = new Point(323, 554);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(67, 48);
+            btnDelete.Size = new Size(88, 48);
             btnDelete.TabIndex = 25;
+            btnDelete.Text = "DELETE";
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
@@ -322,8 +336,9 @@
             btnUpdate.ForeColor = SystemColors.ControlDarkDark;
             btnUpdate.Location = new Point(175, 554);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(67, 48);
+            btnUpdate.Size = new Size(90, 48);
             btnUpdate.TabIndex = 24;
+            btnUpdate.Text = "UPDATE";
             btnUpdate.UseVisualStyleBackColor = true;
             btnUpdate.Click += btnUpdate_Click;
             // 
@@ -331,10 +346,11 @@
             // 
             btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = SystemColors.ControlDarkDark;
-            btnAdd.Location = new Point(62, 554);
+            btnAdd.Location = new Point(45, 554);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(67, 48);
+            btnAdd.Size = new Size(84, 48);
             btnAdd.TabIndex = 23;
+            btnAdd.Text = "ADD";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
             // 
@@ -363,10 +379,11 @@
             // btnBack
             // 
             btnBack.ForeColor = SystemColors.ControlDarkDark;
-            btnBack.Location = new Point(407, 555);
+            btnBack.Location = new Point(466, 556);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(71, 46);
+            btnBack.Size = new Size(99, 46);
             btnBack.TabIndex = 26;
+            btnBack.Text = "BACK";
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
@@ -438,6 +455,7 @@
         private TextBox txtBar;
         private Label label3;
         private TextBox txtSize;
+        private Button btnClear;
         //Tri
     }
 }
