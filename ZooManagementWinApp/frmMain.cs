@@ -1,4 +1,7 @@
-﻿using BusinessObject.Models;
+﻿using AutoMapper;
+using BusinessObject.DTO;
+using BusinessObject.Mapper;
+using BusinessObject.Models;
 using Repository.Repository;
 using ZooWinApp;
 
@@ -23,10 +26,10 @@ namespace SalesWinApp
             if (user != null && user.Email.Equals("admin@gmail.com"))
             {
                 frmMembers f = new frmMembers();
-                f.MdiParent = this;
                 f.StartPosition = FormStartPosition.CenterScreen;
                 f.checkMember = user;
                 f.Show();
+                
             }
             else
             {
@@ -41,7 +44,6 @@ namespace SalesWinApp
             if (user.Email.Equals("admin@gmail.com"))
             {
                 frmProducts f = new frmProducts();
-                f.MdiParent = this;
                 f.StartPosition = FormStartPosition.CenterScreen;
                 f.Show();
             }
@@ -54,7 +56,6 @@ namespace SalesWinApp
         private void orderManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmOrders f = new frmOrders();
-            f.MdiParent = this;
             f.StartPosition = FormStartPosition.CenterScreen;
             f.checkMember = user;
             f.Show();
@@ -63,11 +64,7 @@ namespace SalesWinApp
         private void frmMain_Load(object sender, EventArgs e)
         {
             IEnumerable<Product> products = productRepository.GetProducts();
-            bindingSource = new BindingSource();
-            bindingSource.DataSource = products;
-
-            dgvCage.DataSource = null;
-            dgvCage.DataSource = products;
+            LoadProducts(products);
         }
 
         private void btnViewCart_Click(object sender, EventArgs e)
@@ -160,14 +157,17 @@ namespace SalesWinApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string material = cbMaterial.Text;
+            try
+            {
+                string material = cbMaterial.Text;
 
-            IEnumerable<Product> products = productRepository.FilterByMaterial(material);
+                IEnumerable<Product> products = productRepository.FilterByMaterial(material);
 
-            bindingSource = new BindingSource();
-            bindingSource.DataSource = products;
-
-            dgvCage.DataSource = bindingSource;
+                LoadProducts(products);
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -193,11 +193,7 @@ namespace SalesWinApp
             IEnumerable<Product> productsSearch = productRepository.SearchByDescriptionKeyword(description);
             if (productsSearch.Count() > 0)
             {
-                bindingSource = new BindingSource();
-                bindingSource.DataSource = productsSearch;
-
-                dgvCage.DataSource = null;
-                dgvCage.DataSource = bindingSource;
+                LoadProducts(productsSearch);
             }
             else
             {
@@ -208,32 +204,53 @@ namespace SalesWinApp
 
         private void btnFilterBar_Click(object sender, EventArgs e)
         {
-            string bar = txtBar.Text;
-            if (bar.Length > 0) { txtBar.Text = bar; }
-            IEnumerable<Product> products = productRepository.FilterByBar(bar);
-            bindingSource = new BindingSource() { DataSource = products };
-            dgvCage.DataSource = null;
-            dgvCage.DataSource = bindingSource;
+            try
+            {
+                string bar = txtBar.Text;
+                if (bar.Length > 0) { txtBar.Text = bar; }
+                IEnumerable<Product> products = productRepository.FilterByBar(bar);
+                LoadProducts(products);
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            decimal min = decimal.Parse(txtMin.Text);
-            decimal max = decimal.Parse(txtMax.Text);
-            IEnumerable<Product> products = productRepository.FilterByPrice(min, max);
-            bindingSource = new BindingSource() { DataSource = products };
-            dgvCage.DataSource = null;
-            dgvCage.DataSource = bindingSource;
+            try
+            {
+                decimal min = decimal.Parse(txtMin.Text);
+                decimal max = decimal.Parse(txtMax.Text);
+                IEnumerable<Product> products = productRepository.FilterByPrice(min, max);
+                LoadProducts(products);
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             IEnumerable<Product> products = productRepository.GetProducts();
+            LoadProducts(products);
+        }
+
+        private void LoadProducts(IEnumerable<Product> products)
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                MappingProfiles.createMap(cfg);
+            });
+            var mapProducts = config.CreateMapper();
+
+            var productDtos = products.Select(product => mapProducts.Map<Product, ProductDTO>(product));
+
             bindingSource = new BindingSource();
-            bindingSource.DataSource = products;
+            bindingSource.DataSource = productDtos;
 
             dgvCage.DataSource = null;
-            dgvCage.DataSource = products;
+            dgvCage.DataSource = bindingSource;
         }
     }
 }

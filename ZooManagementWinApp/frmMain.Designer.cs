@@ -305,10 +305,10 @@
             Controls.Add(txtSearch);
             Controls.Add(button1);
             Controls.Add(cbMaterial);
-            Controls.Add(dgvCage);
             Controls.Add(msAction);
             Controls.Add(panel1);
             Controls.Add(lbTitle);
+            Controls.Add(dgvCage);
             IsMdiContainer = true;
             MainMenuStrip = msAction;
             Margin = new Padding(3, 2, 3, 2);
