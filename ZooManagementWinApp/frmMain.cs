@@ -23,10 +23,10 @@ namespace SalesWinApp
             if (user != null && user.Email.Equals("admin@gmail.com"))
             {
                 frmMembers f = new frmMembers();
-                f.MdiParent = this;
                 f.StartPosition = FormStartPosition.CenterScreen;
                 f.checkMember = user;
                 f.Show();
+
             }
             else
             {
@@ -41,7 +41,6 @@ namespace SalesWinApp
             if (user.Email.Equals("admin@gmail.com"))
             {
                 frmProducts f = new frmProducts();
-                f.MdiParent = this;
                 f.StartPosition = FormStartPosition.CenterScreen;
                 f.Show();
             }
@@ -54,7 +53,6 @@ namespace SalesWinApp
         private void orderManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmOrders f = new frmOrders();
-            f.MdiParent = this;
             f.StartPosition = FormStartPosition.CenterScreen;
             f.checkMember = user;
             f.Show();
