@@ -15,13 +15,13 @@ namespace SalesWinApp
 
         private void memberManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (user.Email.Equals("admin@gmail.com"))
+            if (user != null && user.Email.Equals("admin@gmail.com"))
             {
                 frmMembers f = new frmMembers();
-            f.MdiParent = this;
-            f.StartPosition = FormStartPosition.CenterScreen;
-            f.checkMember = user;
-            f.Show();
+                f.MdiParent = this;
+                f.StartPosition = FormStartPosition.CenterScreen;
+                f.checkMember = user;
+                f.Show();
             }
             else
             {
@@ -29,6 +29,7 @@ namespace SalesWinApp
                 MessageBox.Show("Your role does not support this function", "Normal user role");
             }
         }
+
 
         private void productManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {

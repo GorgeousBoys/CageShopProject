@@ -138,5 +138,31 @@ namespace DataAccess.DAO
                 throw new Exception(ex.Message);
             }
         }
+
+        public void AddUser(User user)
+        {
+            using var context = new CageShopUni_Context();
+            context.Users.Add(user);
+            context.SaveChanges();
+        }
+
+        public void UpdateUser(User user)
+        {
+            using var context = new CageShopUni_Context();
+            context.Users.Update(user);
+            context.SaveChanges();
+        }
+
+        public void DeleteUser(User user)
+        {
+            using var context = new CageShopUni_Context();
+            context.Users.Remove(user);
+            context.SaveChanges();
+        }
+        public User FindByID(int id)
+        {
+            using var context = new CageShopUni_Context();
+            return context.Users.SingleOrDefault(user => user.UserId == id);
+        }
     }
 }

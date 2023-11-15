@@ -26,19 +26,16 @@ namespace SalesWinApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var product = GetProductObject();
             try
             {
-                if (product != null)
-                {
-                    productRepository.AddProduct(product);
-                    LoadProductList();
-                    MessageBox.Show("Add new product successfully");
-                }
-                else
-                {
-                    throw new Exception("Add new product fail. Fill in the blank information box!");
-                }
+                var product = GetProductObject1();
+
+                ValidateProduct(product);
+
+                productRepository.AddProduct(product);
+                LoadProductList();
+                MessageBox.Show("Add new product successfully");
+                ClearInputFields(); // Optionally clear input fields after successful addition
             }
             catch (Exception ex)
             {
@@ -46,45 +43,126 @@ namespace SalesWinApp
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void ValidateProduct(Product product)
         {
-            var product = GetProductObject();
+            if (product == null ||
+                string.IsNullOrWhiteSpace(product.CageName) ||
+                product.CategoryId <= 0 ||
+                product.Price <= 0 ||
+                product.CageStatus <= 0 ||
+                product.Quantity <= 0 ||
+                product.Bar <= 0 ||
+                product.DiscountId <= 0 ||
+                string.IsNullOrWhiteSpace(product.Size) ||
+                string.IsNullOrWhiteSpace(product.Description))
+            {
+                throw new Exception("Add new product fail. Fill in all required information.");
+            }
+        }
+
+        private void ClearInputFields()
+        {
+            mtxtCageID.Text = "";
+            txtCageName.Text = "";
+            mtxtCategoryID.Text = "";
+            txtQuantity.Text = "";
+            mtxtPrice.Text = "";
+            mtxtDIscountID.Text = "";
+            txtMaterial.Text = "";
+            txtSize.Text = "";
+            txtBar.Text = "";
+            rbDescription.Text = "";
+            txtCageStatus.Text = "";
+        }
+
+        private Product GetProductObject1()
+        {
+            Product product = null;
             try
             {
-                if (product != null)
+                product = new Product
                 {
-                    product.CageId = int.Parse(mtxtCageID.Text);
-                    productRepository.UpdateProduct(product);
-                    LoadProductList();
-                    MessageBox.Show("Update product successfully");
-                }
-                else
-                {
-                    throw new Exception("Update product fail. Select a product beside to update!");
-                }
+                    CategoryId = int.Parse(mtxtCategoryID.Text),
+                    CageName = txtCageName.Text,
+                    Material = txtQuantity.Text,
+                    Price = decimal.Parse(mtxtPrice.Text),
+                    CageStatus = int.Parse(mtxtDIscountID.Text),
+                    Quantity = int.Parse(txtQuantity.Text),
+                    Bar = int.Parse(txtBar.Text),
+                    DiscountId = int.Parse(mtxtDIscountID.Text),
+                    Size = txtSize.Text,
+                    Description = rbDescription.Text
+                };
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Update product");
+                MessageBox.Show(ex.Message, "Get product");
+            }
+            return product;
+        }
+
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var product = GetProductObject1();
+
+                ValidateProductForUpdate(product);
+
+                product.CageId = int.Parse(mtxtCageID.Text);
+                productRepository.UpdateProduct(product);
+                LoadProductList();
+                MessageBox.Show($"Product {product.CageName} updated successfully!", "Update Product", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Update product", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        private void ValidateProductForUpdate(Product product)
+        {
+            if (product == null ||
+                string.IsNullOrWhiteSpace(product.CageName) ||
+                product.CategoryId <= 0 ||
+                product.Price <= 0 ||
+                product.CageStatus <= 0 ||
+                product.Quantity <= 0 ||
+                product.Bar <= 0 ||
+                product.DiscountId <= 0 ||
+                string.IsNullOrWhiteSpace(product.Size) ||
+                string.IsNullOrWhiteSpace(product.Description))
+            {
+                throw new Exception("Update product fail. Fill in all required information.");
+            }
+        }
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
-                var productID = int.Parse(mtxtCageID.Text);
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this product?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                productRepository.DeleteProduct(productRepository.FindByID(productID));
-                LoadProductList();
-                mtxtCageID.Clear();
-                MessageBox.Show("Delete product successfully");
+                if (result == DialogResult.Yes)
+                {
+                    var productID = int.Parse(mtxtCageID.Text);
+
+                    productRepository.DeleteProduct(productRepository.FindByID(productID));
+                    LoadProductList();
+                    mtxtCageID.Clear();
+
+                    MessageBox.Show("Product deleted successfully!", "Delete Product", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception("Delete product fail. Select a product beside to delete!");
+                MessageBox.Show(ex.Message, "Delete product", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -173,6 +251,19 @@ namespace SalesWinApp
             }
         }
 
-
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            mtxtCageID.Text = "";
+            txtCageName.Text = "";
+            mtxtCategoryID.Text = "";
+            txtQuantity.Text = "";
+            mtxtPrice.Text = "";
+            mtxtDIscountID.Text = "";
+            txtMaterial.Text = "";
+            txtSize.Text = "";
+            txtBar.Text = "";
+            rbDescription.Text = "";
+            txtCageStatus.Text = "";
+        }
     }
 }
