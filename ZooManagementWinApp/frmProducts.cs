@@ -98,16 +98,34 @@ namespace SalesWinApp
 
         private void dgvProductList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvProductList.Rows.Count - 1)
+            if (IsValidRowIndex(e.RowIndex))
             {
-                mtxtCageID.Text = dgvProductList.Rows[e.RowIndex].Cells["CageID"].Value.ToString();
-                mtxtCategoryID.Text = dgvProductList.Rows[e.RowIndex].Cells["CategoryID"].Value.ToString();
-                txtCageName.Text = dgvProductList.Rows[e.RowIndex].Cells["ProductName"].Value.ToString();
-                txtQuantity.Text = dgvProductList.Rows[e.RowIndex].Cells["Weight"].Value.ToString();
-                mtxtPrice.Text = dgvProductList.Rows[e.RowIndex].Cells["UnitPrice"].Value.ToString();
-                mtxtDIscountID.Text = dgvProductList.Rows[e.RowIndex].Cells["UnitInStock"].Value.ToString();
+                DataGridViewRow selectedRow = dgvProductList.Rows[e.RowIndex];
+
+                mtxtCageID.Text = GetCellValue(selectedRow, "CageID");
+                txtCageName.Text = GetCellValue(selectedRow, "CageName");
+                mtxtCategoryID.Text = GetCellValue(selectedRow, "CategoryID");
+                txtQuantity.Text = GetCellValue(selectedRow, "Quantity");
+                mtxtPrice.Text = GetCellValue(selectedRow, "Price");
+                mtxtDIscountID.Text = GetCellValue(selectedRow, "DiscountID");
+                txtMaterial.Text = GetCellValue(selectedRow, "Material");
+                txtSize.Text = GetCellValue(selectedRow, "Size");
+                txtBar.Text = GetCellValue(selectedRow, "Bar");
+                rbDescription.Text = GetCellValue(selectedRow, "Description");
+                txtCageStatus.Text = GetCellValue(selectedRow, "CageStatus");
             }
         }
+
+        private bool IsValidRowIndex(int rowIndex)
+        {
+            return rowIndex >= 0 && rowIndex < dgvProductList.Rows.Count - 1;
+        }
+
+        private string GetCellValue(DataGridViewRow row, string columnName)
+        {
+            return row.Cells[columnName].Value?.ToString() ?? string.Empty;
+        }
+
 
         private Product GetProductObject()
         {

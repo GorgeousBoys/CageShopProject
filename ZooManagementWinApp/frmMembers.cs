@@ -112,18 +112,30 @@ namespace SalesWinApp
         {
             if (e.RowIndex >= 0 && e.RowIndex < dgvMemberList.Rows.Count - 1)
             {
-                txtUserId.Text = dgvMemberList.Rows[e.RowIndex].Cells["UserID"].Value.ToString();
-                txtEmail.Text = dgvMemberList.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                txtDob.Text = dgvMemberList.Rows[e.RowIndex].Cells["Dob"].Value.ToString();
-                txtAddress.Text = dgvMemberList.Rows[e.RowIndex].Cells["Address"].Value.ToString();
-                txtPhone.Text = dgvMemberList.Rows[e.RowIndex].Cells["Phone"].Value.ToString();
-                txtPassword.Text = dgvMemberList.Rows[e.RowIndex].Cells["UserPassword"].Value.ToString();
-                txtStatus.Text = dgvMemberList.Rows[e.RowIndex].Cells["Status"].Value.ToString();
-                txtUsername.Text = dgvMemberList.Rows[e.RowIndex].Cells["UserName"].Value.ToString();
-                txtGender.Text = dgvMemberList.Rows[e.RowIndex].Cells["Gender"].Value.ToString();
-                txtRoleId.Text = dgvMemberList.Rows[e.RowIndex].Cells["RoleID"].Value.ToString();
+                DataGridViewRow selectedRow = dgvMemberList.Rows[e.RowIndex];
+
+                txtUserId.Text = GetValueFromCell(selectedRow, "UserID");
+                txtEmail.Text = GetValueFromCell(selectedRow, "Email");
+                txtDob.Text = GetValueFromCell(selectedRow, "Dob");
+                txtAddress.Text = GetValueFromCell(selectedRow, "Address");
+                txtPhone.Text = GetValueFromCell(selectedRow, "Phone");
+                txtPassword.Text = GetValueFromCell(selectedRow, "UserPassword");
+                txtStatus.Text = GetValueFromCell(selectedRow, "Status");
+                txtUsername.Text = GetValueFromCell(selectedRow, "UserName");
+                txtGender.Text = GetValueFromCell(selectedRow, "Gender");
+                txtRoleId.Text = GetValueFromCell(selectedRow, "RoleID");
             }
         }
+
+        private string GetValueFromCell(DataGridViewRow row, string columnName)
+        {
+            if (row.Cells[columnName].Value != null)
+            {
+                return row.Cells[columnName].Value.ToString();
+            }
+            return string.Empty;
+        }
+
 
         /*private User GetMemberObject()
         {
