@@ -28,308 +28,307 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbTitle = new System.Windows.Forms.Label();
-            this.gbDetailInfo = new System.Windows.Forms.GroupBox();
-            this.dtpShippedDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpRequiredDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpOrderDate = new System.Windows.Forms.DateTimePicker();
-            this.cbMemberID = new System.Windows.Forms.ComboBox();
-            this.txtOrderID = new System.Windows.Forms.TextBox();
-            this.txtFreight = new System.Windows.Forms.TextBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnMoreDetail = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.lbRequiredDate = new System.Windows.Forms.Label();
-            this.lbOrderDate = new System.Windows.Forms.Label();
-            this.lbShippedDate = new System.Windows.Forms.Label();
-            this.lbFreight = new System.Windows.Forms.Label();
-            this.lbOrderID = new System.Windows.Forms.Label();
-            this.lbMemberID = new System.Windows.Forms.Label();
-            this.gbGeneralInfo = new System.Windows.Forms.GroupBox();
-            this.dgvOrderList = new System.Windows.Forms.DataGridView();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.gbDetailInfo.SuspendLayout();
-            this.gbGeneralInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderList)).BeginInit();
-            this.SuspendLayout();
+            lbTitle = new Label();
+            gbDetailInfo = new GroupBox();
+            dtpShippedDate = new DateTimePicker();
+            dtpRequiredDate = new DateTimePicker();
+            dtpOrderDate = new DateTimePicker();
+            cbMemberID = new ComboBox();
+            txtOrderID = new TextBox();
+            txtFreight = new TextBox();
+            btnUpdate = new Button();
+            btnDelete = new Button();
+            btnMoreDetail = new Button();
+            btnAdd = new Button();
+            lbRequiredDate = new Label();
+            lbOrderDate = new Label();
+            lbShippedDate = new Label();
+            lbFreight = new Label();
+            lbOrderID = new Label();
+            lbMemberID = new Label();
+            gbGeneralInfo = new GroupBox();
+            dgvOrderList = new DataGridView();
+            btnBack = new Button();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            button1 = new Button();
+            gbDetailInfo.SuspendLayout();
+            gbGeneralInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvOrderList).BeginInit();
+            SuspendLayout();
             // 
             // lbTitle
             // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTitle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbTitle.Location = new System.Drawing.Point(366, 9);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(275, 38);
-            this.lbTitle.TabIndex = 6;
-            this.lbTitle.Text = "Order Management";
+            lbTitle.AutoSize = true;
+            lbTitle.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lbTitle.ForeColor = Color.FromArgb(116, 86, 120);
+            lbTitle.Location = new Point(366, 9);
+            lbTitle.Name = "lbTitle";
+            lbTitle.Size = new Size(275, 38);
+            lbTitle.TabIndex = 6;
+            lbTitle.Text = "Order Management";
             // 
             // gbDetailInfo
             // 
-            this.gbDetailInfo.Controls.Add(this.dtpShippedDate);
-            this.gbDetailInfo.Controls.Add(this.dtpRequiredDate);
-            this.gbDetailInfo.Controls.Add(this.dtpOrderDate);
-            this.gbDetailInfo.Controls.Add(this.cbMemberID);
-            this.gbDetailInfo.Controls.Add(this.txtOrderID);
-            this.gbDetailInfo.Controls.Add(this.txtFreight);
-            this.gbDetailInfo.Controls.Add(this.btnUpdate);
-            this.gbDetailInfo.Controls.Add(this.btnDelete);
-            this.gbDetailInfo.Controls.Add(this.btnMoreDetail);
-            this.gbDetailInfo.Controls.Add(this.btnAdd);
-            this.gbDetailInfo.Controls.Add(this.lbRequiredDate);
-            this.gbDetailInfo.Controls.Add(this.lbOrderDate);
-            this.gbDetailInfo.Controls.Add(this.lbShippedDate);
-            this.gbDetailInfo.Controls.Add(this.lbFreight);
-            this.gbDetailInfo.Controls.Add(this.lbOrderID);
-            this.gbDetailInfo.Controls.Add(this.lbMemberID);
-            this.gbDetailInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.gbDetailInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.gbDetailInfo.Location = new System.Drawing.Point(789, 46);
-            this.gbDetailInfo.Name = "gbDetailInfo";
-            this.gbDetailInfo.Size = new System.Drawing.Size(292, 402);
-            this.gbDetailInfo.TabIndex = 8;
-            this.gbDetailInfo.TabStop = false;
-            this.gbDetailInfo.Text = "Detail Information";
+            gbDetailInfo.Controls.Add(dtpShippedDate);
+            gbDetailInfo.Controls.Add(dtpRequiredDate);
+            gbDetailInfo.Controls.Add(dtpOrderDate);
+            gbDetailInfo.Controls.Add(cbMemberID);
+            gbDetailInfo.Controls.Add(txtOrderID);
+            gbDetailInfo.Controls.Add(txtFreight);
+            gbDetailInfo.Controls.Add(btnUpdate);
+            gbDetailInfo.Controls.Add(btnDelete);
+            gbDetailInfo.Controls.Add(btnMoreDetail);
+            gbDetailInfo.Controls.Add(btnAdd);
+            gbDetailInfo.Controls.Add(lbRequiredDate);
+            gbDetailInfo.Controls.Add(lbOrderDate);
+            gbDetailInfo.Controls.Add(lbShippedDate);
+            gbDetailInfo.Controls.Add(lbFreight);
+            gbDetailInfo.Controls.Add(lbOrderID);
+            gbDetailInfo.Controls.Add(lbMemberID);
+            gbDetailInfo.FlatStyle = FlatStyle.Popup;
+            gbDetailInfo.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            gbDetailInfo.Location = new Point(789, 46);
+            gbDetailInfo.Name = "gbDetailInfo";
+            gbDetailInfo.Size = new Size(292, 402);
+            gbDetailInfo.TabIndex = 8;
+            gbDetailInfo.TabStop = false;
+            gbDetailInfo.Text = "Detail Information";
             // 
             // dtpShippedDate
             // 
-            this.dtpShippedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpShippedDate.Location = new System.Drawing.Point(113, 283);
-            this.dtpShippedDate.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
-            this.dtpShippedDate.MinDate = new System.DateTime(1996, 1, 1, 0, 0, 0, 0);
-            this.dtpShippedDate.Name = "dtpShippedDate";
-            this.dtpShippedDate.Size = new System.Drawing.Size(164, 27);
-            this.dtpShippedDate.TabIndex = 25;
+            dtpShippedDate.Format = DateTimePickerFormat.Short;
+            dtpShippedDate.Location = new Point(113, 283);
+            dtpShippedDate.MaxDate = new DateTime(2023, 12, 31, 0, 0, 0, 0);
+            dtpShippedDate.MinDate = new DateTime(1996, 1, 1, 0, 0, 0, 0);
+            dtpShippedDate.Name = "dtpShippedDate";
+            dtpShippedDate.Size = new Size(164, 27);
+            dtpShippedDate.TabIndex = 25;
             // 
             // dtpRequiredDate
             // 
-            this.dtpRequiredDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpRequiredDate.Location = new System.Drawing.Point(113, 234);
-            this.dtpRequiredDate.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
-            this.dtpRequiredDate.MinDate = new System.DateTime(1996, 1, 1, 0, 0, 0, 0);
-            this.dtpRequiredDate.Name = "dtpRequiredDate";
-            this.dtpRequiredDate.Size = new System.Drawing.Size(164, 27);
-            this.dtpRequiredDate.TabIndex = 24;
+            dtpRequiredDate.Format = DateTimePickerFormat.Short;
+            dtpRequiredDate.Location = new Point(113, 234);
+            dtpRequiredDate.MaxDate = new DateTime(2022, 12, 31, 0, 0, 0, 0);
+            dtpRequiredDate.MinDate = new DateTime(1996, 1, 1, 0, 0, 0, 0);
+            dtpRequiredDate.Name = "dtpRequiredDate";
+            dtpRequiredDate.Size = new Size(164, 27);
+            dtpRequiredDate.TabIndex = 24;
+            dtpRequiredDate.Value = new DateTime(2022, 12, 31, 0, 0, 0, 0);
             // 
             // dtpOrderDate
             // 
-            this.dtpOrderDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.dtpOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpOrderDate.Location = new System.Drawing.Point(113, 185);
-            this.dtpOrderDate.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
-            this.dtpOrderDate.MinDate = new System.DateTime(1996, 1, 1, 0, 0, 0, 0);
-            this.dtpOrderDate.Name = "dtpOrderDate";
-            this.dtpOrderDate.Size = new System.Drawing.Size(164, 27);
-            this.dtpOrderDate.TabIndex = 23;
-            this.dtpOrderDate.Value = new System.DateTime(2022, 7, 9, 0, 0, 0, 0);
+            dtpOrderDate.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            dtpOrderDate.Format = DateTimePickerFormat.Short;
+            dtpOrderDate.Location = new Point(113, 185);
+            dtpOrderDate.MaxDate = new DateTime(2023, 12, 31, 0, 0, 0, 0);
+            dtpOrderDate.MinDate = new DateTime(1996, 1, 1, 0, 0, 0, 0);
+            dtpOrderDate.Name = "dtpOrderDate";
+            dtpOrderDate.Size = new Size(164, 27);
+            dtpOrderDate.TabIndex = 23;
+            dtpOrderDate.Value = new DateTime(2022, 7, 9, 0, 0, 0, 0);
             // 
             // cbMemberID
             // 
-            this.cbMemberID.FormattingEnabled = true;
-            this.cbMemberID.Location = new System.Drawing.Point(113, 80);
-            this.cbMemberID.Name = "cbMemberID";
-            this.cbMemberID.Size = new System.Drawing.Size(164, 28);
-            this.cbMemberID.TabIndex = 22;
+            cbMemberID.FormattingEnabled = true;
+            cbMemberID.Location = new Point(113, 80);
+            cbMemberID.Name = "cbMemberID";
+            cbMemberID.Size = new Size(164, 28);
+            cbMemberID.TabIndex = 22;
             // 
             // txtOrderID
             // 
-            this.txtOrderID.Location = new System.Drawing.Point(113, 30);
-            this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.ReadOnly = true;
-            this.txtOrderID.Size = new System.Drawing.Size(164, 27);
-            this.txtOrderID.TabIndex = 6;
+            txtOrderID.Location = new Point(113, 30);
+            txtOrderID.Name = "txtOrderID";
+            txtOrderID.ReadOnly = true;
+            txtOrderID.Size = new Size(164, 27);
+            txtOrderID.TabIndex = 6;
             // 
             // txtFreight
             // 
-            this.txtFreight.Location = new System.Drawing.Point(113, 131);
-            this.txtFreight.Name = "txtFreight";
-            this.txtFreight.Size = new System.Drawing.Size(164, 27);
-            this.txtFreight.TabIndex = 18;
+            txtFreight.Location = new Point(113, 131);
+            txtFreight.Name = "txtFreight";
+            txtFreight.Size = new Size(164, 27);
+            txtFreight.TabIndex = 18;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnUpdate.Location = new System.Drawing.Point(215, 354);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(62, 40);
-            this.btnUpdate.TabIndex = 12;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            btnUpdate.ForeColor = SystemColors.ControlDarkDark;
+            btnUpdate.Location = new Point(215, 354);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(62, 40);
+            btnUpdate.TabIndex = 12;
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnDelete
             // 
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnDelete.Location = new System.Drawing.Point(113, 354);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(62, 42);
-            this.btnDelete.TabIndex = 11;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            btnDelete.ForeColor = SystemColors.ControlDarkDark;
+            btnDelete.Location = new Point(113, 354);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(62, 42);
+            btnDelete.TabIndex = 11;
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnMoreDetail
             // 
-            this.btnMoreDetail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMoreDetail.Location = new System.Drawing.Point(172, 316);
-            this.btnMoreDetail.Name = "btnMoreDetail";
-            this.btnMoreDetail.Size = new System.Drawing.Size(105, 28);
-            this.btnMoreDetail.TabIndex = 12;
-            this.btnMoreDetail.Text = "More Detail";
-            this.btnMoreDetail.UseVisualStyleBackColor = true;
-            this.btnMoreDetail.Click += new System.EventHandler(this.btnMoreDetail_Click);
+            btnMoreDetail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMoreDetail.Location = new Point(172, 316);
+            btnMoreDetail.Name = "btnMoreDetail";
+            btnMoreDetail.Size = new Size(105, 28);
+            btnMoreDetail.TabIndex = 12;
+            btnMoreDetail.Text = "More Detail";
+            btnMoreDetail.UseVisualStyleBackColor = true;
+            btnMoreDetail.Click += btnMoreDetail_Click;
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAdd.Location = new System.Drawing.Point(8, 354);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(62, 42);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdd.ForeColor = SystemColors.ControlDarkDark;
+            btnAdd.Location = new Point(8, 354);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(62, 42);
+            btnAdd.TabIndex = 10;
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // lbRequiredDate
             // 
-            this.lbRequiredDate.AutoSize = true;
-            this.lbRequiredDate.Location = new System.Drawing.Point(6, 241);
-            this.lbRequiredDate.Name = "lbRequiredDate";
-            this.lbRequiredDate.Size = new System.Drawing.Size(96, 20);
-            this.lbRequiredDate.TabIndex = 5;
-            this.lbRequiredDate.Text = "RequiredDate";
+            lbRequiredDate.AutoSize = true;
+            lbRequiredDate.Location = new Point(6, 241);
+            lbRequiredDate.Name = "lbRequiredDate";
+            lbRequiredDate.Size = new Size(96, 20);
+            lbRequiredDate.TabIndex = 5;
+            lbRequiredDate.Text = "RequiredDate";
             // 
             // lbOrderDate
             // 
-            this.lbOrderDate.AutoSize = true;
-            this.lbOrderDate.Location = new System.Drawing.Point(6, 192);
-            this.lbOrderDate.Name = "lbOrderDate";
-            this.lbOrderDate.Size = new System.Drawing.Size(80, 20);
-            this.lbOrderDate.TabIndex = 4;
-            this.lbOrderDate.Text = "Order Date";
+            lbOrderDate.AutoSize = true;
+            lbOrderDate.Location = new Point(6, 192);
+            lbOrderDate.Name = "lbOrderDate";
+            lbOrderDate.Size = new Size(80, 20);
+            lbOrderDate.TabIndex = 4;
+            lbOrderDate.Text = "Order Date";
             // 
             // lbShippedDate
             // 
-            this.lbShippedDate.AutoSize = true;
-            this.lbShippedDate.Location = new System.Drawing.Point(6, 290);
-            this.lbShippedDate.Name = "lbShippedDate";
-            this.lbShippedDate.Size = new System.Drawing.Size(94, 20);
-            this.lbShippedDate.TabIndex = 3;
-            this.lbShippedDate.Text = "Shipped Date";
+            lbShippedDate.AutoSize = true;
+            lbShippedDate.Location = new Point(6, 290);
+            lbShippedDate.Name = "lbShippedDate";
+            lbShippedDate.Size = new Size(94, 20);
+            lbShippedDate.TabIndex = 3;
+            lbShippedDate.Text = "Shipped Date";
             // 
             // lbFreight
             // 
-            this.lbFreight.AutoSize = true;
-            this.lbFreight.Location = new System.Drawing.Point(6, 138);
-            this.lbFreight.Name = "lbFreight";
-            this.lbFreight.Size = new System.Drawing.Size(53, 20);
-            this.lbFreight.TabIndex = 2;
-            this.lbFreight.Text = "Freight";
+            lbFreight.AutoSize = true;
+            lbFreight.Location = new Point(6, 138);
+            lbFreight.Name = "lbFreight";
+            lbFreight.Size = new Size(53, 20);
+            lbFreight.TabIndex = 2;
+            lbFreight.Text = "Freight";
             // 
             // lbOrderID
             // 
-            this.lbOrderID.AutoSize = true;
-            this.lbOrderID.Location = new System.Drawing.Point(6, 41);
-            this.lbOrderID.Name = "lbOrderID";
-            this.lbOrderID.Size = new System.Drawing.Size(64, 20);
-            this.lbOrderID.TabIndex = 1;
-            this.lbOrderID.Text = "Order ID";
+            lbOrderID.AutoSize = true;
+            lbOrderID.Location = new Point(6, 41);
+            lbOrderID.Name = "lbOrderID";
+            lbOrderID.Size = new Size(64, 20);
+            lbOrderID.TabIndex = 1;
+            lbOrderID.Text = "Order ID";
             // 
             // lbMemberID
             // 
-            this.lbMemberID.AutoSize = true;
-            this.lbMemberID.Location = new System.Drawing.Point(6, 88);
-            this.lbMemberID.Name = "lbMemberID";
-            this.lbMemberID.Size = new System.Drawing.Size(80, 20);
-            this.lbMemberID.TabIndex = 0;
-            this.lbMemberID.Text = "Member ID";
+            lbMemberID.AutoSize = true;
+            lbMemberID.Location = new Point(6, 88);
+            lbMemberID.Name = "lbMemberID";
+            lbMemberID.Size = new Size(80, 20);
+            lbMemberID.TabIndex = 0;
+            lbMemberID.Text = "Member ID";
             // 
             // gbGeneralInfo
             // 
-            this.gbGeneralInfo.Controls.Add(this.dgvOrderList);
-            this.gbGeneralInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.gbGeneralInfo.Location = new System.Drawing.Point(12, 50);
-            this.gbGeneralInfo.Name = "gbGeneralInfo";
-            this.gbGeneralInfo.Size = new System.Drawing.Size(770, 450);
-            this.gbGeneralInfo.TabIndex = 14;
-            this.gbGeneralInfo.TabStop = false;
-            this.gbGeneralInfo.Text = "General Information";
+            gbGeneralInfo.Controls.Add(dgvOrderList);
+            gbGeneralInfo.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            gbGeneralInfo.Location = new Point(12, 50);
+            gbGeneralInfo.Name = "gbGeneralInfo";
+            gbGeneralInfo.Size = new Size(770, 450);
+            gbGeneralInfo.TabIndex = 14;
+            gbGeneralInfo.TabStop = false;
+            gbGeneralInfo.Text = "General Information";
             // 
             // dgvOrderList
             // 
-            this.dgvOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderList.Location = new System.Drawing.Point(0, 32);
-            this.dgvOrderList.Name = "dgvOrderList";
-            this.dgvOrderList.ReadOnly = true;
-            this.dgvOrderList.RowHeadersWidth = 51;
-            this.dgvOrderList.RowTemplate.Height = 29;
-            this.dgvOrderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrderList.Size = new System.Drawing.Size(764, 412);
-            this.dgvOrderList.TabIndex = 0;
-            this.dgvOrderList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderList_CellClick);
-            this.dgvOrderList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderList_CellDoubleClick);
+            dgvOrderList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOrderList.Location = new Point(0, 32);
+            dgvOrderList.Name = "dgvOrderList";
+            dgvOrderList.ReadOnly = true;
+            dgvOrderList.RowHeadersWidth = 51;
+            dgvOrderList.RowTemplate.Height = 29;
+            dgvOrderList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvOrderList.Size = new Size(764, 412);
+            dgvOrderList.TabIndex = 0;
+            dgvOrderList.CellClick += dgvOrderList_CellClick;
+            dgvOrderList.CellContentClick += dgvOrderList_CellContentClick;
+            dgvOrderList.CellDoubleClick += dgvOrderList_CellDoubleClick;
             // 
             // btnBack
             // 
-            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnBack.Location = new System.Drawing.Point(797, 454);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(269, 40);
-            this.btnBack.TabIndex = 27;
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            btnBack.ForeColor = SystemColors.ControlDarkDark;
+            btnBack.Location = new Point(797, 454);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(269, 40);
+            btnBack.TabIndex = 27;
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(222, 576);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker1.TabIndex = 28;
+            dateTimePicker1.Location = new Point(222, 576);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.TabIndex = 28;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(508, 576);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker2.TabIndex = 29;
+            dateTimePicker2.Location = new Point(508, 576);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(250, 27);
+            dateTimePicker2.TabIndex = 29;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(70, 574);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Report";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new Point(70, 574);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 30;
+            button1.Text = "Report";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // frmOrders
             // 
-
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 671);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.gbGeneralInfo);
-            this.Controls.Add(this.gbDetailInfo);
-            this.Controls.Add(this.lbTitle);
-            this.Name = "frmOrders";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Tag = "Add";
-            this.Load += new System.EventHandler(this.frmOrders_Load);
-            this.gbDetailInfo.ResumeLayout(false);
-            this.gbDetailInfo.PerformLayout();
-            this.gbGeneralInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderList)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1093, 671);
+            Controls.Add(button1);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(btnBack);
+            Controls.Add(gbGeneralInfo);
+            Controls.Add(gbDetailInfo);
+            Controls.Add(lbTitle);
+            Name = "frmOrders";
+            StartPosition = FormStartPosition.CenterScreen;
+            Tag = "Add";
+            Load += frmOrders_Load;
+            gbDetailInfo.ResumeLayout(false);
+            gbDetailInfo.PerformLayout();
+            gbGeneralInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvOrderList).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -354,12 +353,12 @@
         private DateTimePicker dtpShippedDate;
         private DateTimePicker dtpRequiredDate;
         private DateTimePicker dtpOrderDate;
-//Tri
+        //Tri
 
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
         private Button button1;
         private ComboBox cbMemberID;
-//Tri
+        //Tri
     }
 }

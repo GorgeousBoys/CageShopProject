@@ -19,7 +19,7 @@ namespace SalesWinApp
         IOrderDetailRepository orderDetailRepository = new OrderDetailRepository();
         BindingSource bindingSource;
         public User user { get; set; }
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Close();
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
 
         private void memberManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -55,10 +55,19 @@ namespace SalesWinApp
         }
         private void orderManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmOrders f = new frmOrders();
-            f.StartPosition = FormStartPosition.CenterScreen;
-            f.checkMember = user;
-            f.Show();
+            if (user.Email.Equals("admin@gmail.com"))
+            {
+                frmOrders f = new frmOrders();
+                f.StartPosition = FormStartPosition.CenterScreen;
+                f.checkMember = user;
+                f.Show();
+
+            }
+            else
+            {
+                productManagementToolStripMenuItem.Enabled = false;
+                MessageBox.Show("Your role does not support this function", "Normal user role");
+            }
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -262,5 +271,18 @@ namespace SalesWinApp
             dgvCage.DataSource = null;
             dgvCage.DataSource = bindingSource;
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Hide the current form (frmMain)
+            this.Hide();
+
+            // Create an instance of the login form (assuming it's named frmLogin)
+            frmLogin loginForm = new frmLogin();
+
+            // Show the login form
+            loginForm.Show();
+        }
+
     }
 }

@@ -59,5 +59,11 @@ namespace DataAccess.DAO
             context.Orders.Remove(order);
             context.SaveChanges();
         }
+
+        public IEnumerable<Order> GetAllOrders()
+        {
+            using var context = new CageShopUni_Context();
+            return context.Orders.ToList();
+        }
     }
 }

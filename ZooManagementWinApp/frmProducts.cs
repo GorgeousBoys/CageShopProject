@@ -265,5 +265,10 @@ namespace SalesWinApp
             rbDescription.Text = "";
             txtCageStatus.Text = "";
         }
+
+        private void lbTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
