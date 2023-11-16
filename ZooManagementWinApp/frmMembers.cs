@@ -32,7 +32,7 @@ namespace SalesWinApp
                     Phone = txtPhone.Text,
                     Address = txtAddress.Text,
                     DoB = DateTime.Parse(txtDob.Text), // Adjust the format as needed
-                    Status = txtStatus.Text,
+                    Status = cbMemberStatus.Text,
                     RoleId = int.Parse(txtRoleId.Text), // Make sure to handle parsing errors
                     Gender = txtGender.Text
                 };
@@ -65,7 +65,7 @@ namespace SalesWinApp
                     Phone = txtPhone.Text,
                     Address = txtAddress.Text,
                     DoB = DateTime.Parse(txtDob.Text), // Adjust the format as needed
-                    Status = txtStatus.Text,
+                    Status = cbMemberStatus.Text,
                     RoleId = int.Parse(txtRoleId.Text), // Make sure to handle parsing errors
                     Gender = txtGender.Text
                 };
@@ -136,10 +136,9 @@ namespace SalesWinApp
                 txtPhone.Text = GetValueFromCell(selectedRow, "Phone");
                 txtAddress.Text = GetValueFromCell(selectedRow, "Address");
                 txtDob.Text = GetValueFromCell(selectedRow, "DoB");
-                txtStatus.Text = GetValueFromCell(selectedRow, "Status");
                 txtRoleId.Text = GetValueFromCell(selectedRow, "RoleID");
                 txtGender.Text = GetValueFromCell(selectedRow, "Gender");
-
+                cbMemberStatus.Text = GetValueFromCell(selectedRow, "Status");
                 // Get the byte array from the UserIMG column
                 byte[] imageData = selectedRow.Cells["UserIMG"].Value as byte[];
 

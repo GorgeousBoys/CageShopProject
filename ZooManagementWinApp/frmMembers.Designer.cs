@@ -30,6 +30,7 @@
         {
             lbTitle = new Label();
             gbDetailInfo = new GroupBox();
+            cbMemberStatus = new ComboBox();
             txtGender = new TextBox();
             txtRoleId = new TextBox();
             txtUsername = new TextBox();
@@ -58,12 +59,12 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            panel1 = new Panel();
+            groupBox1 = new GroupBox();
             gbDetailInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUser).BeginInit();
             gbGeneralInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMemberList).BeginInit();
-            panel1.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // lbTitle
@@ -79,6 +80,7 @@
             // 
             // gbDetailInfo
             // 
+            gbDetailInfo.Controls.Add(cbMemberStatus);
             gbDetailInfo.Controls.Add(txtGender);
             gbDetailInfo.Controls.Add(txtRoleId);
             gbDetailInfo.Controls.Add(txtUsername);
@@ -109,6 +111,15 @@
             gbDetailInfo.TabIndex = 7;
             gbDetailInfo.TabStop = false;
             gbDetailInfo.Text = "Detail Information";
+            // 
+            // cbMemberStatus
+            // 
+            cbMemberStatus.FormattingEnabled = true;
+            cbMemberStatus.Items.AddRange(new object[] { "Active", "Deactive" });
+            cbMemberStatus.Location = new Point(107, 200);
+            cbMemberStatus.Name = "cbMemberStatus";
+            cbMemberStatus.Size = new Size(210, 28);
+            cbMemberStatus.TabIndex = 42;
             // 
             // txtGender
             // 
@@ -177,7 +188,7 @@
             // 
             // txtStatus
             // 
-            txtStatus.Location = new Point(107, 197);
+            txtStatus.Location = new Point(420, 333);
             txtStatus.Name = "txtStatus";
             txtStatus.Size = new Size(210, 27);
             txtStatus.TabIndex = 33;
@@ -317,7 +328,7 @@
             button1.BackColor = SystemColors.ButtonHighlight;
             button1.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.FromArgb(116, 86, 120);
-            button1.Location = new Point(217, 55);
+            button1.Location = new Point(206, 51);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(113, 31);
@@ -330,7 +341,7 @@
             button2.BackColor = SystemColors.ButtonHighlight;
             button2.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.FromArgb(116, 86, 120);
-            button2.Location = new Point(74, 55);
+            button2.Location = new Point(68, 51);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(113, 31);
@@ -343,7 +354,7 @@
             button3.BackColor = SystemColors.ButtonHighlight;
             button3.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.FromArgb(116, 86, 120);
-            button3.Location = new Point(375, 55);
+            button3.Location = new Point(341, 51);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(113, 31);
@@ -356,7 +367,7 @@
             button4.BackColor = SystemColors.ButtonHighlight;
             button4.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.FromArgb(116, 86, 120);
-            button4.Location = new Point(518, 55);
+            button4.Location = new Point(478, 51);
             button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
             button4.Size = new Size(113, 31);
@@ -364,24 +375,25 @@
             button4.Text = "BACK";
             button4.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // groupBox1
             // 
-            panel1.BackColor = Color.FromArgb(116, 86, 174);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
-            panel1.Location = new Point(8, 474);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(683, 139);
-            panel1.TabIndex = 32;
+            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(button4);
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(button3);
+            groupBox1.Location = new Point(33, 484);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(651, 131);
+            groupBox1.TabIndex = 9;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Task";
             // 
             // frmMembers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1370, 624);
-            Controls.Add(panel1);
+            Controls.Add(groupBox1);
             Controls.Add(gbGeneralInfo);
             Controls.Add(gbDetailInfo);
             Controls.Add(lbTitle);
@@ -393,7 +405,7 @@
             ((System.ComponentModel.ISupportInitialize)picUser).EndInit();
             gbGeneralInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvMemberList).EndInit();
-            panel1.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -425,10 +437,11 @@
         private TextBox txtUsername;
         private TextBox txtGender;
         private TextBox txtRoleId;
-        private Button button1;
         private Button button2;
         private Button button3;
+        private Button button1;
         private Button button4;
-        private Panel panel1;
+        private GroupBox groupBox1;
+        private ComboBox cbMemberStatus;
     }
 }
