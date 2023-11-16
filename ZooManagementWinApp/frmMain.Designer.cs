@@ -202,7 +202,8 @@
             dgvCage.Name = "dgvCage";
             dgvCage.RowHeadersWidth = 51;
             dgvCage.RowTemplate.Height = 25;
-            dgvCage.Size = new Size(1137, 344);
+            dgvCage.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCage.Size = new Size(711, 191);
             dgvCage.TabIndex = 11;
             // 
             // cbMaterial

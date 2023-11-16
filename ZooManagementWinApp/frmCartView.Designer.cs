@@ -44,7 +44,8 @@
             dgvCart.Name = "dgvCart";
             dgvCart.RowHeadersWidth = 51;
             dgvCart.RowTemplate.Height = 25;
-            dgvCart.Size = new Size(528, 596);
+            dgvCart.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCart.Size = new Size(433, 399);
             dgvCart.TabIndex = 0;
             // 
             // panel1
