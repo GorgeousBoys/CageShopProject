@@ -25,38 +25,7 @@ namespace SalesWinApp
         }
         public void LoadOrderDetailList()
         {
-            // if Member
-            if(_memberManager.RoleId == 1)
-            {
-                bindingSource = new BindingSource();
-                List<OrderDetail> orderDetail = orderDetailRepository.FindByOrderID(_order.OrderId);
-                bindingSource.DataSource = orderDetail;
-
-                dgvOrderDetailList.DataSource = null;
-                dgvOrderDetailList.DataSource = bindingSource;
-            }
             
-            /* var orderDetails = orderDetailRepository.GetOrderDetails(orderId);
-             try
-             {
-                 source = new BindingSource();
-                 source.DataSource = orderDetails;
-
-                 dgvOrderDetailList.DataSource = null;
-                 dgvOrderDetailList.DataSource = source;
-
-                 dgvOrderDetailList.Columns[0].Width = (int)(dgvOrderDetailList.Width * 0.15);
-                 dgvOrderDetailList.Columns[1].Width = (int)(dgvOrderDetailList.Width * 0.15);
-                 dgvOrderDetailList.Columns[2].Width = (int)(dgvOrderDetailList.Width * 0.3);
-                 dgvOrderDetailList.Columns[3].Width = (int)(dgvOrderDetailList.Width * 0.15);
-                 dgvOrderDetailList.Columns[4].Width = (int)(dgvOrderDetailList.Width * 0.15);
-                 dgvOrderDetailList.Columns[5].Width = (int)(dgvOrderDetailList.Width * 0);
-                 dgvOrderDetailList.Columns[6].Width = (int)(dgvOrderDetailList.Width * 0);
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message, "Load orderDetail list");
-             }*/
         }
 
         private void btnExit_Click(object sender, EventArgs e)
