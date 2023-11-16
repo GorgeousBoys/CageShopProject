@@ -30,12 +30,13 @@ namespace Repository.Repository
         }
 
         public void AddUser(User user, string selectedImagePath) => UserDAO.Instance.AddUser(user, selectedImagePath);
-        public void UpdateUser(User user) => UserDAO.Instance.UpdateUser(user);
+        public void UpdateUser(User user, string selectedImagePath) => UserDAO.Instance.UpdateUser(user, selectedImagePath);
         
 
         public User FindByID(int id) => UserDAO.Instance.FindByID(id);
 
         public void DeleteUser(User user) => UserDAO.Instance.DeleteUser(user);
 
+        public List<User> GetUsers() => UserDAO.Instance.GetUsers();
     }
 }

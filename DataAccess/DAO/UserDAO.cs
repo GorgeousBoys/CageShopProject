@@ -1,4 +1,5 @@
 ﻿using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
@@ -29,6 +30,7 @@ namespace DataAccess.DAO
                 }
             }
         }
+
         public IEnumerable<User> GetAllMember()
         {
             IEnumerable<User> users = null;
@@ -37,7 +39,25 @@ namespace DataAccess.DAO
             {
                 var context = new CageShopUni_Context();
                 // Lay tat ca Users trong database
-                users = context.Users;
+                users = context.Users.Include(u => u.Role);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return users;
+        }
+
+        public List<User> GetUsers()
+        {
+            List<User> users = null;
+
+            try
+            {
+                var context = new CageShopUni_Context();
+                // Lay tat ca Users trong database
+                users = context.Users.Include(u => u.Role).ToList();
             }
             catch (Exception ex)
             {
@@ -178,9 +198,10 @@ namespace DataAccess.DAO
         }
 
 
-        public void UpdateUser(User user)
+        public void UpdateUser(User user,string imagePath)
         {
             using var context = new CageShopUni_Context();
+            user.UserImg = ConvertImageToByteArray(imagePath);
             context.Users.Update(user);
             context.SaveChanges();
         }

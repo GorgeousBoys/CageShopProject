@@ -165,7 +165,8 @@ namespace SalesWinApp
                 {
                     MessageBox.Show("Only user allowed");
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
