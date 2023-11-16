@@ -56,11 +56,11 @@
             lbTitle = new Label();
             btnSearch = new Button();
             txtSearch = new TextBox();
-            button2 = new Button();
-            button1 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            btnAdd = new Button();
+            btnUpdate = new Button();
+            btnDelete = new Button();
+            btnBack = new Button();
+            btnClear = new Button();
             panel1 = new Panel();
             gbGeneralInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductList).BeginInit();
@@ -127,7 +127,7 @@
             // 
             // txtCageStatus
             // 
-            txtCageStatus.Location = new Point(428, 303);
+            txtCageStatus.Location = new Point(413, 304);
             txtCageStatus.Name = "txtCageStatus";
             txtCageStatus.Size = new Size(125, 27);
             txtCageStatus.TabIndex = 39;
@@ -342,79 +342,84 @@
             txtSearch.TabIndex = 27;
             txtSearch.Text = "you are looking for...\r\n";
             // 
-            // button2
+            // btnAdd
             // 
-            button2.BackColor = SystemColors.ButtonHighlight;
-            button2.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.FromArgb(116, 86, 120);
-            button2.Location = new Point(276, 65);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(113, 48);
-            button2.TabIndex = 30;
-            button2.Text = "ADD";
-            button2.UseVisualStyleBackColor = false;
+            btnAdd.BackColor = SystemColors.ButtonHighlight;
+            btnAdd.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdd.ForeColor = Color.FromArgb(116, 86, 120);
+            btnAdd.Location = new Point(276, 65);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(113, 48);
+            btnAdd.TabIndex = 30;
+            btnAdd.Text = "ADD";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
-            // button1
+            // btnUpdate
             // 
-            button1.BackColor = SystemColors.ButtonHighlight;
-            button1.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.FromArgb(116, 86, 120);
-            button1.Location = new Point(444, 65);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(113, 48);
-            button1.TabIndex = 31;
-            button1.Text = "UPDATE";
-            button1.UseVisualStyleBackColor = false;
+            btnUpdate.BackColor = SystemColors.ButtonHighlight;
+            btnUpdate.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUpdate.ForeColor = Color.FromArgb(116, 86, 120);
+            btnUpdate.Location = new Point(444, 65);
+            btnUpdate.Margin = new Padding(3, 4, 3, 4);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(113, 48);
+            btnUpdate.TabIndex = 31;
+            btnUpdate.Text = "UPDATE";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
-            // button3
+            // btnDelete
             // 
-            button3.BackColor = SystemColors.ButtonHighlight;
-            button3.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.FromArgb(116, 86, 120);
-            button3.Location = new Point(628, 65);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(113, 48);
-            button3.TabIndex = 32;
-            button3.Text = "DELETE";
-            button3.UseVisualStyleBackColor = false;
+            btnDelete.BackColor = SystemColors.ButtonHighlight;
+            btnDelete.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.FromArgb(116, 86, 120);
+            btnDelete.Location = new Point(628, 65);
+            btnDelete.Margin = new Padding(3, 4, 3, 4);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(113, 48);
+            btnDelete.TabIndex = 32;
+            btnDelete.Text = "DELETE";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // button4
+            // btnBack
             // 
-            button4.BackColor = SystemColors.ButtonHighlight;
-            button4.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.FromArgb(116, 86, 120);
-            button4.Location = new Point(814, 65);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(113, 48);
-            button4.TabIndex = 33;
-            button4.Text = "BACK";
-            button4.UseVisualStyleBackColor = false;
+            btnBack.BackColor = SystemColors.ButtonHighlight;
+            btnBack.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBack.ForeColor = Color.FromArgb(116, 86, 120);
+            btnBack.Location = new Point(814, 65);
+            btnBack.Margin = new Padding(3, 4, 3, 4);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(113, 48);
+            btnBack.TabIndex = 33;
+            btnBack.Text = "BACK";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
             // 
-            // button5
+            // btnClear
             // 
-            button5.BackColor = SystemColors.ButtonHighlight;
-            button5.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = Color.FromArgb(116, 86, 120);
-            button5.Location = new Point(977, 65);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(113, 48);
-            button5.TabIndex = 34;
-            button5.Text = "CLEAR";
-            button5.UseVisualStyleBackColor = false;
+            btnClear.BackColor = SystemColors.ButtonHighlight;
+            btnClear.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnClear.ForeColor = Color.FromArgb(116, 86, 120);
+            btnClear.Location = new Point(977, 65);
+            btnClear.Margin = new Padding(3, 4, 3, 4);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(113, 48);
+            btnClear.TabIndex = 34;
+            btnClear.Text = "CLEAR";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(116, 86, 174);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(btnClear);
+            panel1.Controls.Add(btnBack);
+            panel1.Controls.Add(btnDelete);
+            panel1.Controls.Add(btnUpdate);
+            panel1.Controls.Add(btnAdd);
             panel1.Location = new Point(9, 500);
             panel1.Name = "panel1";
             panel1.Size = new Size(1377, 158);
@@ -473,11 +478,11 @@
         private TextBox txtBar;
         private Label label3;
         private TextBox txtSize;
-        private Button button5;
-        private Button button2;
-        private Button button1;
-        private Button button3;
-        private Button button4;
+        private Button btnClear;
+        private Button btnAdd;
+        private Button btnUpdate;
+        private Button btnDelete;
+        private Button btnBack;
         private Panel panel1;
         //Tri
     }
