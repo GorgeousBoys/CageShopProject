@@ -1,5 +1,6 @@
 using BusinessObject;
-using System.Data;
+using System;
+using System.Windows.Forms;
 using Repository.Repository;
 using BusinessObject.Models;
 
@@ -11,237 +12,215 @@ namespace SalesWinApp
         IUserRepository memberRepository = new UserRepository();
         BindingSource source;
         public User checkMember { get; set; }
+
         public frmOrders()
         {
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            /* var order = GetOrderObject();
-             try
-             {
-                 if (order != null)
-                 {
-                     orderRepository.InsertOrder(order);
-                     LoadOrderList();
-                     LoadCbMemberID();
-                     MessageBox.Show("Add new order successfully");
-                 }
-                 else
-                 {
-                     throw new Exception("Add new order fail. Fill in the blank information box!");
-                 }
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message, "Add order");
-             }*/
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            /*  try
-              {
-                  var orderID = int.Parse(txtOrderID.Text);
-                  orderRepository.DeleteOrder(orderID);
-                  LoadOrderList();
-                  LoadCbMemberID();
-                  txtOrderID.Clear();
-                  MessageBox.Show("Delete order successfully");
-              }
-              catch (Exception ex)
-              {
-                  MessageBox.Show("Delete order fail. Select an order beside to delete!");
-              }*/
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            /* var order = GetOrderObject();
-             try
-             {
-                 if (order!=null)
-                 {
-                     order.OrderId = int.Parse(txtOrderID.Text);
-                     orderRepository.UpdateOrder(order);
-                     LoadOrderList();
-                     LoadCbMemberID();
-                     MessageBox.Show("Update order successfully"); 
-                 }
-                 else
-                 {
-                     throw new Exception("Update order fail. Select an order beside to update!");
-                 }
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message, "Update order");
-             }*/
+            // Implement the update logic here
         }
 
-        private void btnBack_Click(object sender, EventArgs e) => Close();
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
 
         private void frmOrders_Load(object sender, EventArgs e)
         {
-            var result = orderRepository.GetAllOrders();
-            dgvOrderList.DataSource = null;
-            dgvOrderList.DataSource = result;
+            LoadOrderList();
         }
+
         private void btnMoreDetail_Click(object sender, EventArgs e)
         {
-            /* try
-             {
-                 if (txtOrderID.Text != null && txtOrderID.Text != "")
-                 {
-                     int orderID = int.Parse(txtOrderID.Text);
-                     frmOrderDetail f = new frmOrderDetail();
-                     f.orderID = orderID;
-                     f.ShowDialog();
-                 }
-                 else
-                     throw new Exception("Invalid orderID");
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message, "More Detail");
-             } */
-        }
-        /* private Order GetOrderObject()
-         {
-             Order order = null;
-             try
-             {
-                 if (CheckMemberIDValid())
-                 {
-                     order = new Order
-                     {
-                         MemberId = int.Parse(cbMemberID.Text),
-                         Freight = decimal.Parse(txtFreight.Text),
-                         OrderDate = dtpOrderDate.Value,
-                         RequiredDate = dtpRequiredDate.Value,
-                         ShippedDate = dtpShippedDate.Value,
-                     };
-                 }
-                 else
-                 {
-                     throw new Exception("The memberID doesn't exist. Try other values in the box!");
-                 }
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message, "Get order");
-             }
-             return order;
-         }*/
-
-        /*  private bool CheckMemberIDValid()
-          {
-              int checkMemberID = int.Parse(cbMemberID.Text);
-              var checkMember = memberRepository.GetMemberByID(checkMemberID);
-              if (checkMember != null)
-              {
-                  return true;
-              }
-              return false;
-          }
-
-          private void LoadOrderList()
-          {
-              try
-              {
-                  var orders = new List<Order>();
-
-                  if (checkMember.Email.Equals("admin@fstore.com"))
-                  {
-                      orders = (List<Order>)orderRepository.GetOrders();
-                  }
-                  else
-                  {
-                      orders = (List<Order>)orderRepository.GetOrdersByMemberID(checkMember.MemberId);
-                  }
-                  source = new BindingSource();
-                  source.DataSource = orders;
-
-                  dgvOrderList.DataSource = null;
-                  dgvOrderList.DataSource = source;
-
-                  dgvOrderList.Columns[0].Width = (int)(dgvOrderList.Width * 0.1);
-                  dgvOrderList.Columns[1].Width = (int)(dgvOrderList.Width * 0.1);
-                  dgvOrderList.Columns[2].Width = (int)(dgvOrderList.Width * 0.2);
-                  dgvOrderList.Columns[3].Width = (int)(dgvOrderList.Width * 0.2);
-                  dgvOrderList.Columns[4].Width = (int)(dgvOrderList.Width * 0.2);
-                  dgvOrderList.Columns[5].Width = (int)(dgvOrderList.Width * 0.14);
-                  dgvOrderList.Columns[6].Width = (int)(dgvOrderList.Width * 0);
-                  dgvOrderList.Columns[7].Width = (int)(dgvOrderList.Width * 0);
-              }
-              catch (Exception ex)
-              {
-                  MessageBox.Show(ex.Message, "Load order list");
-              }
-          }
-
-          private void LoadCbMemberID()
-          {
-              try
-              {
-                  source = new BindingSource();
-                  source.DataSource = orderRepository.GetMemberID();
-
-                  cbMemberID.DataSource = null;
-                  cbMemberID.DataSource = source;
-                  cbMemberID.DisplayMember = "MemberID";
-              }
-              catch (Exception ex)
-              {
-                  MessageBox.Show(ex.Message, "Load memberID list");
-              }
-          }*/
-
-        private void dgvOrderList_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            /*  if (e.RowIndex >= 0 && e.RowIndex < dgvOrderList.Rows.Count - 1)
-              {
-                  txtOrderID.Text = dgvOrderList.Rows[e.RowIndex].Cells["OrderID"].Value.ToString();
-                  cbMemberID.Text = dgvOrderList.Rows[e.RowIndex].Cells["MemberID"].Value.ToString();
-                  txtFreight.Text = dgvOrderList.Rows[e.RowIndex].Cells["Freight"].Value.ToString();
-                  dtpOrderDate.Text = dgvOrderList.Rows[e.RowIndex].Cells["OrderDate"].Value.ToString();
-                  dtpRequiredDate.Text = dgvOrderList.Rows[e.RowIndex].Cells["RequiredDate"].Value.ToString();
-                  dtpShippedDate.Text = dgvOrderList.Rows[e.RowIndex].Cells["ShippedDate"].Value.ToString();
-              }*/
+            // Implement the logic for displaying more details
         }
 
-        private void dgvOrderList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            /* int orderID = 0;
-             if (e.RowIndex >= 0 && e.RowIndex < dgvOrderList.Rows.Count - 1)
-             {
-                 orderID = int.Parse(dgvOrderList.Rows[e.RowIndex].Cells["OrderID"].Value.ToString());
-             }
-             frmOrderDetail f = new frmOrderDetail();
-             f.orderID = orderID;
-             f.ShowDialog();*/
-        }
-        //Tri
         private void button1_Click(object sender, EventArgs e)
         {
-            /*  DateTime start = dateTimePicker1.Value.Date;
-              DateTime end = dateTimePicker2.Value.Date;
-
-              var orders = orderRepository.Search(x => x.OrderDate >= start.AddMinutes(-100) && x.OrderDate <= end).ToList();
-              var res = from order in orders
-                        orderby order.OrderDate descending
-                        select order;
-              dgvOrderList.DataSource = res.ToList();*/
+            // Implement the search logic
         }
 
         private void dgvOrderList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var result = orderRepository.GetAllOrders();
+            // Refresh the order list
+            LoadOrderList();
+        }
+
+        private void dgvOrderList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0 && e.RowIndex < dgvOrderList.Rows.Count - 1)
+                {
+                    DataGridViewRow selectedRow = dgvOrderList.Rows[e.RowIndex];
+
+                    // Populate the textboxes with the selected order's information
+                    txtOrderName.Text = GetValueFromCell(selectedRow, "OrderName");
+                    txtOrderPhone.Text = GetValueFromCell(selectedRow, "OrderPhone");
+                    txtOrderPrice.Text = GetValueFromCell(selectedRow, "OrderPrice");
+                    txtAddress.Text = GetValueFromCell(selectedRow, "OrderAdress");
+                    txtStatus.Text = GetValueFromCell(selectedRow, "OrderStatus");
+
+                    // If OrderUserID is a foreign key to the User table, you can get the user details
+                    int orderUserID = int.Parse(GetValueFromCell(selectedRow, "UserID"));
+                    User user = memberRepository.FindByID(orderUserID);
+
+                    if (user != null)
+                    {
+                        // Populate user-related textboxes if needed
+                        txtUserID.Text = user.UserId.ToString();
+                        // ... (populate other user-related textboxes)
+                    }
+                    else
+                    {
+                        // Handle the case when the user is not found
+                        txtUserID.Text = "";
+                        // ... (clear other user-related textboxes)
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Loading Order Details");
+            }
+        }
+
+        private void LoadOrderList()
+        {
+            // Retrieve the list of orders from the database
+            var result = orderRepository.GetAllOrders().ToList();
+
+            // Display the list of orders in the DataGridView
             dgvOrderList.DataSource = null;
             dgvOrderList.DataSource = result;
-
         }
-        //Tri 
+
+        private string GetValueFromCell(DataGridViewRow row, string columnName)
+        {
+            if (row.Cells[columnName].Value != null)
+            {
+                return row.Cells[columnName].Value.ToString();
+            }
+            return string.Empty;
+        }
+
+        private void lbOrderDate_Click(object sender, EventArgs e)
+        {
+            // Handle the click event if needed
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this order?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    int orderID = int.Parse(txtUserID.Text); // Assuming you have a TextBox named txtOrderID
+
+                    // Delete the order from the database
+                    Order orderToDelete = orderRepository.FindByID(orderID);
+
+                    if (orderToDelete != null)
+                    {
+                        orderRepository.DeleteOrder(orderToDelete);
+
+                        // Refresh the DataGridView with the updated order list
+                        LoadOrderList1();
+
+                        MessageBox.Show("Delete order successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Order not found", "Error Deleting Order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Deleting Order");
+            }
+        }
+
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            // Refresh the DataGridView with the updated order list
+            LoadOrderList1();
+            // Clear the text of each textbox
+            txtUserID.Text = "";
+            txtOrderName.Text = "";
+            txtOrderPhone.Text = "";
+            txtOrderPrice.Text = "";
+            txtAddress.Text = "";
+            txtStatus.Text = "";
+            txtUserID.Text = ""; // Clear other user-related textboxes if needed
+
+            MessageBox.Show("Order list refreshed");
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                // Assuming you have the necessary textboxes for updating an order
+                int orderID = int.Parse(txtUserID.Text); // Assuming you have a TextBox named txtOrderID
+                Order existingOrder = orderRepository.FindByID(orderID);
+
+                if (existingOrder != null)
+                {
+                    // Update the order properties based on the textboxes or other controls
+                    existingOrder.OrderName = txtOrderName.Text;
+                    existingOrder.OrderPhone = txtOrderPhone.Text;
+                    existingOrder.OrderPrice = decimal.Parse(txtOrderPrice.Text); // Assuming OrderPrice is a decimal
+                    existingOrder.OrderAdress = txtAddress.Text;
+                    existingOrder.OrderStatus = txtStatus.Text;
+
+                    // Update the order in the database
+                    orderRepository.UpdateOrder(existingOrder);
+
+                    // Refresh the DataGridView with the updated order list
+                    LoadOrderList();
+
+                    MessageBox.Show("Update order successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Order not found", "Error Updating Order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Updating Order");
+            }
+        }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            // Close the form or navigate back to the previous form
+            Close();
+        }
+        private void LoadOrderList1()
+        {
+            try
+            {
+                // Retrieve the list of orders from the database
+                var result = orderRepository.GetAllOrders().ToList();
+
+                // Display the list of orders in the DataGridView
+                dgvOrderList.DataSource = null;
+                dgvOrderList.DataSource = result;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Loading Orders");
+            }
+        }
+
     }
+
 }
+

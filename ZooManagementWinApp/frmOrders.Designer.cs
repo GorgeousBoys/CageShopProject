@@ -28,30 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrders));
             lbTitle = new Label();
             gbDetailInfo = new GroupBox();
-            dtpShippedDate = new DateTimePicker();
-            dtpRequiredDate = new DateTimePicker();
+            txtStatus = new TextBox();
+            txtAddress = new TextBox();
+            txtOrderPrice = new TextBox();
+            txtOrderPhone = new TextBox();
+            txtOrderName = new TextBox();
+            txtUserID = new TextBox();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             dtpOrderDate = new DateTimePicker();
-            cbMemberID = new ComboBox();
-            txtOrderID = new TextBox();
-            txtFreight = new TextBox();
-            btnUpdate = new Button();
-            btnDelete = new Button();
-            btnMoreDetail = new Button();
-            btnAdd = new Button();
-            lbRequiredDate = new Label();
             lbOrderDate = new Label();
-            lbShippedDate = new Label();
-            lbFreight = new Label();
-            lbOrderID = new Label();
-            lbMemberID = new Label();
+            btnRefesh = new Button();
+            btnUpdate = new Button();
             gbGeneralInfo = new GroupBox();
             dgvOrderList = new DataGridView();
             btnBack = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
-            button1 = new Button();
+            btnDelete = new Button();
             gbDetailInfo.SuspendLayout();
             gbGeneralInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvOrderList).BeginInit();
@@ -60,9 +59,10 @@
             // lbTitle
             // 
             lbTitle.AutoSize = true;
+            lbTitle.BackColor = SystemColors.Control;
             lbTitle.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             lbTitle.ForeColor = Color.FromArgb(116, 86, 120);
-            lbTitle.Location = new Point(366, 9);
+            lbTitle.Location = new Point(428, 9);
             lbTitle.Name = "lbTitle";
             lbTitle.Size = new Size(275, 38);
             lbTitle.TabIndex = 6;
@@ -70,190 +70,184 @@
             // 
             // gbDetailInfo
             // 
-            gbDetailInfo.Controls.Add(dtpShippedDate);
-            gbDetailInfo.Controls.Add(dtpRequiredDate);
+            gbDetailInfo.BackColor = Color.MediumOrchid;
+            gbDetailInfo.Controls.Add(txtStatus);
+            gbDetailInfo.Controls.Add(txtAddress);
+            gbDetailInfo.Controls.Add(txtOrderPrice);
+            gbDetailInfo.Controls.Add(txtOrderPhone);
+            gbDetailInfo.Controls.Add(txtOrderName);
+            gbDetailInfo.Controls.Add(txtUserID);
+            gbDetailInfo.Controls.Add(label6);
+            gbDetailInfo.Controls.Add(label5);
+            gbDetailInfo.Controls.Add(label4);
+            gbDetailInfo.Controls.Add(label3);
+            gbDetailInfo.Controls.Add(label2);
+            gbDetailInfo.Controls.Add(label1);
             gbDetailInfo.Controls.Add(dtpOrderDate);
-            gbDetailInfo.Controls.Add(cbMemberID);
-            gbDetailInfo.Controls.Add(txtOrderID);
-            gbDetailInfo.Controls.Add(txtFreight);
-            gbDetailInfo.Controls.Add(btnUpdate);
-            gbDetailInfo.Controls.Add(btnDelete);
-            gbDetailInfo.Controls.Add(btnMoreDetail);
-            gbDetailInfo.Controls.Add(btnAdd);
-            gbDetailInfo.Controls.Add(lbRequiredDate);
             gbDetailInfo.Controls.Add(lbOrderDate);
-            gbDetailInfo.Controls.Add(lbShippedDate);
-            gbDetailInfo.Controls.Add(lbFreight);
-            gbDetailInfo.Controls.Add(lbOrderID);
-            gbDetailInfo.Controls.Add(lbMemberID);
             gbDetailInfo.FlatStyle = FlatStyle.Popup;
             gbDetailInfo.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            gbDetailInfo.Location = new Point(789, 46);
+            gbDetailInfo.Location = new Point(715, 50);
             gbDetailInfo.Name = "gbDetailInfo";
-            gbDetailInfo.Size = new Size(292, 402);
+            gbDetailInfo.Size = new Size(366, 450);
             gbDetailInfo.TabIndex = 8;
             gbDetailInfo.TabStop = false;
             gbDetailInfo.Text = "Detail Information";
             // 
-            // dtpShippedDate
+            // txtStatus
             // 
-            dtpShippedDate.Format = DateTimePickerFormat.Short;
-            dtpShippedDate.Location = new Point(113, 283);
-            dtpShippedDate.MaxDate = new DateTime(2023, 12, 31, 0, 0, 0, 0);
-            dtpShippedDate.MinDate = new DateTime(1996, 1, 1, 0, 0, 0, 0);
-            dtpShippedDate.Name = "dtpShippedDate";
-            dtpShippedDate.Size = new Size(164, 27);
-            dtpShippedDate.TabIndex = 25;
+            txtStatus.Location = new Point(119, 374);
+            txtStatus.Name = "txtStatus";
+            txtStatus.Size = new Size(174, 27);
+            txtStatus.TabIndex = 35;
             // 
-            // dtpRequiredDate
+            // txtAddress
             // 
-            dtpRequiredDate.Format = DateTimePickerFormat.Short;
-            dtpRequiredDate.Location = new Point(113, 234);
-            dtpRequiredDate.MaxDate = new DateTime(2022, 12, 31, 0, 0, 0, 0);
-            dtpRequiredDate.MinDate = new DateTime(1996, 1, 1, 0, 0, 0, 0);
-            dtpRequiredDate.Name = "dtpRequiredDate";
-            dtpRequiredDate.Size = new Size(164, 27);
-            dtpRequiredDate.TabIndex = 24;
-            dtpRequiredDate.Value = new DateTime(2022, 12, 31, 0, 0, 0, 0);
+            txtAddress.Location = new Point(119, 317);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(174, 27);
+            txtAddress.TabIndex = 34;
+            // 
+            // txtOrderPrice
+            // 
+            txtOrderPrice.Location = new Point(119, 199);
+            txtOrderPrice.Name = "txtOrderPrice";
+            txtOrderPrice.Size = new Size(174, 27);
+            txtOrderPrice.TabIndex = 33;
+            // 
+            // txtOrderPhone
+            // 
+            txtOrderPhone.Location = new Point(119, 144);
+            txtOrderPhone.Name = "txtOrderPhone";
+            txtOrderPhone.Size = new Size(174, 27);
+            txtOrderPhone.TabIndex = 32;
+            // 
+            // txtOrderName
+            // 
+            txtOrderName.Location = new Point(119, 92);
+            txtOrderName.Name = "txtOrderName";
+            txtOrderName.Size = new Size(174, 27);
+            txtOrderName.TabIndex = 31;
+            // 
+            // txtUserID
+            // 
+            txtUserID.Location = new Point(119, 34);
+            txtUserID.Name = "txtUserID";
+            txtUserID.Size = new Size(174, 27);
+            txtUserID.TabIndex = 30;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(18, 147);
+            label6.Name = "label6";
+            label6.Size = new Size(85, 20);
+            label6.TabIndex = 29;
+            label6.Text = "OrderPhone";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(18, 95);
+            label5.Name = "label5";
+            label5.Size = new Size(84, 20);
+            label5.TabIndex = 28;
+            label5.Text = "OrderName";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(18, 320);
+            label4.Name = "label4";
+            label4.Size = new Size(58, 20);
+            label4.TabIndex = 27;
+            label4.Text = "Address";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(18, 202);
+            label3.Name = "label3";
+            label3.Size = new Size(77, 20);
+            label3.TabIndex = 26;
+            label3.Text = "OrderPrice";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(18, 381);
+            label2.Name = "label2";
+            label2.Size = new Size(48, 20);
+            label2.TabIndex = 25;
+            label2.Text = "Status";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(18, 36);
+            label1.Name = "label1";
+            label1.Size = new Size(52, 20);
+            label1.TabIndex = 24;
+            label1.Text = "UserID";
             // 
             // dtpOrderDate
             // 
             dtpOrderDate.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
             dtpOrderDate.Format = DateTimePickerFormat.Short;
-            dtpOrderDate.Location = new Point(113, 185);
+            dtpOrderDate.Location = new Point(119, 255);
             dtpOrderDate.MaxDate = new DateTime(2023, 12, 31, 0, 0, 0, 0);
             dtpOrderDate.MinDate = new DateTime(1996, 1, 1, 0, 0, 0, 0);
             dtpOrderDate.Name = "dtpOrderDate";
-            dtpOrderDate.Size = new Size(164, 27);
+            dtpOrderDate.Size = new Size(174, 27);
             dtpOrderDate.TabIndex = 23;
             dtpOrderDate.Value = new DateTime(2022, 7, 9, 0, 0, 0, 0);
-            // 
-            // cbMemberID
-            // 
-            cbMemberID.FormattingEnabled = true;
-            cbMemberID.Location = new Point(113, 80);
-            cbMemberID.Name = "cbMemberID";
-            cbMemberID.Size = new Size(164, 28);
-            cbMemberID.TabIndex = 22;
-            // 
-            // txtOrderID
-            // 
-            txtOrderID.Location = new Point(113, 30);
-            txtOrderID.Name = "txtOrderID";
-            txtOrderID.ReadOnly = true;
-            txtOrderID.Size = new Size(164, 27);
-            txtOrderID.TabIndex = 6;
-            // 
-            // txtFreight
-            // 
-            txtFreight.Location = new Point(113, 131);
-            txtFreight.Name = "txtFreight";
-            txtFreight.Size = new Size(164, 27);
-            txtFreight.TabIndex = 18;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.ForeColor = SystemColors.ControlDarkDark;
-            btnUpdate.Location = new Point(215, 354);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(62, 40);
-            btnUpdate.TabIndex = 12;
-            btnUpdate.UseVisualStyleBackColor = true;
-            btnUpdate.Click += btnUpdate_Click;
-            // 
-            // btnDelete
-            // 
-            btnDelete.ForeColor = SystemColors.ControlDarkDark;
-            btnDelete.Location = new Point(113, 354);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(62, 42);
-            btnDelete.TabIndex = 11;
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
-            // 
-            // btnMoreDetail
-            // 
-            btnMoreDetail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMoreDetail.Location = new Point(172, 316);
-            btnMoreDetail.Name = "btnMoreDetail";
-            btnMoreDetail.Size = new Size(105, 28);
-            btnMoreDetail.TabIndex = 12;
-            btnMoreDetail.Text = "More Detail";
-            btnMoreDetail.UseVisualStyleBackColor = true;
-            btnMoreDetail.Click += btnMoreDetail_Click;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAdd.ForeColor = SystemColors.ControlDarkDark;
-            btnAdd.Location = new Point(8, 354);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(62, 42);
-            btnAdd.TabIndex = 10;
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
-            // 
-            // lbRequiredDate
-            // 
-            lbRequiredDate.AutoSize = true;
-            lbRequiredDate.Location = new Point(6, 241);
-            lbRequiredDate.Name = "lbRequiredDate";
-            lbRequiredDate.Size = new Size(96, 20);
-            lbRequiredDate.TabIndex = 5;
-            lbRequiredDate.Text = "RequiredDate";
             // 
             // lbOrderDate
             // 
             lbOrderDate.AutoSize = true;
-            lbOrderDate.Location = new Point(6, 192);
+            lbOrderDate.Location = new Point(18, 255);
             lbOrderDate.Name = "lbOrderDate";
             lbOrderDate.Size = new Size(80, 20);
             lbOrderDate.TabIndex = 4;
             lbOrderDate.Text = "Order Date";
+            lbOrderDate.Click += lbOrderDate_Click;
             // 
-            // lbShippedDate
+            // btnRefesh
             // 
-            lbShippedDate.AutoSize = true;
-            lbShippedDate.Location = new Point(6, 290);
-            lbShippedDate.Name = "lbShippedDate";
-            lbShippedDate.Size = new Size(94, 20);
-            lbShippedDate.TabIndex = 3;
-            lbShippedDate.Text = "Shipped Date";
+            btnRefesh.BackColor = SystemColors.ButtonHighlight;
+            btnRefesh.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRefesh.ForeColor = Color.FromArgb(116, 86, 120);
+            btnRefesh.Location = new Point(872, 522);
+            btnRefesh.Margin = new Padding(3, 4, 3, 4);
+            btnRefesh.Name = "btnRefesh";
+            btnRefesh.Size = new Size(113, 31);
+            btnRefesh.TabIndex = 45;
+            btnRefesh.Text = "REFESH";
+            btnRefesh.UseVisualStyleBackColor = false;
+            btnRefesh.Click += btnRefesh_Click;
             // 
-            // lbFreight
+            // btnUpdate
             // 
-            lbFreight.AutoSize = true;
-            lbFreight.Location = new Point(6, 138);
-            lbFreight.Name = "lbFreight";
-            lbFreight.Size = new Size(53, 20);
-            lbFreight.TabIndex = 2;
-            lbFreight.Text = "Freight";
-            // 
-            // lbOrderID
-            // 
-            lbOrderID.AutoSize = true;
-            lbOrderID.Location = new Point(6, 41);
-            lbOrderID.Name = "lbOrderID";
-            lbOrderID.Size = new Size(64, 20);
-            lbOrderID.TabIndex = 1;
-            lbOrderID.Text = "Order ID";
-            // 
-            // lbMemberID
-            // 
-            lbMemberID.AutoSize = true;
-            lbMemberID.Location = new Point(6, 88);
-            lbMemberID.Name = "lbMemberID";
-            lbMemberID.Size = new Size(80, 20);
-            lbMemberID.TabIndex = 0;
-            lbMemberID.Text = "Member ID";
+            btnUpdate.BackColor = SystemColors.ButtonHighlight;
+            btnUpdate.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUpdate.ForeColor = Color.FromArgb(116, 86, 120);
+            btnUpdate.Location = new Point(715, 522);
+            btnUpdate.Margin = new Padding(3, 4, 3, 4);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(113, 31);
+            btnUpdate.TabIndex = 44;
+            btnUpdate.Text = "UPDATE";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click_1;
             // 
             // gbGeneralInfo
             // 
+            gbGeneralInfo.BackColor = Color.MediumOrchid;
             gbGeneralInfo.Controls.Add(dgvOrderList);
             gbGeneralInfo.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
             gbGeneralInfo.Location = new Point(12, 50);
             gbGeneralInfo.Name = "gbGeneralInfo";
-            gbGeneralInfo.Size = new Size(770, 450);
+            gbGeneralInfo.Size = new Size(697, 450);
             gbGeneralInfo.TabIndex = 14;
             gbGeneralInfo.TabStop = false;
             gbGeneralInfo.Text = "General Information";
@@ -261,64 +255,57 @@
             // dgvOrderList
             // 
             dgvOrderList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrderList.Location = new Point(0, 32);
+            dgvOrderList.Location = new Point(6, 32);
             dgvOrderList.Name = "dgvOrderList";
             dgvOrderList.ReadOnly = true;
             dgvOrderList.RowHeadersWidth = 51;
             dgvOrderList.RowTemplate.Height = 29;
             dgvOrderList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvOrderList.Size = new Size(764, 412);
+            dgvOrderList.Size = new Size(685, 412);
             dgvOrderList.TabIndex = 0;
-            dgvOrderList.CellClick += dgvOrderList_CellClick;
-            dgvOrderList.CellContentClick += dgvOrderList_CellContentClick;
-            dgvOrderList.CellDoubleClick += dgvOrderList_CellDoubleClick;
+            dgvOrderList.CellMouseDoubleClick += dgvOrderList_CellMouseDoubleClick;
             // 
             // btnBack
             // 
-            btnBack.ForeColor = SystemColors.ControlDarkDark;
-            btnBack.Location = new Point(797, 454);
+            btnBack.BackColor = SystemColors.ButtonHighlight;
+            btnBack.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBack.ForeColor = Color.FromArgb(116, 86, 120);
+            btnBack.Location = new Point(872, 580);
+            btnBack.Margin = new Padding(3, 4, 3, 4);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(269, 40);
-            btnBack.TabIndex = 27;
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += btnBack_Click;
+            btnBack.Size = new Size(113, 31);
+            btnBack.TabIndex = 46;
+            btnBack.Text = "BACK";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click_1;
             // 
-            // dateTimePicker1
+            // btnDelete
             // 
-            dateTimePicker1.Location = new Point(222, 576);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 28;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(508, 576);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(250, 27);
-            dateTimePicker2.TabIndex = 29;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(70, 574);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 30;
-            button1.Text = "Report";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnDelete.BackColor = SystemColors.ButtonHighlight;
+            btnDelete.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.FromArgb(116, 86, 120);
+            btnDelete.Location = new Point(715, 580);
+            btnDelete.Margin = new Padding(3, 4, 3, 4);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(113, 31);
+            btnDelete.TabIndex = 47;
+            btnDelete.Text = "DELETE";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // frmOrders
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1093, 671);
-            Controls.Add(button1);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(btnDelete);
             Controls.Add(btnBack);
             Controls.Add(gbGeneralInfo);
             Controls.Add(gbDetailInfo);
+            Controls.Add(btnRefesh);
             Controls.Add(lbTitle);
+            Controls.Add(btnUpdate);
             Name = "frmOrders";
             StartPosition = FormStartPosition.CenterScreen;
             Tag = "Add";
@@ -335,30 +322,26 @@
 
         private Label lbTitle;
         private GroupBox gbDetailInfo;
-        private TextBox txtOrderID;
-        private Label lbRequiredDate;
         private Label lbOrderDate;
-        private Label lbShippedDate;
-        private Label lbFreight;
-        private Label lbOrderID;
-        private Label lbMemberID;
-        private Button btnAdd;
-        private Button btnDelete;
-        private Button btnUpdate;
-        private Button btnMoreDetail;
         private GroupBox gbGeneralInfo;
         private DataGridView dgvOrderList;
-        private TextBox txtFreight;
-        private Button btnBack;
-        private DateTimePicker dtpShippedDate;
-        private DateTimePicker dtpRequiredDate;
         private DateTimePicker dtpOrderDate;
-        //Tri
-
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
-        private Button button1;
-        private ComboBox cbMemberID;
+        private Label label1;
+        public Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private TextBox txtUserID;
+        private TextBox txtOrderPhone;
+        private TextBox txtOrderName;
+        private TextBox txtOrderPrice;
+        private TextBox txtAddress;
+        private TextBox txtStatus;
+        private Button btnUpdate;
+        private Button btnRefesh;
+        private Button btnBack;
+        private Button btnDelete;
         //Tri
     }
 }
