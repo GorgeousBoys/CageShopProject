@@ -14,6 +14,7 @@ namespace SalesWinApp
         private BindingSource source;
         public User checkMember { get; set; }
         public string SelectedImagePath { get; set; }
+        private RoleRepository roleRepository = new RoleRepository();
 
         public frmMembers()
         {
@@ -22,20 +23,26 @@ namespace SalesWinApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string message = "Missing input fields";
+            string title = "Invalid Input";
+            if (txtEmail == null) MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
             try
             {
+                
                 // Create a new User object based on the input fields
                 User newUser = new User
                 {
+                    
                     UserName = txtUsername.Text,
                     UserPassword = txtPassword.Text, // You should consider hashing the password
                     Email = txtEmail.Text,
                     Phone = txtPhone.Text,
                     Address = txtAddress.Text,
                     DoB = DateTime.Parse(txtDob.Text), // Adjust the format as needed
-                    //Status = cbMemberStatus.Text,
-                    RoleId = int.Parse(txtRoleId.Text), // Make sure to handle parsing errors
-                    Gender = txtGender.Text
+                    Status = cboMemStatus.Text,
+                    RoleId = int.Parse(cboRole.Text), // Make sure to handle parsing errors
+                    Gender = cboGender.Text
+
                 };
 
                 // Add the new user to the database with the selected image path
@@ -68,13 +75,13 @@ namespace SalesWinApp
                     Phone = txtPhone.Text,
                     Address = txtAddress.Text,
                     DoB = DateTime.Parse(txtDob.Text), // Adjust the format as needed
-                    //Status = cbMemberStatus.Text,
-                    RoleId = int.Parse(txtRoleId.Text), // Make sure to handle parsing errors
-                    Gender = txtGender.Text
+                    Status = cboMemStatus.Text,
+                    RoleId = int.Parse(cboRole.Text), // Make sure to handle parsing errors
+                    Gender = cboGender.Text
                 };
 
                 // Update the user in the database
-                memberRepository.UpdateUser(updatedUser);
+                memberRepository.UpdateUser(updatedUser, SelectedImagePath);
 
                 // Refresh the DataGridView with the updated user list
                 LoadMemberList();
@@ -127,38 +134,38 @@ namespace SalesWinApp
 
         private void dgvMemberList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvMemberList.Rows.Count - 1)
+
+            DataGridViewRow selectedRow = dgvMemberList.Rows[e.RowIndex];
+
+            // Populate the form fields with the selected user's information
+            txtUserId.Text = GetValueFromCell(selectedRow, "UserID");
+            txtUsername.Text = GetValueFromCell(selectedRow, "UserName");
+            txtPassword.Text = GetValueFromCell(selectedRow, "UserPassword");
+            txtEmail.Text = GetValueFromCell(selectedRow, "Email");
+            txtPhone.Text = GetValueFromCell(selectedRow, "Phone");
+            txtAddress.Text = GetValueFromCell(selectedRow, "Address");
+            txtDob.Text = GetValueFromCell(selectedRow, "DoB");
+            cboRole.Text = GetValueFromCell(selectedRow, "RoleID");
+            cboGender.Text = GetValueFromCell(selectedRow, "Gender");
+            cboMemStatus.Text = GetValueFromCell(selectedRow, "Status");
+
+            // Get the byte array from the UserIMG column
+            byte[] imageData = selectedRow.Cells["UserIMG"].Value as byte[];
+
+            if (imageData != null)
             {
-                DataGridViewRow selectedRow = dgvMemberList.Rows[e.RowIndex];
+                // Convert the byte array to an Image
+                Image userImage = byteArrayToImage(imageData);
 
-                // Populate the form fields with the selected user's information
-                txtUserId.Text = GetValueFromCell(selectedRow, "UserID");
-                txtUsername.Text = GetValueFromCell(selectedRow, "UserName");
-                txtPassword.Text = GetValueFromCell(selectedRow, "UserPassword");
-                txtEmail.Text = GetValueFromCell(selectedRow, "Email");
-                txtPhone.Text = GetValueFromCell(selectedRow, "Phone");
-                txtAddress.Text = GetValueFromCell(selectedRow, "Address");
-                txtDob.Text = GetValueFromCell(selectedRow, "DoB");
-                txtRoleId.Text = GetValueFromCell(selectedRow, "RoleID");
-                txtGender.Text = GetValueFromCell(selectedRow, "Gender");
-                //cbMemberStatus.Text = GetValueFromCell(selectedRow, "Status");
-                // Get the byte array from the UserIMG column
-                byte[] imageData = selectedRow.Cells["UserIMG"].Value as byte[];
-
-                if (imageData != null)
-                {
-                    // Convert the byte array to an Image
-                    Image userImage = byteArrayToImage(imageData);
-
-                    // Display the image in the PictureBox (assuming 'picUser' is your PictureBox)
-                    picUser.Image = userImage;
-                }
-                else
-                {
-                    // Handle the case when there is no image data
-                    picUser.Image = null;
-                }
+                // Display the image in the PictureBox (assuming 'picUser' is your PictureBox)
+                picUser.Image = userImage;
             }
+            else
+            {
+                // Handle the case when there is no image data
+                picUser.Image = null;
+            }
+
         }
 
         private Image byteArrayToImage(byte[] byteArrayIn)
@@ -179,6 +186,10 @@ namespace SalesWinApp
             // Display the list of users in the DataGridView
             dgvMemberList.DataSource = null;
             dgvMemberList.DataSource = result;
+
+            cboRole.DataSource = roleRepository.GetAll();
+            cboRole.DisplayMember = "RoleName";
+            cboRole.ValueMember = "RoleID";
         }
 
         private string GetValueFromCell(DataGridViewRow row, string columnName)
@@ -191,7 +202,7 @@ namespace SalesWinApp
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
@@ -225,7 +236,14 @@ namespace SalesWinApp
 
         private void btnRefesh_Click(object sender, EventArgs e)
         {
-
+            txtUserId.Text = "";
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+            txtEmail.Text = "";
+            txtPhone.Text = "";
+            txtAddress.Text = "";
+            txtDob.Text = "";
+            byte[] imageData = null;
         }
     }
 }

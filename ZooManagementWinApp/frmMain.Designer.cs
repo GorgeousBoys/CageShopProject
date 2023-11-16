@@ -133,7 +133,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(145, 538);
+            panel1.Size = new Size(145, 541);
             panel1.TabIndex = 10;
             // 
             // btnViewMyOrders
@@ -203,14 +203,14 @@
             dgvCage.RowHeadersWidth = 51;
             dgvCage.RowTemplate.Height = 25;
             dgvCage.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCage.Size = new Size(711, 191);
+            dgvCage.Size = new Size(711, 0);
             dgvCage.TabIndex = 11;
             // 
             // cbMaterial
             // 
             cbMaterial.FormattingEnabled = true;
             cbMaterial.Items.AddRange(new object[] { "Wood", "Metal", "Steel", "Plastic" });
-            cbMaterial.Location = new Point(46, 24);
+            cbMaterial.Location = new Point(38, 32);
             cbMaterial.Margin = new Padding(3, 4, 3, 4);
             cbMaterial.Name = "cbMaterial";
             cbMaterial.Size = new Size(110, 28);
@@ -222,7 +222,7 @@
             button1.BackColor = SystemColors.ButtonHighlight;
             button1.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.FromArgb(116, 86, 120);
-            button1.Location = new Point(13, 60);
+            button1.Location = new Point(6, 67);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(173, 31);
@@ -245,7 +245,7 @@
             btnSearch.BackColor = SystemColors.ButtonHighlight;
             btnSearch.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSearch.ForeColor = Color.FromArgb(116, 86, 120);
-            btnSearch.Location = new Point(11, 67);
+            btnSearch.Location = new Point(22, 67);
             btnSearch.Margin = new Padding(3, 4, 3, 4);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(113, 31);
@@ -265,7 +265,7 @@
             // 
             // txtMin
             // 
-            txtMin.Location = new Point(33, 31);
+            txtMin.Location = new Point(24, 32);
             txtMin.Margin = new Padding(3, 4, 3, 4);
             txtMin.Name = "txtMin";
             txtMin.PlaceholderText = "Min Price";
@@ -274,7 +274,7 @@
             // 
             // txtMax
             // 
-            txtMax.Location = new Point(33, 63);
+            txtMax.Location = new Point(159, 32);
             txtMax.Margin = new Padding(3, 4, 3, 4);
             txtMax.Name = "txtMax";
             txtMax.PlaceholderText = "Max price";
@@ -286,7 +286,7 @@
             button2.BackColor = SystemColors.ButtonHighlight;
             button2.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.FromArgb(116, 86, 120);
-            button2.Location = new Point(6, 91);
+            button2.Location = new Point(76, 67);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(163, 31);
@@ -300,7 +300,7 @@
             btnFilterBar.BackColor = SystemColors.ButtonHighlight;
             btnFilterBar.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnFilterBar.ForeColor = Color.FromArgb(116, 86, 120);
-            btnFilterBar.Location = new Point(10, 66);
+            btnFilterBar.Location = new Point(27, 66);
             btnFilterBar.Margin = new Padding(3, 4, 3, 4);
             btnFilterBar.Name = "btnFilterBar";
             btnFilterBar.Size = new Size(173, 31);
@@ -314,7 +314,7 @@
             button3.BackColor = SystemColors.ButtonHighlight;
             button3.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.FromArgb(116, 86, 120);
-            button3.Location = new Point(265, 67);
+            button3.Location = new Point(253, 67);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(86, 31);
@@ -339,7 +339,7 @@
             // 
             groupBox2.Controls.Add(button1);
             groupBox2.Controls.Add(cbMaterial);
-            groupBox2.Location = new Point(555, 64);
+            groupBox2.Location = new Point(539, 65);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(203, 108);
             groupBox2.TabIndex = 27;
@@ -350,7 +350,7 @@
             // 
             groupBox3.Controls.Add(btnFilterBar);
             groupBox3.Controls.Add(txtBar);
-            groupBox3.Location = new Point(769, 65);
+            groupBox3.Location = new Point(757, 65);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(219, 107);
             groupBox3.TabIndex = 28;
@@ -362,9 +362,9 @@
             groupBox4.Controls.Add(button2);
             groupBox4.Controls.Add(txtMax);
             groupBox4.Controls.Add(txtMin);
-            groupBox4.Location = new Point(994, 33);
+            groupBox4.Location = new Point(994, 64);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(200, 137);
+            groupBox4.Size = new Size(287, 106);
             groupBox4.TabIndex = 29;
             groupBox4.TabStop = false;
             groupBox4.Text = "Search Price";
@@ -374,6 +374,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(172, 172, 230);
+            BackgroundImage = ZooWinApp.Properties.Resources._118629057_759072744913122_4611360679530079040_n;
             ClientSize = new Size(1281, 540);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);

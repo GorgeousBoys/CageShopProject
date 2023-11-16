@@ -30,17 +30,17 @@
         {
             lbTitle = new Label();
             gbDetailInfo = new GroupBox();
+            cboRole = new ComboBox();
+            cboGender = new ComboBox();
+            cboMemStatus = new ComboBox();
             btnRefesh = new Button();
             btnUpload = new Button();
-            txtGender = new TextBox();
-            txtRoleId = new TextBox();
             txtUsername = new TextBox();
             picUser = new PictureBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            txtStatus = new TextBox();
             label1 = new Label();
             txtPhone = new TextBox();
             txtDob = new TextBox();
@@ -79,17 +79,17 @@
             // 
             // gbDetailInfo
             // 
+            gbDetailInfo.Controls.Add(cboRole);
+            gbDetailInfo.Controls.Add(cboGender);
+            gbDetailInfo.Controls.Add(cboMemStatus);
             gbDetailInfo.Controls.Add(btnRefesh);
             gbDetailInfo.Controls.Add(btnUpload);
-            gbDetailInfo.Controls.Add(txtGender);
-            gbDetailInfo.Controls.Add(txtRoleId);
             gbDetailInfo.Controls.Add(txtUsername);
             gbDetailInfo.Controls.Add(picUser);
             gbDetailInfo.Controls.Add(label5);
             gbDetailInfo.Controls.Add(label4);
             gbDetailInfo.Controls.Add(label3);
             gbDetailInfo.Controls.Add(label2);
-            gbDetailInfo.Controls.Add(txtStatus);
             gbDetailInfo.Controls.Add(label1);
             gbDetailInfo.Controls.Add(txtPhone);
             gbDetailInfo.Controls.Add(txtDob);
@@ -111,6 +111,32 @@
             gbDetailInfo.TabIndex = 7;
             gbDetailInfo.TabStop = false;
             gbDetailInfo.Text = "Detail Information";
+            // 
+            // cboRole
+            // 
+            cboRole.FormattingEnabled = true;
+            cboRole.Location = new Point(107, 254);
+            cboRole.Name = "cboRole";
+            cboRole.Size = new Size(210, 28);
+            cboRole.TabIndex = 48;
+            // 
+            // cboGender
+            // 
+            cboGender.FormattingEnabled = true;
+            cboGender.Items.AddRange(new object[] { "Male", "Female" });
+            cboGender.Location = new Point(452, 251);
+            cboGender.Name = "cboGender";
+            cboGender.Size = new Size(190, 28);
+            cboGender.TabIndex = 47;
+            // 
+            // cboMemStatus
+            // 
+            cboMemStatus.FormattingEnabled = true;
+            cboMemStatus.Items.AddRange(new object[] { "Active", "Suspended" });
+            cboMemStatus.Location = new Point(107, 194);
+            cboMemStatus.Name = "cboMemStatus";
+            cboMemStatus.Size = new Size(210, 28);
+            cboMemStatus.TabIndex = 43;
             // 
             // btnRefesh
             // 
@@ -139,20 +165,6 @@
             btnUpload.Text = "UPLOAD";
             btnUpload.UseVisualStyleBackColor = false;
             btnUpload.Click += btnUpload_Click;
-            // 
-            // txtGender
-            // 
-            txtGender.Location = new Point(452, 250);
-            txtGender.Name = "txtGender";
-            txtGender.Size = new Size(190, 27);
-            txtGender.TabIndex = 41;
-            // 
-            // txtRoleId
-            // 
-            txtRoleId.Location = new Point(105, 251);
-            txtRoleId.Name = "txtRoleId";
-            txtRoleId.Size = new Size(212, 27);
-            txtRoleId.TabIndex = 40;
             // 
             // txtUsername
             // 
@@ -205,13 +217,6 @@
             label2.Size = new Size(76, 20);
             label2.TabIndex = 34;
             label2.Text = "UserName";
-            // 
-            // txtStatus
-            // 
-            txtStatus.Location = new Point(107, 197);
-            txtStatus.Name = "txtStatus";
-            txtStatus.Size = new Size(210, 27);
-            txtStatus.TabIndex = 33;
             // 
             // label1
             // 
@@ -315,9 +320,9 @@
             lbMemberID.AutoSize = true;
             lbMemberID.Location = new Point(14, 45);
             lbMemberID.Name = "lbMemberID";
-            lbMemberID.Size = new Size(80, 20);
+            lbMemberID.Size = new Size(56, 20);
             lbMemberID.TabIndex = 0;
-            lbMemberID.Text = "Member ID";
+            lbMemberID.Text = "User ID";
             // 
             // gbGeneralInfo
             // 
@@ -440,7 +445,6 @@
         private TextBox txtPhone;
         private TextBox txtEmail;
         private TextBox txtUserId;
-        private TextBox txtStatus;
         private Label label1;
         private Label label5;
         private Label label4;
@@ -448,8 +452,6 @@
         private Label label2;
         private PictureBox picUser;
         private TextBox txtUsername;
-        private TextBox txtGender;
-        private TextBox txtRoleId;
         private Button btnUpdate;
         private Button btnAdd;
         private Button btnDelete;
@@ -461,5 +463,8 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private ComboBox cboMemStatus;
+        private ComboBox cboGender;
+        private ComboBox cboRole;
     }
 }
