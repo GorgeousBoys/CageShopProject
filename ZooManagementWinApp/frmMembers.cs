@@ -13,6 +13,7 @@ namespace SalesWinApp
         private IUserRepository memberRepository = new UserRepository();
         private BindingSource source;
         public User checkMember { get; set; }
+        public string SelectedImagePath { get; set; }
 
         public frmMembers()
         {
@@ -32,13 +33,13 @@ namespace SalesWinApp
                     Phone = txtPhone.Text,
                     Address = txtAddress.Text,
                     DoB = DateTime.Parse(txtDob.Text), // Adjust the format as needed
-                    Status = txtStatus.Text,
+                    //Status = cbMemberStatus.Text,
                     RoleId = int.Parse(txtRoleId.Text), // Make sure to handle parsing errors
                     Gender = txtGender.Text
                 };
 
-                // Add the new user to the database
-                memberRepository.AddUser(newUser);
+                // Add the new user to the database with the selected image path
+                memberRepository.AddUser(newUser, SelectedImagePath);
 
                 // Refresh the DataGridView with the updated user list
                 LoadMemberList();
@@ -50,6 +51,8 @@ namespace SalesWinApp
                 MessageBox.Show(ex.Message, "Error Adding Member");
             }
         }
+
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -65,7 +68,7 @@ namespace SalesWinApp
                     Phone = txtPhone.Text,
                     Address = txtAddress.Text,
                     DoB = DateTime.Parse(txtDob.Text), // Adjust the format as needed
-                    Status = txtStatus.Text,
+                    //Status = cbMemberStatus.Text,
                     RoleId = int.Parse(txtRoleId.Text), // Make sure to handle parsing errors
                     Gender = txtGender.Text
                 };
@@ -136,10 +139,9 @@ namespace SalesWinApp
                 txtPhone.Text = GetValueFromCell(selectedRow, "Phone");
                 txtAddress.Text = GetValueFromCell(selectedRow, "Address");
                 txtDob.Text = GetValueFromCell(selectedRow, "DoB");
-                txtStatus.Text = GetValueFromCell(selectedRow, "Status");
                 txtRoleId.Text = GetValueFromCell(selectedRow, "RoleID");
                 txtGender.Text = GetValueFromCell(selectedRow, "Gender");
-
+                //cbMemberStatus.Text = GetValueFromCell(selectedRow, "Status");
                 // Get the byte array from the UserIMG column
                 byte[] imageData = selectedRow.Cells["UserIMG"].Value as byte[];
 
@@ -190,6 +192,35 @@ namespace SalesWinApp
         private void btnBack_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+
+                // Set the filter to allow only image files
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Get the selected image file path
+                    string imagePath = openFileDialog.FileName;
+
+                    // Display the selected image in the PictureBox
+                    picUser.Image = Image.FromFile(imagePath);
+
+                    // Save the image path to a variable or property for later use
+                    // For simplicity, let's assume you have a property in your form
+                    // Example: public string SelectedImagePath { get; set; }
+                    SelectedImagePath = imagePath;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Uploading Image");
+            }
         }
     }
 }

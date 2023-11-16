@@ -15,7 +15,7 @@ namespace Repository.Repository
         public void registerShopKeeperAccount (User user);
         public User getUserByUserId(int id);
 
-        void AddUser(User user);
+        void AddUser(User user, string selectedImagePath);
         void UpdateUser(User user);
         void DeleteUser(User user);
 

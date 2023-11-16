@@ -29,7 +29,7 @@ namespace Repository.Repository
             return UserDAO.Instance.getUserByUserId(id);
         }
 
-        public void AddUser(User user) => UserDAO.Instance.AddUser(user);
+        public void AddUser(User user, string selectedImagePath) => UserDAO.Instance.AddUser(user, selectedImagePath);
         public void UpdateUser(User user) => UserDAO.Instance.UpdateUser(user);
         
 
