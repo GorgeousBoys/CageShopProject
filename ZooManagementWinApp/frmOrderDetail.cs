@@ -29,7 +29,7 @@ namespace SalesWinApp
             if(_memberManager.RoleId == 1)
             {
                 bindingSource = new BindingSource();
-                OrderDetail orderDetail = orderDetailRepository.FindByOrderID(_order.OrderId);
+                List<OrderDetail> orderDetail = orderDetailRepository.FindByOrderID(_order.OrderId);
                 bindingSource.DataSource = orderDetail;
 
                 dgvOrderDetailList.DataSource = null;

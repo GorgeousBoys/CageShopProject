@@ -30,8 +30,8 @@
         {
             dgvCart = new DataGridView();
             panel1 = new Panel();
-            button1 = new Button();
             button2 = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCart).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -58,19 +58,6 @@
             panel1.Size = new Size(157, 596);
             panel1.TabIndex = 3;
             // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ButtonHighlight;
-            button1.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.FromArgb(116, 86, 120);
-            button1.Location = new Point(22, 158);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(113, 31);
-            button1.TabIndex = 5;
-            button1.Text = "Remove";
-            button1.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
             button2.BackColor = SystemColors.ButtonHighlight;
@@ -83,6 +70,19 @@
             button2.TabIndex = 6;
             button2.Text = "Buy";
             button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ButtonHighlight;
+            button1.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.FromArgb(116, 86, 120);
+            button1.Location = new Point(22, 158);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(113, 31);
+            button1.TabIndex = 5;
+            button1.Text = "Remove";
+            button1.UseVisualStyleBackColor = false;
             // 
             // frmCartView
             // 

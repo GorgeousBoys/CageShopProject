@@ -75,7 +75,7 @@ namespace ZooWinApp
                     ID = kv.Key,
                     Price = kv.Value.Price,
                     Quantity = kv.Value.Quantity
-                }) ;
+                });
                 bindingSource = new BindingSource();
                 bindingSource.DataSource = dataList;
 
