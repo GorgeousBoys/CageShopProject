@@ -30,7 +30,8 @@
         {
             lbTitle = new Label();
             gbDetailInfo = new GroupBox();
-            cbMemberStatus = new ComboBox();
+            btnRefesh = new Button();
+            btnUpload = new Button();
             txtGender = new TextBox();
             txtRoleId = new TextBox();
             txtUsername = new TextBox();
@@ -60,12 +61,11 @@
             btnDelete = new Button();
             btnBack = new Button();
             panel1 = new Panel();
-            btnRefesh = new Button();
             gbDetailInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUser).BeginInit();
             gbGeneralInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMemberList).BeginInit();
-            groupBox1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lbTitle
@@ -81,7 +81,6 @@
             // 
             // gbDetailInfo
             // 
-            gbDetailInfo.Controls.Add(cbMemberStatus);
             gbDetailInfo.Controls.Add(btnRefesh);
             gbDetailInfo.Controls.Add(btnUpload);
             gbDetailInfo.Controls.Add(txtGender);
@@ -115,21 +114,25 @@
             gbDetailInfo.TabStop = false;
             gbDetailInfo.Text = "Detail Information";
             // 
-            // cbMemberStatus
+            // btnRefesh
             // 
-            cbMemberStatus.FormattingEnabled = true;
-            cbMemberStatus.Items.AddRange(new object[] { "Active", "Deactive" });
-            cbMemberStatus.Location = new Point(107, 200);
-            cbMemberStatus.Name = "cbMemberStatus";
-            cbMemberStatus.Size = new Size(210, 28);
-            cbMemberStatus.TabIndex = 42;
+            btnRefesh.BackColor = SystemColors.ButtonHighlight;
+            btnRefesh.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRefesh.ForeColor = Color.FromArgb(116, 86, 120);
+            btnRefesh.Location = new Point(516, 333);
+            btnRefesh.Margin = new Padding(3, 4, 3, 4);
+            btnRefesh.Name = "btnRefesh";
+            btnRefesh.Size = new Size(113, 31);
+            btnRefesh.TabIndex = 32;
+            btnRefesh.Text = "REFESH";
+            btnRefesh.UseVisualStyleBackColor = false;
             // 
             // btnUpload
             // 
             btnUpload.BackColor = SystemColors.ButtonHighlight;
             btnUpload.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpload.ForeColor = Color.FromArgb(116, 86, 120);
-            btnUpload.Location = new Point(338, 333);
+            btnUpload.Location = new Point(369, 333);
             btnUpload.Margin = new Padding(3, 4, 3, 4);
             btnUpload.Name = "btnUpload";
             btnUpload.Size = new Size(113, 31);
@@ -206,7 +209,7 @@
             // 
             // txtStatus
             // 
-            txtStatus.Location = new Point(420, 333);
+            txtStatus.Location = new Point(107, 197);
             txtStatus.Name = "txtStatus";
             txtStatus.Size = new Size(210, 27);
             txtStatus.TabIndex = 33;
@@ -397,38 +400,23 @@
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
-            // groupBox1
+            // panel1
             // 
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(button3);
-            groupBox1.Location = new Point(33, 484);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(651, 131);
-            groupBox1.TabIndex = 9;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Task";
-            // 
-            // btnRefesh
-            // 
-            btnRefesh.BackColor = SystemColors.ButtonHighlight;
-            btnRefesh.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRefesh.ForeColor = Color.FromArgb(116, 86, 120);
-            btnRefesh.Location = new Point(505, 333);
-            btnRefesh.Margin = new Padding(3, 4, 3, 4);
-            btnRefesh.Name = "btnRefesh";
-            btnRefesh.Size = new Size(113, 31);
-            btnRefesh.TabIndex = 32;
-            btnRefesh.Text = "REFESH";
-            btnRefesh.UseVisualStyleBackColor = false;
+            panel1.BackColor = Color.FromArgb(116, 86, 174);
+            panel1.Controls.Add(btnBack);
+            panel1.Controls.Add(btnDelete);
+            panel1.Controls.Add(btnAdd);
+            panel1.Controls.Add(btnUpdate);
+            panel1.Location = new Point(8, 474);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(683, 139);
+            panel1.TabIndex = 32;
             // 
             // frmMembers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1370, 624);
-            Controls.Add(groupBox1);
             Controls.Add(gbGeneralInfo);
             Controls.Add(gbDetailInfo);
             Controls.Add(lbTitle);
@@ -440,7 +428,7 @@
             ((System.ComponentModel.ISupportInitialize)picUser).EndInit();
             gbGeneralInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvMemberList).EndInit();
-            groupBox1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -476,7 +464,8 @@
         private Button btnAdd;
         private Button btnDelete;
         private Button btnBack;
-        private GroupBox groupBox1;
-        private ComboBox cbMemberStatus;
+        private Panel panel1;
+        private Button btnUpload;
+        private Button btnRefesh;
     }
 }
