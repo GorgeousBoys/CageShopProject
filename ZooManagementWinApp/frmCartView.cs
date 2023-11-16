@@ -90,13 +90,14 @@ namespace ZooWinApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var productBuy = cartRepository.GetCart().ToList()[dgvCart.CurrentRow.Index];
+            var productBuy = cartRepository.GetCart().Values.ToList();
+            var cartProducts = cartRepository.GetCart();
             if (MessageBox.Show("Are you sure to buy", "Cage Shop", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 Order order = new()
                 {
                     OrderName = user.UserName,
-                    OrderPrice = productBuy.Value.Price,
+                    OrderPrice = productBuy.Sum(p => p.Price),
                     OrderStatus = "Pending",
                     UserId = user.UserId,
                     OrderAdress = user.Address,
@@ -107,17 +108,21 @@ namespace ZooWinApp
 
                 int orderId = order.OrderId;
 
-                OrderDetail detail = new()
+                foreach (var cartProduct in cartProducts)
                 {
-                    CageId = productBuy.Key,
-                    OrderId = orderId,
-                    DetailPrice = order.OrderPrice,
-                    DetailQuantity = 1
-                };
-                orderDetailRepository.AddOrderDetail(detail);
+                    OrderDetail detail = new()
+                    {
+                        CageId = cartProduct.Key,
+                        OrderId = orderId,
+                        DetailPrice = cartProduct.Value.Price,
+                        DetailQuantity = cartProduct.Value.Quantity
+                    };
+
+                    orderDetailRepository.AddOrderDetail(detail);
+                }
 
                 MessageBox.Show("Buy successfully ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cartRepository.RemoveFromCart(productBuy.Key);
+                cartRepository.DeleteCart();
                 Dictionary<int, ProductCart> cartDic = cartRepository.GetCart();
                 if (cartDic != null)
                 {
