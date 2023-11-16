@@ -90,13 +90,13 @@ namespace ZooWinApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var productBuy = productRepository.GetProducts().ToList()[dgvCart.CurrentRow.Index];
+            var productBuy = cartRepository.GetCart().ToList()[dgvCart.CurrentRow.Index];
             if (MessageBox.Show("Are you sure to buy", "Cage Shop", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 Order order = new()
                 {
                     OrderName = user.UserName,
-                    OrderPrice = productBuy.Price,
+                    OrderPrice = productBuy.Value.Price,
                     OrderStatus = "Pending",
                     UserId = user.UserId,
                     OrderAdress = user.Address,
@@ -109,7 +109,7 @@ namespace ZooWinApp
 
                 OrderDetail detail = new()
                 {
-                    CageId = productBuy.CageId,
+                    CageId = productBuy.Key,
                     OrderId = orderId,
                     DetailPrice = order.OrderPrice,
                     DetailQuantity = 1
@@ -117,7 +117,7 @@ namespace ZooWinApp
                 orderDetailRepository.AddOrderDetail(detail);
 
                 MessageBox.Show("Buy successfully ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cartRepository.RemoveFromCart(productBuy.CageId);
+                cartRepository.RemoveFromCart(productBuy.Key);
                 Dictionary<int, ProductCart> cartDic = cartRepository.GetCart();
                 if (cartDic != null)
                 {
