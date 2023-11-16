@@ -30,6 +30,7 @@
         {
             lbTitle = new Label();
             gbDetailInfo = new GroupBox();
+            btnUpload = new Button();
             txtGender = new TextBox();
             txtRoleId = new TextBox();
             txtUsername = new TextBox();
@@ -54,11 +55,12 @@
             lbMemberID = new Label();
             gbGeneralInfo = new GroupBox();
             dgvMemberList = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            btnUpdate = new Button();
+            btnAdd = new Button();
+            btnDelete = new Button();
+            btnBack = new Button();
             panel1 = new Panel();
+            btnRefesh = new Button();
             gbDetailInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUser).BeginInit();
             gbGeneralInfo.SuspendLayout();
@@ -79,6 +81,8 @@
             // 
             // gbDetailInfo
             // 
+            gbDetailInfo.Controls.Add(btnRefesh);
+            gbDetailInfo.Controls.Add(btnUpload);
             gbDetailInfo.Controls.Add(txtGender);
             gbDetailInfo.Controls.Add(txtRoleId);
             gbDetailInfo.Controls.Add(txtUsername);
@@ -110,6 +114,20 @@
             gbDetailInfo.TabStop = false;
             gbDetailInfo.Text = "Detail Information";
             // 
+            // btnUpload
+            // 
+            btnUpload.BackColor = SystemColors.ButtonHighlight;
+            btnUpload.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUpload.ForeColor = Color.FromArgb(116, 86, 120);
+            btnUpload.Location = new Point(338, 333);
+            btnUpload.Margin = new Padding(3, 4, 3, 4);
+            btnUpload.Name = "btnUpload";
+            btnUpload.Size = new Size(113, 31);
+            btnUpload.TabIndex = 42;
+            btnUpload.Text = "UPLOAD";
+            btnUpload.UseVisualStyleBackColor = false;
+            btnUpload.Click += btnUpload_Click;
+            // 
             // txtGender
             // 
             txtGender.Location = new Point(452, 250);
@@ -133,9 +151,10 @@
             // 
             // picUser
             // 
-            picUser.Location = new Point(105, 293);
+            picUser.Location = new Point(105, 299);
             picUser.Name = "picUser";
             picUser.Size = new Size(212, 119);
+            picUser.SizeMode = PictureBoxSizeMode.StretchImage;
             picUser.TabIndex = 38;
             picUser.TabStop = false;
             // 
@@ -207,7 +226,7 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(452, 92);
+            txtAddress.Location = new Point(452, 85);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(190, 27);
             txtAddress.TabIndex = 12;
@@ -312,69 +331,86 @@
             dgvMemberList.TabIndex = 0;
             dgvMemberList.CellClick += dgvMemberList_CellClick;
             // 
-            // button1
+            // btnUpdate
             // 
-            button1.BackColor = SystemColors.ButtonHighlight;
-            button1.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.FromArgb(116, 86, 120);
-            button1.Location = new Point(217, 55);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(113, 31);
-            button1.TabIndex = 28;
-            button1.Text = "REMOVE";
-            button1.UseVisualStyleBackColor = false;
+            btnUpdate.BackColor = SystemColors.ButtonHighlight;
+            btnUpdate.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUpdate.ForeColor = Color.FromArgb(116, 86, 120);
+            btnUpdate.Location = new Point(217, 55);
+            btnUpdate.Margin = new Padding(3, 4, 3, 4);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(113, 31);
+            btnUpdate.TabIndex = 28;
+            btnUpdate.Text = "UPDATE";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
-            // button2
+            // btnAdd
             // 
-            button2.BackColor = SystemColors.ButtonHighlight;
-            button2.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.FromArgb(116, 86, 120);
-            button2.Location = new Point(74, 55);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(113, 31);
-            button2.TabIndex = 29;
-            button2.Text = "ADD";
-            button2.UseVisualStyleBackColor = false;
+            btnAdd.BackColor = SystemColors.ButtonShadow;
+            btnAdd.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdd.ForeColor = Color.FromArgb(116, 86, 120);
+            btnAdd.Location = new Point(74, 55);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(113, 31);
+            btnAdd.TabIndex = 29;
+            btnAdd.Text = "ADD";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
-            // button3
+            // btnDelete
             // 
-            button3.BackColor = SystemColors.ButtonHighlight;
-            button3.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.FromArgb(116, 86, 120);
-            button3.Location = new Point(375, 55);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(113, 31);
-            button3.TabIndex = 30;
-            button3.Text = "DELETE";
-            button3.UseVisualStyleBackColor = false;
+            btnDelete.BackColor = SystemColors.ButtonHighlight;
+            btnDelete.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.FromArgb(116, 86, 120);
+            btnDelete.Location = new Point(375, 55);
+            btnDelete.Margin = new Padding(3, 4, 3, 4);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(113, 31);
+            btnDelete.TabIndex = 30;
+            btnDelete.Text = "DELETE";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // button4
+            // btnBack
             // 
-            button4.BackColor = SystemColors.ButtonHighlight;
-            button4.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.FromArgb(116, 86, 120);
-            button4.Location = new Point(518, 55);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(113, 31);
-            button4.TabIndex = 31;
-            button4.Text = "BACK";
-            button4.UseVisualStyleBackColor = false;
+            btnBack.BackColor = SystemColors.ButtonHighlight;
+            btnBack.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBack.ForeColor = Color.FromArgb(116, 86, 120);
+            btnBack.Location = new Point(518, 55);
+            btnBack.Margin = new Padding(3, 4, 3, 4);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(113, 31);
+            btnBack.TabIndex = 31;
+            btnBack.Text = "BACK";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(116, 86, 174);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnBack);
+            panel1.Controls.Add(btnDelete);
+            panel1.Controls.Add(btnAdd);
+            panel1.Controls.Add(btnUpdate);
             panel1.Location = new Point(8, 474);
             panel1.Name = "panel1";
             panel1.Size = new Size(683, 139);
             panel1.TabIndex = 32;
+            // 
+            // btnRefesh
+            // 
+            btnRefesh.BackColor = SystemColors.ButtonHighlight;
+            btnRefesh.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRefesh.ForeColor = Color.FromArgb(116, 86, 120);
+            btnRefesh.Location = new Point(505, 333);
+            btnRefesh.Margin = new Padding(3, 4, 3, 4);
+            btnRefesh.Name = "btnRefesh";
+            btnRefesh.Size = new Size(113, 31);
+            btnRefesh.TabIndex = 32;
+            btnRefesh.Text = "REFESH";
+            btnRefesh.UseVisualStyleBackColor = false;
             // 
             // frmMembers
             // 
@@ -425,10 +461,12 @@
         private TextBox txtUsername;
         private TextBox txtGender;
         private TextBox txtRoleId;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private Button btnUpdate;
+        private Button btnAdd;
+        private Button btnDelete;
+        private Button btnBack;
         private Panel panel1;
+        private Button btnUpload;
+        private Button btnRefesh;
     }
 }

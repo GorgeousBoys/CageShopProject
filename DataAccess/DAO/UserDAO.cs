@@ -139,12 +139,44 @@ namespace DataAccess.DAO
             }
         }
 
-        public void AddUser(User user)
+        public void AddUser(User user, string imagePath)
         {
             using var context = new CageShopUni_Context();
-            context.Users.Add(user);
-            context.SaveChanges();
+
+            try
+            {
+                // Save the image path to the database
+                user.UserImg = ConvertImageToByteArray(imagePath);
+
+                // Add the user to the context and save changes
+                context.Users.Add(user);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions or propagate them to the calling code
+                throw new Exception("Error adding user to the database", ex);
+            }
         }
+
+        // Convert an image file to a byte array
+        private byte[] ConvertImageToByteArray(string imagePath)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
+                {
+                    BinaryReader br = new BinaryReader(fs);
+                    return br.ReadBytes((int)fs.Length);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions or propagate them to the calling code
+                throw new Exception("Error converting image to byte array", ex);
+            }
+        }
+
 
         public void UpdateUser(User user)
         {

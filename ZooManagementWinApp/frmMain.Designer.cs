@@ -34,6 +34,7 @@
             productManagementToolStripMenuItem = new ToolStripMenuItem();
             orderManagementToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
+            logoutToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
             btnViewMyOrders = new Button();
             btnAddToCart = new Button();
@@ -50,10 +51,17 @@
             button2 = new Button();
             btnFilterBar = new Button();
             button3 = new Button();
-            logoutToolStripMenuItem = new ToolStripMenuItem();
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
+            groupBox3 = new GroupBox();
+            groupBox4 = new GroupBox();
             msAction.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCage).BeginInit();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // lbTitle
@@ -73,7 +81,7 @@
             msAction.Location = new Point(0, 0);
             msAction.Name = "msAction";
             msAction.Padding = new Padding(6, 3, 0, 3);
-            msAction.Size = new Size(957, 30);
+            msAction.Size = new Size(1281, 30);
             msAction.TabIndex = 8;
             msAction.Text = "HomeAction";
             // 
@@ -105,6 +113,13 @@
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
+            // logoutToolStripMenuItem
+            // 
+            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            logoutToolStripMenuItem.Size = new Size(70, 24);
+            logoutToolStripMenuItem.Text = "Logout";
+            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
+            // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
@@ -118,7 +133,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(145, 449);
+            panel1.Size = new Size(145, 538);
             panel1.TabIndex = 10;
             // 
             // btnViewMyOrders
@@ -187,14 +202,14 @@
             dgvCage.Name = "dgvCage";
             dgvCage.RowHeadersWidth = 51;
             dgvCage.RowTemplate.Height = 25;
-            dgvCage.Size = new Size(813, 255);
+            dgvCage.Size = new Size(1137, 344);
             dgvCage.TabIndex = 11;
             // 
             // cbMaterial
             // 
             cbMaterial.FormattingEnabled = true;
             cbMaterial.Items.AddRange(new object[] { "Wood", "Metal", "Steel", "Plastic" });
-            cbMaterial.Location = new Point(171, 100);
+            cbMaterial.Location = new Point(46, 24);
             cbMaterial.Margin = new Padding(3, 4, 3, 4);
             cbMaterial.Name = "cbMaterial";
             cbMaterial.Size = new Size(110, 28);
@@ -206,7 +221,7 @@
             button1.BackColor = SystemColors.ButtonHighlight;
             button1.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.FromArgb(116, 86, 120);
-            button1.Location = new Point(313, 97);
+            button1.Location = new Point(13, 60);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(173, 31);
@@ -217,7 +232,7 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(171, 53);
+            txtSearch.Location = new Point(11, 32);
             txtSearch.Margin = new Padding(3, 4, 3, 4);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search for Cage Description";
@@ -229,7 +244,7 @@
             btnSearch.BackColor = SystemColors.ButtonHighlight;
             btnSearch.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSearch.ForeColor = Color.FromArgb(116, 86, 120);
-            btnSearch.Location = new Point(543, 53);
+            btnSearch.Location = new Point(11, 67);
             btnSearch.Margin = new Padding(3, 4, 3, 4);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(113, 31);
@@ -240,7 +255,7 @@
             // 
             // txtBar
             // 
-            txtBar.Location = new Point(171, 141);
+            txtBar.Location = new Point(36, 31);
             txtBar.Margin = new Padding(3, 4, 3, 4);
             txtBar.Name = "txtBar";
             txtBar.PlaceholderText = "Bar";
@@ -249,7 +264,7 @@
             // 
             // txtMin
             // 
-            txtMin.Location = new Point(681, 106);
+            txtMin.Location = new Point(33, 31);
             txtMin.Margin = new Padding(3, 4, 3, 4);
             txtMin.Name = "txtMin";
             txtMin.PlaceholderText = "Min Price";
@@ -258,11 +273,11 @@
             // 
             // txtMax
             // 
-            txtMax.Location = new Point(540, 106);
+            txtMax.Location = new Point(33, 63);
             txtMax.Margin = new Padding(3, 4, 3, 4);
             txtMax.Name = "txtMax";
             txtMax.PlaceholderText = "Max price";
-            txtMax.Size = new Size(113, 27);
+            txtMax.Size = new Size(116, 27);
             txtMax.TabIndex = 20;
             // 
             // button2
@@ -270,7 +285,7 @@
             button2.BackColor = SystemColors.ButtonHighlight;
             button2.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.FromArgb(116, 86, 120);
-            button2.Location = new Point(590, 141);
+            button2.Location = new Point(6, 91);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(163, 31);
@@ -284,7 +299,7 @@
             btnFilterBar.BackColor = SystemColors.ButtonHighlight;
             btnFilterBar.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnFilterBar.ForeColor = Color.FromArgb(116, 86, 120);
-            btnFilterBar.Location = new Point(313, 141);
+            btnFilterBar.Location = new Point(10, 66);
             btnFilterBar.Margin = new Padding(3, 4, 3, 4);
             btnFilterBar.Name = "btnFilterBar";
             btnFilterBar.Size = new Size(173, 31);
@@ -298,7 +313,7 @@
             button3.BackColor = SystemColors.ButtonHighlight;
             button3.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.FromArgb(116, 86, 120);
-            button3.Location = new Point(681, 53);
+            button3.Location = new Point(265, 67);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(86, 31);
@@ -307,29 +322,62 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
-            // logoutToolStripMenuItem
+            // groupBox1
             // 
-            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            logoutToolStripMenuItem.Size = new Size(70, 24);
-            logoutToolStripMenuItem.Text = "Logout";
-            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
+            groupBox1.Controls.Add(button3);
+            groupBox1.Controls.Add(btnSearch);
+            groupBox1.Controls.Add(txtSearch);
+            groupBox1.Location = new Point(160, 64);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(364, 108);
+            groupBox1.TabIndex = 26;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Search Description";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(button1);
+            groupBox2.Controls.Add(cbMaterial);
+            groupBox2.Location = new Point(555, 64);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(203, 108);
+            groupBox2.TabIndex = 27;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Search Material";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(btnFilterBar);
+            groupBox3.Controls.Add(txtBar);
+            groupBox3.Location = new Point(769, 65);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(219, 107);
+            groupBox3.TabIndex = 28;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Search Bar";
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(button2);
+            groupBox4.Controls.Add(txtMax);
+            groupBox4.Controls.Add(txtMin);
+            groupBox4.Location = new Point(994, 33);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(200, 137);
+            groupBox4.TabIndex = 29;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Search Price";
             // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(172, 172, 230);
-            ClientSize = new Size(957, 451);
-            Controls.Add(button3);
-            Controls.Add(btnFilterBar);
-            Controls.Add(button2);
-            Controls.Add(txtMax);
-            Controls.Add(txtMin);
-            Controls.Add(txtBar);
-            Controls.Add(btnSearch);
-            Controls.Add(txtSearch);
-            Controls.Add(button1);
-            Controls.Add(cbMaterial);
+            ClientSize = new Size(1281, 540);
+            Controls.Add(groupBox4);
+            Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
             Controls.Add(msAction);
             Controls.Add(panel1);
             Controls.Add(lbTitle);
@@ -344,6 +392,13 @@
             msAction.PerformLayout();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCage).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -373,5 +428,9 @@
         private Button btnFilterBar;
         private Button button3;
         private ToolStripMenuItem logoutToolStripMenuItem;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private GroupBox groupBox3;
+        private GroupBox groupBox4;
     }
 }

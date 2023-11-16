@@ -13,6 +13,7 @@ namespace SalesWinApp
         private IUserRepository memberRepository = new UserRepository();
         private BindingSource source;
         public User checkMember { get; set; }
+        public string SelectedImagePath { get; set; }
 
         public frmMembers()
         {
@@ -37,8 +38,8 @@ namespace SalesWinApp
                     Gender = txtGender.Text
                 };
 
-                // Add the new user to the database
-                memberRepository.AddUser(newUser);
+                // Add the new user to the database with the selected image path
+                memberRepository.AddUser(newUser, SelectedImagePath);
 
                 // Refresh the DataGridView with the updated user list
                 LoadMemberList();
@@ -50,6 +51,8 @@ namespace SalesWinApp
                 MessageBox.Show(ex.Message, "Error Adding Member");
             }
         }
+
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -190,6 +193,35 @@ namespace SalesWinApp
         private void btnBack_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+
+                // Set the filter to allow only image files
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Get the selected image file path
+                    string imagePath = openFileDialog.FileName;
+
+                    // Display the selected image in the PictureBox
+                    picUser.Image = Image.FromFile(imagePath);
+
+                    // Save the image path to a variable or property for later use
+                    // For simplicity, let's assume you have a property in your form
+                    // Example: public string SelectedImagePath { get; set; }
+                    SelectedImagePath = imagePath;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Uploading Image");
+            }
         }
     }
 }
