@@ -179,6 +179,7 @@
             dgvCage.Location = new Point(126, 135);
             dgvCage.Name = "dgvCage";
             dgvCage.RowTemplate.Height = 25;
+            dgvCage.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCage.Size = new Size(711, 191);
             dgvCage.TabIndex = 11;
             // 

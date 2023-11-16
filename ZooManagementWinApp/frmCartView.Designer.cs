@@ -40,6 +40,7 @@
             dgvCart.Location = new Point(27, 23);
             dgvCart.Name = "dgvCart";
             dgvCart.RowTemplate.Height = 25;
+            dgvCart.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCart.Size = new Size(433, 399);
             dgvCart.TabIndex = 0;
             // 

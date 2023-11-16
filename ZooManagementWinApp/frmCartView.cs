@@ -48,13 +48,20 @@ namespace ZooWinApp
                     var productId = dgvCart.SelectedCells[0].Value.ToString();
                     cartRepository.RemoveFromCart(Int32.Parse(productId));
                     Dictionary<int, ProductCart>? cartDic = cartRepository.GetCart();
-                    MessageBox.Show("Delete successfully");
-                    LoadCart(cartDic);
+                    if (cartDic != null)
+                    {
+                        MessageBox.Show("Delete successfully");
+                        LoadCart(cartDic);
+                    }
+                    else
+                    {
+                        dgvCart.DataSource = null;
+                    }
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Please click on the whole cell", "Cage Shop", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There's some error while removing", "Cage Shop", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -68,7 +75,7 @@ namespace ZooWinApp
                     ID = kv.Key,
                     Price = kv.Value.Price,
                     Quantity = kv.Value.Quantity
-                });
+                }) ;
                 bindingSource = new BindingSource();
                 bindingSource.DataSource = dataList;
 
@@ -112,7 +119,14 @@ namespace ZooWinApp
                 MessageBox.Show("Buy successfully ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cartRepository.RemoveFromCart(productBuy.CageId);
                 Dictionary<int, ProductCart> cartDic = cartRepository.GetCart();
-                LoadCart(cartDic);
+                if (cartDic != null)
+                {
+                    LoadCart(cartDic);
+                }
+                else
+                {
+                    dgvCart.DataSource = null;
+                }
             }
         }
     }

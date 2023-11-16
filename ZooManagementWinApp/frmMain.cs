@@ -29,7 +29,7 @@ namespace SalesWinApp
                 f.StartPosition = FormStartPosition.CenterScreen;
                 f.checkMember = user;
                 f.Show();
-                
+
             }
             else
             {
@@ -90,10 +90,11 @@ namespace SalesWinApp
                 if (user.RoleId == 1)
                 {
                     int productId = Int32.Parse(dgvCage.SelectedCells[0].Value.ToString());
-                    int quantity = Int32.Parse(dgvCage.SelectedCells[3].Value.ToString());
+                    int quantity = 0;
                     decimal price = decimal.Parse(dgvCage.SelectedCells[4].Value.ToString());
-                    if (productId != null && quantity != null && price != null)
+                    if (productId != null)
                     {
+                        quantity += 1;
                         MessageBox.Show("This product is added to your cart successfully.", "Cage Shop", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cartRepository.AddToCart(productId, quantity, price);
                     }
@@ -115,43 +116,49 @@ namespace SalesWinApp
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            if (user.RoleId == 1)
+            try
             {
-                var productBuy = productRepository.GetProducts().ToList()[dgvCage.CurrentRow.Index];
-                if (productBuy != null)
+                if (user.RoleId == 1)
                 {
-                    if (MessageBox.Show("Would you like to buy it? ", "Buy Product", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                    var productBuy = productRepository.GetProducts().ToList()[dgvCage.CurrentRow.Index];
+                    if (productBuy != null)
                     {
-                        Order order = new()
+                        if (MessageBox.Show("Would you like to buy it? ", "Buy Product", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                         {
-                            OrderName = user.UserName,
-                            OrderPrice = productBuy.Price,
-                            OrderStatus = "Pending",
-                            UserId = user.UserId,
-                            OrderAdress = user.Address,
-                            OrderPhone = user.Phone,
-                            OrderDate = DateTime.Now
-                        };
-                        orderRepository.AddOrder(order);
+                            Order order = new()
+                            {
+                                OrderName = user.UserName,
+                                OrderPrice = productBuy.Price,
+                                OrderStatus = "Pending",
+                                UserId = user.UserId,
+                                OrderAdress = user.Address,
+                                OrderPhone = user.Phone,
+                                OrderDate = DateTime.Now
+                            };
+                            orderRepository.AddOrder(order);
 
-                        int orderId = order.OrderId;
+                            int orderId = order.OrderId;
 
-                        OrderDetail detail = new()
-                        {
-                            CageId = productBuy.CageId,
-                            OrderId = orderId,
-                            DetailPrice = order.OrderPrice,
-                            DetailQuantity = 1
-                        };
-                        orderDetailRepository.AddOrderDetail(detail);
+                            OrderDetail detail = new()
+                            {
+                                CageId = productBuy.CageId,
+                                OrderId = orderId,
+                                DetailPrice = order.OrderPrice,
+                                DetailQuantity = 1
+                            };
+                            orderDetailRepository.AddOrderDetail(detail);
 
-                        MessageBox.Show("Buy successfully ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Buy successfully ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
-            }
-            else
+                else
+                {
+                    MessageBox.Show("Only user allowed");
+                }
+            }catch(Exception ex)
             {
-                MessageBox.Show("Only user allowed");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -164,7 +171,8 @@ namespace SalesWinApp
                 IEnumerable<Product> products = productRepository.FilterByMaterial(material);
 
                 LoadProducts(products);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -210,7 +218,8 @@ namespace SalesWinApp
                 if (bar.Length > 0) { txtBar.Text = bar; }
                 IEnumerable<Product> products = productRepository.FilterByBar(bar);
                 LoadProducts(products);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -224,7 +233,8 @@ namespace SalesWinApp
                 decimal max = decimal.Parse(txtMax.Text);
                 IEnumerable<Product> products = productRepository.FilterByPrice(min, max);
                 LoadProducts(products);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
