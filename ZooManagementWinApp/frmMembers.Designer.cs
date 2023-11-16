@@ -30,7 +30,7 @@
         {
             lbTitle = new Label();
             gbDetailInfo = new GroupBox();
-            btnUpload = new Button();
+            cbMemberStatus = new ComboBox();
             txtGender = new TextBox();
             txtRoleId = new TextBox();
             txtUsername = new TextBox();
@@ -65,7 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)picUser).BeginInit();
             gbGeneralInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMemberList).BeginInit();
-            panel1.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // lbTitle
@@ -81,6 +81,7 @@
             // 
             // gbDetailInfo
             // 
+            gbDetailInfo.Controls.Add(cbMemberStatus);
             gbDetailInfo.Controls.Add(btnRefesh);
             gbDetailInfo.Controls.Add(btnUpload);
             gbDetailInfo.Controls.Add(txtGender);
@@ -113,6 +114,15 @@
             gbDetailInfo.TabIndex = 7;
             gbDetailInfo.TabStop = false;
             gbDetailInfo.Text = "Detail Information";
+            // 
+            // cbMemberStatus
+            // 
+            cbMemberStatus.FormattingEnabled = true;
+            cbMemberStatus.Items.AddRange(new object[] { "Active", "Deactive" });
+            cbMemberStatus.Location = new Point(107, 200);
+            cbMemberStatus.Name = "cbMemberStatus";
+            cbMemberStatus.Size = new Size(210, 28);
+            cbMemberStatus.TabIndex = 42;
             // 
             // btnUpload
             // 
@@ -196,7 +206,7 @@
             // 
             // txtStatus
             // 
-            txtStatus.Location = new Point(107, 197);
+            txtStatus.Location = new Point(420, 333);
             txtStatus.Name = "txtStatus";
             txtStatus.Size = new Size(210, 27);
             txtStatus.TabIndex = 33;
@@ -387,17 +397,18 @@
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
-            // panel1
+            // groupBox1
             // 
-            panel1.BackColor = Color.FromArgb(116, 86, 174);
-            panel1.Controls.Add(btnBack);
-            panel1.Controls.Add(btnDelete);
-            panel1.Controls.Add(btnAdd);
-            panel1.Controls.Add(btnUpdate);
-            panel1.Location = new Point(8, 474);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(683, 139);
-            panel1.TabIndex = 32;
+            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(button4);
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(button3);
+            groupBox1.Location = new Point(33, 484);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(651, 131);
+            groupBox1.TabIndex = 9;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Task";
             // 
             // btnRefesh
             // 
@@ -417,7 +428,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1370, 624);
-            Controls.Add(panel1);
+            Controls.Add(groupBox1);
             Controls.Add(gbGeneralInfo);
             Controls.Add(gbDetailInfo);
             Controls.Add(lbTitle);
@@ -429,7 +440,7 @@
             ((System.ComponentModel.ISupportInitialize)picUser).EndInit();
             gbGeneralInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvMemberList).EndInit();
-            panel1.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -465,8 +476,7 @@
         private Button btnAdd;
         private Button btnDelete;
         private Button btnBack;
-        private Panel panel1;
-        private Button btnUpload;
-        private Button btnRefesh;
+        private GroupBox groupBox1;
+        private ComboBox cbMemberStatus;
     }
 }
