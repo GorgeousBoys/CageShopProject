@@ -11,7 +11,7 @@ namespace Repository.Repository
     {
         IEnumerable<OrderDetail> GetOrderDetails();
         OrderDetail FindByID(int id);
-        OrderDetail FindByOrderID(int orderId);
+        List<OrderDetail> FindByOrderID(int orderId);
         void AddOrderDetail(OrderDetail orderDetail);
         void UpdateOrderDetail(OrderDetail orderDetail);
         void DeleteOrderDetail(OrderDetail orderDetail);

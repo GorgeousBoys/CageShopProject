@@ -60,12 +60,12 @@ namespace DataAccess.DAO
             context.SaveChanges();
         }
 
-        public OrderDetail getByOrderID(int id)
+        public List<OrderDetail> getByOrderID(int id)
         {
             try
             {
                 var context = new CageShopUni_Context();
-                return context.OrderDetails.SingleOrDefault(o => o.OrderId == id);
+                return context.OrderDetails.Where(o => o.OrderId == id).ToList();
             } catch (Exception ex)
             {
                 throw new Exception(ex.Message);
