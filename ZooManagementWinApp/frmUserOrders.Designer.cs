@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            btnExit = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -38,16 +39,30 @@
             dataGridView1.Location = new Point(14, 56);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(708, 501);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellMouseDoubleClick += dataGridView1_CellMouseDoubleClick;
+            // 
+            // btnExit
+            // 
+            btnExit.Location = new Point(767, 330);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(94, 29);
+            btnExit.TabIndex = 1;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // frmUserOrders
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(740, 600);
+            ClientSize = new Size(905, 600);
+            Controls.Add(btnExit);
             Controls.Add(dataGridView1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmUserOrders";
@@ -60,5 +75,6 @@
         #endregion
 
         private DataGridView dataGridView1;
+        private Button btnExit;
     }
 }

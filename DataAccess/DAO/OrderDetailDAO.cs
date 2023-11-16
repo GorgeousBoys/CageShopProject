@@ -59,5 +59,17 @@ namespace DataAccess.DAO
             context.OrderDetails.Remove(orderDetail);
             context.SaveChanges();
         }
+
+        public OrderDetail getByOrderID(int id)
+        {
+            try
+            {
+                var context = new CageShopUni_Context();
+                return context.OrderDetails.SingleOrDefault(o => o.OrderId == id);
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
