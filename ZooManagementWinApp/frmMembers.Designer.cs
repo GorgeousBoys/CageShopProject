@@ -56,16 +56,14 @@
             lbMemberID = new Label();
             gbGeneralInfo = new GroupBox();
             dgvMemberList = new DataGridView();
-            btnUpdate = new Button();
             btnAdd = new Button();
+            btnUpdate = new Button();
             btnDelete = new Button();
             btnBack = new Button();
-            panel1 = new Panel();
             gbDetailInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUser).BeginInit();
             gbGeneralInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMemberList).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lbTitle
@@ -126,6 +124,7 @@
             btnRefesh.TabIndex = 32;
             btnRefesh.Text = "REFESH";
             btnRefesh.UseVisualStyleBackColor = false;
+            btnRefesh.Click += btnRefesh_Click;
             // 
             // btnUpload
             // 
@@ -344,44 +343,44 @@
             dgvMemberList.TabIndex = 0;
             dgvMemberList.CellClick += dgvMemberList_CellClick;
             // 
+            // btnAdd
+            // 
+            btnAdd.BackColor = SystemColors.ButtonHighlight;
+            btnAdd.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdd.ForeColor = Color.FromArgb(116, 86, 120);
+            btnAdd.Location = new Point(42, 538);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(113, 31);
+            btnAdd.TabIndex = 43;
+            btnAdd.Text = "ADD";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
+            // 
             // btnUpdate
             // 
             btnUpdate.BackColor = SystemColors.ButtonHighlight;
             btnUpdate.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.FromArgb(116, 86, 120);
-            btnUpdate.Location = new Point(217, 55);
+            btnUpdate.Location = new Point(212, 538);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(113, 31);
-            btnUpdate.TabIndex = 28;
+            btnUpdate.TabIndex = 44;
             btnUpdate.Text = "UPDATE";
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
-            // 
-            // btnAdd
-            // 
-            btnAdd.BackColor = SystemColors.ButtonShadow;
-            btnAdd.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdd.ForeColor = Color.FromArgb(116, 86, 120);
-            btnAdd.Location = new Point(74, 55);
-            btnAdd.Margin = new Padding(3, 4, 3, 4);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(113, 31);
-            btnAdd.TabIndex = 29;
-            btnAdd.Text = "ADD";
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += btnAdd_Click;
             // 
             // btnDelete
             // 
             btnDelete.BackColor = SystemColors.ButtonHighlight;
             btnDelete.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.FromArgb(116, 86, 120);
-            btnDelete.Location = new Point(375, 55);
+            btnDelete.Location = new Point(370, 538);
             btnDelete.Margin = new Padding(3, 4, 3, 4);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(113, 31);
-            btnDelete.TabIndex = 30;
+            btnDelete.TabIndex = 45;
             btnDelete.Text = "DELETE";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -391,32 +390,24 @@
             btnBack.BackColor = SystemColors.ButtonHighlight;
             btnBack.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnBack.ForeColor = Color.FromArgb(116, 86, 120);
-            btnBack.Location = new Point(518, 55);
+            btnBack.Location = new Point(537, 538);
             btnBack.Margin = new Padding(3, 4, 3, 4);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(113, 31);
-            btnBack.TabIndex = 31;
+            btnBack.TabIndex = 46;
             btnBack.Text = "BACK";
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(116, 86, 174);
-            panel1.Controls.Add(btnBack);
-            panel1.Controls.Add(btnDelete);
-            panel1.Controls.Add(btnAdd);
-            panel1.Controls.Add(btnUpdate);
-            panel1.Location = new Point(8, 474);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(683, 139);
-            panel1.TabIndex = 32;
             // 
             // frmMembers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1370, 624);
+            Controls.Add(btnBack);
+            Controls.Add(btnDelete);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnAdd);
             Controls.Add(gbGeneralInfo);
             Controls.Add(gbDetailInfo);
             Controls.Add(lbTitle);
@@ -428,7 +419,6 @@
             ((System.ComponentModel.ISupportInitialize)picUser).EndInit();
             gbGeneralInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvMemberList).EndInit();
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -467,5 +457,9 @@
         private Panel panel1;
         private Button btnUpload;
         private Button btnRefesh;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
     }
 }

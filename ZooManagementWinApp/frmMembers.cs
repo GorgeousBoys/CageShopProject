@@ -222,5 +222,10 @@ namespace SalesWinApp
                 MessageBox.Show(ex.Message, "Error Uploading Image");
             }
         }
+
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
