@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnAdd = new Button();
-            btnUpdate = new Button();
-            btnDelete = new Button();
             lbTitle = new Label();
             gbDetailInfo = new GroupBox();
             txtGender = new TextBox();
@@ -57,58 +54,26 @@
             lbMemberID = new Label();
             gbGeneralInfo = new GroupBox();
             dgvMemberList = new DataGridView();
-            btnBack = new Button();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            panel1 = new Panel();
             gbDetailInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUser).BeginInit();
             gbGeneralInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMemberList).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnAdd
-            // 
-            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAdd.ForeColor = SystemColors.ControlDarkDark;
-            btnAdd.Location = new Point(59, 388);
-            btnAdd.Margin = new Padding(3, 2, 3, 2);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(82, 33);
-            btnAdd.TabIndex = 1;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.ForeColor = SystemColors.ControlDarkDark;
-            btnUpdate.Location = new Point(289, 388);
-            btnUpdate.Margin = new Padding(3, 2, 3, 2);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(88, 33);
-            btnUpdate.TabIndex = 2;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = true;
-            btnUpdate.Click += btnUpdate_Click;
-            // 
-            // btnDelete
-            // 
-            btnDelete.ForeColor = SystemColors.ControlDarkDark;
-            btnDelete.Location = new Point(172, 388);
-            btnDelete.Margin = new Padding(3, 2, 3, 2);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(85, 33);
-            btnDelete.TabIndex = 3;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
             // 
             // lbTitle
             // 
             lbTitle.AutoSize = true;
             lbTitle.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lbTitle.ForeColor = SystemColors.ControlText;
-            lbTitle.Location = new Point(544, -2);
+            lbTitle.ForeColor = Color.FromArgb(116, 86, 120);
+            lbTitle.Location = new Point(622, -3);
             lbTitle.Name = "lbTitle";
-            lbTitle.Size = new Size(245, 30);
+            lbTitle.Size = new Size(311, 38);
             lbTitle.TabIndex = 5;
             lbTitle.Text = "Member Management";
             // 
@@ -138,201 +103,188 @@
             gbDetailInfo.Controls.Add(lbMemberID);
             gbDetailInfo.FlatStyle = FlatStyle.Popup;
             gbDetailInfo.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            gbDetailInfo.Location = new Point(18, 29);
-            gbDetailInfo.Margin = new Padding(3, 2, 3, 2);
+            gbDetailInfo.Location = new Point(21, 39);
             gbDetailInfo.Name = "gbDetailInfo";
-            gbDetailInfo.Padding = new Padding(3, 2, 3, 2);
-            gbDetailInfo.Size = new Size(748, 325);
+            gbDetailInfo.Size = new Size(670, 433);
             gbDetailInfo.TabIndex = 7;
             gbDetailInfo.TabStop = false;
             gbDetailInfo.Text = "Detail Information";
             // 
             // txtGender
             // 
-            txtGender.Location = new Point(439, 185);
-            txtGender.Margin = new Padding(3, 2, 3, 2);
+            txtGender.Location = new Point(452, 250);
             txtGender.Name = "txtGender";
-            txtGender.Size = new Size(255, 23);
+            txtGender.Size = new Size(190, 27);
             txtGender.TabIndex = 41;
             // 
             // txtRoleId
             // 
-            txtRoleId.Location = new Point(92, 188);
-            txtRoleId.Margin = new Padding(3, 2, 3, 2);
+            txtRoleId.Location = new Point(105, 251);
             txtRoleId.Name = "txtRoleId";
-            txtRoleId.Size = new Size(253, 23);
+            txtRoleId.Size = new Size(212, 27);
             txtRoleId.TabIndex = 40;
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(439, 148);
-            txtUsername.Margin = new Padding(3, 2, 3, 2);
+            txtUsername.Location = new Point(452, 200);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(255, 23);
+            txtUsername.Size = new Size(190, 27);
             txtUsername.TabIndex = 39;
             // 
             // picUser
             // 
-            picUser.Location = new Point(92, 220);
-            picUser.Margin = new Padding(3, 2, 3, 2);
+            picUser.Location = new Point(105, 293);
             picUser.Name = "picUser";
-            picUser.Size = new Size(338, 89);
+            picUser.Size = new Size(212, 119);
             picUser.TabIndex = 38;
             picUser.TabStop = false;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(19, 193);
+            label5.Location = new Point(22, 257);
             label5.Name = "label5";
-            label5.Size = new Size(39, 15);
+            label5.Size = new Size(49, 20);
             label5.TabIndex = 37;
             label5.Text = "RoleId";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(18, 250);
+            label4.Location = new Point(21, 333);
             label4.Name = "label4";
-            label4.Size = new Size(51, 15);
+            label4.Size = new Size(63, 20);
             label4.TabIndex = 36;
             label4.Text = "UserIMG";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(371, 188);
+            label3.Location = new Point(353, 254);
             label3.Name = "label3";
-            label3.Size = new Size(45, 15);
+            label3.Size = new Size(54, 20);
             label3.TabIndex = 35;
             label3.Text = "Gender";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(360, 151);
+            label2.Location = new Point(349, 200);
             label2.Name = "label2";
-            label2.Size = new Size(62, 15);
+            label2.Size = new Size(76, 20);
             label2.TabIndex = 34;
             label2.Text = "UserName";
             // 
             // txtStatus
             // 
-            txtStatus.Location = new Point(94, 148);
-            txtStatus.Margin = new Padding(3, 2, 3, 2);
+            txtStatus.Location = new Point(107, 197);
             txtStatus.Name = "txtStatus";
-            txtStatus.Size = new Size(251, 23);
+            txtStatus.Size = new Size(210, 27);
             txtStatus.TabIndex = 33;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(20, 148);
+            label1.Location = new Point(23, 197);
             label1.Name = "label1";
-            label1.Size = new Size(40, 15);
+            label1.Size = new Size(48, 20);
             label1.TabIndex = 32;
             label1.Text = "Status";
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(439, 28);
-            txtPhone.Margin = new Padding(3, 2, 3, 2);
+            txtPhone.Location = new Point(452, 38);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(255, 23);
+            txtPhone.Size = new Size(190, 27);
             txtPhone.TabIndex = 31;
             // 
             // txtDob
             // 
-            txtDob.Location = new Point(439, 104);
-            txtDob.Margin = new Padding(3, 2, 3, 2);
+            txtDob.Location = new Point(452, 139);
             txtDob.Name = "txtDob";
-            txtDob.Size = new Size(255, 23);
+            txtDob.Size = new Size(190, 27);
             txtDob.TabIndex = 13;
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(439, 68);
-            txtAddress.Margin = new Padding(3, 2, 3, 2);
+            txtAddress.Location = new Point(452, 92);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(255, 23);
+            txtAddress.Size = new Size(190, 27);
             txtAddress.TabIndex = 12;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(94, 104);
-            txtPassword.Margin = new Padding(3, 2, 3, 2);
+            txtPassword.Location = new Point(107, 139);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(251, 23);
+            txtPassword.Size = new Size(210, 27);
             txtPassword.TabIndex = 8;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(94, 67);
-            txtEmail.Margin = new Padding(3, 2, 3, 2);
+            txtEmail.Location = new Point(107, 89);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(251, 23);
+            txtEmail.Size = new Size(210, 27);
             txtEmail.TabIndex = 7;
             // 
             // txtUserId
             // 
-            txtUserId.Location = new Point(94, 28);
-            txtUserId.Margin = new Padding(3, 2, 3, 2);
+            txtUserId.Location = new Point(107, 37);
             txtUserId.Name = "txtUserId";
             txtUserId.ReadOnly = true;
-            txtUserId.Size = new Size(251, 23);
+            txtUserId.Size = new Size(210, 27);
             txtUserId.TabIndex = 6;
             // 
             // lbCity
             // 
             lbCity.AutoSize = true;
-            lbCity.Location = new Point(371, 73);
+            lbCity.Location = new Point(349, 92);
             lbCity.Name = "lbCity";
-            lbCity.Size = new Size(49, 15);
+            lbCity.Size = new Size(58, 20);
             lbCity.TabIndex = 5;
             lbCity.Text = "Address";
             // 
             // lbCountry
             // 
             lbCountry.AutoSize = true;
-            lbCountry.Location = new Point(371, 34);
+            lbCountry.Location = new Point(349, 44);
             lbCountry.Name = "lbCountry";
-            lbCountry.Size = new Size(40, 15);
+            lbCountry.Size = new Size(49, 20);
             lbCountry.TabIndex = 4;
             lbCountry.Text = "Phone";
             // 
             // lbCompany
             // 
             lbCompany.AutoSize = true;
-            lbCompany.Location = new Point(371, 109);
+            lbCompany.Location = new Point(349, 142);
             lbCompany.Name = "lbCompany";
-            lbCompany.Size = new Size(29, 15);
+            lbCompany.Size = new Size(36, 20);
             lbCompany.TabIndex = 3;
             lbCompany.Text = "Dob";
             // 
             // lbPassword
             // 
             lbPassword.AutoSize = true;
-            lbPassword.Location = new Point(12, 110);
+            lbPassword.Location = new Point(14, 147);
             lbPassword.Name = "lbPassword";
-            lbPassword.Size = new Size(57, 15);
+            lbPassword.Size = new Size(70, 20);
             lbPassword.TabIndex = 2;
             lbPassword.Text = "Password";
             // 
             // lbGmail
             // 
             lbGmail.AutoSize = true;
-            lbGmail.Location = new Point(12, 72);
+            lbGmail.Location = new Point(14, 96);
             lbGmail.Name = "lbGmail";
-            lbGmail.Size = new Size(36, 15);
+            lbGmail.Size = new Size(45, 20);
             lbGmail.TabIndex = 1;
             lbGmail.Text = "Email";
             // 
             // lbMemberID
             // 
             lbMemberID.AutoSize = true;
-            lbMemberID.Location = new Point(12, 34);
+            lbMemberID.Location = new Point(14, 45);
             lbMemberID.Name = "lbMemberID";
-            lbMemberID.Size = new Size(65, 15);
+            lbMemberID.Size = new Size(80, 20);
             lbMemberID.TabIndex = 0;
             lbMemberID.Text = "Member ID";
             // 
@@ -340,11 +292,9 @@
             // 
             gbGeneralInfo.Controls.Add(dgvMemberList);
             gbGeneralInfo.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            gbGeneralInfo.Location = new Point(824, 40);
-            gbGeneralInfo.Margin = new Padding(3, 2, 3, 2);
+            gbGeneralInfo.Location = new Point(697, 39);
             gbGeneralInfo.Name = "gbGeneralInfo";
-            gbGeneralInfo.Padding = new Padding(3, 2, 3, 2);
-            gbGeneralInfo.Size = new Size(360, 380);
+            gbGeneralInfo.Size = new Size(656, 573);
             gbGeneralInfo.TabIndex = 8;
             gbGeneralInfo.TabStop = false;
             gbGeneralInfo.Text = "General Information";
@@ -352,42 +302,89 @@
             // dgvMemberList
             // 
             dgvMemberList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMemberList.Location = new Point(5, 20);
-            dgvMemberList.Margin = new Padding(3, 2, 3, 2);
+            dgvMemberList.Location = new Point(17, 26);
             dgvMemberList.Name = "dgvMemberList";
             dgvMemberList.ReadOnly = true;
             dgvMemberList.RowHeadersWidth = 51;
             dgvMemberList.RowTemplate.Height = 29;
             dgvMemberList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMemberList.Size = new Size(349, 344);
+            dgvMemberList.Size = new Size(617, 527);
             dgvMemberList.TabIndex = 0;
             dgvMemberList.CellClick += dgvMemberList_CellClick;
             // 
-            // btnBack
+            // button1
             // 
-            btnBack.ForeColor = SystemColors.ControlDarkDark;
-            btnBack.Location = new Point(414, 388);
-            btnBack.Margin = new Padding(3, 2, 3, 2);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(77, 33);
-            btnBack.TabIndex = 27;
-            btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += btnBack_Click;
+            button1.BackColor = SystemColors.ButtonHighlight;
+            button1.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.FromArgb(116, 86, 120);
+            button1.Location = new Point(217, 55);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(113, 31);
+            button1.TabIndex = 28;
+            button1.Text = "REMOVE";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.ButtonHighlight;
+            button2.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.FromArgb(116, 86, 120);
+            button2.Location = new Point(74, 55);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(113, 31);
+            button2.TabIndex = 29;
+            button2.Text = "ADD";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = SystemColors.ButtonHighlight;
+            button3.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = Color.FromArgb(116, 86, 120);
+            button3.Location = new Point(375, 55);
+            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(113, 31);
+            button3.TabIndex = 30;
+            button3.Text = "DELETE";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = SystemColors.ButtonHighlight;
+            button4.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.ForeColor = Color.FromArgb(116, 86, 120);
+            button4.Location = new Point(518, 55);
+            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(113, 31);
+            button4.TabIndex = 31;
+            button4.Text = "BACK";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(116, 86, 174);
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
+            panel1.Location = new Point(8, 474);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(683, 139);
+            panel1.TabIndex = 32;
             // 
             // frmMembers
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1199, 468);
-            Controls.Add(btnBack);
+            ClientSize = new Size(1370, 624);
+            Controls.Add(panel1);
             Controls.Add(gbGeneralInfo);
             Controls.Add(gbDetailInfo);
-            Controls.Add(btnDelete);
             Controls.Add(lbTitle);
-            Controls.Add(btnAdd);
-            Controls.Add(btnUpdate);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "frmMembers";
             StartPosition = FormStartPosition.CenterScreen;
             Load += frmMembers_Load;
@@ -396,14 +393,12 @@
             ((System.ComponentModel.ISupportInitialize)picUser).EndInit();
             gbGeneralInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvMemberList).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button btnAdd;
-        private Button btnUpdate;
-        private Button btnDelete;
         private Label lbTitle;
         private GroupBox gbDetailInfo;
         private GroupBox gbGeneralInfo;
@@ -417,7 +412,6 @@
         private TextBox txtDob;
         private TextBox txtAddress;
         private DataGridView dgvMemberList;
-        private Button btnBack;
         private TextBox txtPhone;
         private TextBox txtEmail;
         private TextBox txtUserId;
@@ -431,5 +425,10 @@
         private TextBox txtUsername;
         private TextBox txtGender;
         private TextBox txtRoleId;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Panel panel1;
     }
 }

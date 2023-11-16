@@ -31,7 +31,6 @@
             gbGeneralInfo = new GroupBox();
             dgvProductList = new DataGridView();
             gbDetailInfo = new GroupBox();
-            btnClear = new Button();
             txtCageStatus = new TextBox();
             label5 = new Label();
             label4 = new Label();
@@ -54,16 +53,19 @@
             lbCageName = new Label();
             lbProductID = new Label();
             lbCategoryID = new Label();
-            btnDelete = new Button();
-            btnUpdate = new Button();
-            btnAdd = new Button();
             lbTitle = new Label();
             btnSearch = new Button();
-            btnBack = new Button();
             txtSearch = new TextBox();
+            button2 = new Button();
+            button1 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            panel1 = new Panel();
             gbGeneralInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductList).BeginInit();
             gbDetailInfo.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // gbGeneralInfo
@@ -92,7 +94,6 @@
             // 
             // gbDetailInfo
             // 
-            gbDetailInfo.Controls.Add(btnClear);
             gbDetailInfo.Controls.Add(txtCageStatus);
             gbDetailInfo.Controls.Add(label5);
             gbDetailInfo.Controls.Add(label4);
@@ -119,21 +120,10 @@
             gbDetailInfo.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
             gbDetailInfo.Location = new Point(756, 50);
             gbDetailInfo.Name = "gbDetailInfo";
-            gbDetailInfo.Size = new Size(628, 564);
+            gbDetailInfo.Size = new Size(628, 453);
             gbDetailInfo.TabIndex = 9;
             gbDetailInfo.TabStop = false;
             gbDetailInfo.Text = "Detail Information";
-            // 
-            // btnClear
-            // 
-            btnClear.ForeColor = SystemColors.ControlDarkDark;
-            btnClear.Location = new Point(25, 504);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(99, 46);
-            btnClear.TabIndex = 40;
-            btnClear.Text = "CLEAR";
-            btnClear.UseVisualStyleBackColor = true;
-            btnClear.Click += btnClear_Click;
             // 
             // txtCageStatus
             // 
@@ -320,50 +310,17 @@
             lbCategoryID.TabIndex = 0;
             lbCategoryID.Text = "Category ID";
             // 
-            // btnDelete
-            // 
-            btnDelete.ForeColor = SystemColors.ControlDarkDark;
-            btnDelete.Location = new Point(323, 554);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(88, 48);
-            btnDelete.TabIndex = 25;
-            btnDelete.Text = "DELETE";
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.ForeColor = SystemColors.ControlDarkDark;
-            btnUpdate.Location = new Point(175, 554);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(90, 48);
-            btnUpdate.TabIndex = 24;
-            btnUpdate.Text = "UPDATE";
-            btnUpdate.UseVisualStyleBackColor = true;
-            btnUpdate.Click += btnUpdate_Click;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAdd.ForeColor = SystemColors.ControlDarkDark;
-            btnAdd.Location = new Point(45, 554);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(84, 48);
-            btnAdd.TabIndex = 23;
-            btnAdd.Text = "ADD";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
-            // 
             // lbTitle
             // 
             lbTitle.AutoSize = true;
             lbTitle.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lbTitle.ForeColor = SystemColors.ControlText;
-            lbTitle.Location = new Point(426, 9);
+            lbTitle.ForeColor = Color.FromArgb(116, 86, 120);
+            lbTitle.Location = new Point(544, 9);
             lbTitle.Name = "lbTitle";
             lbTitle.Size = new Size(303, 38);
             lbTitle.TabIndex = 19;
             lbTitle.Text = "Product Management";
+            lbTitle.Click += lbTitle_Click;
             // 
             // btnSearch
             // 
@@ -376,17 +333,6 @@
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
-            // btnBack
-            // 
-            btnBack.ForeColor = SystemColors.ControlDarkDark;
-            btnBack.Location = new Point(466, 556);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(99, 46);
-            btnBack.TabIndex = 26;
-            btnBack.Text = "BACK";
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += btnBack_Click;
-            // 
             // txtSearch
             // 
             txtSearch.Font = new Font("SimSun-ExtB", 10.8F, FontStyle.Italic, GraphicsUnit.Point);
@@ -396,20 +342,95 @@
             txtSearch.TabIndex = 27;
             txtSearch.Text = "you are looking for...\r\n";
             // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.ButtonHighlight;
+            button2.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.FromArgb(116, 86, 120);
+            button2.Location = new Point(276, 65);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(113, 48);
+            button2.TabIndex = 30;
+            button2.Text = "ADD";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ButtonHighlight;
+            button1.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.FromArgb(116, 86, 120);
+            button1.Location = new Point(444, 65);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(113, 48);
+            button1.TabIndex = 31;
+            button1.Text = "UPDATE";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = SystemColors.ButtonHighlight;
+            button3.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = Color.FromArgb(116, 86, 120);
+            button3.Location = new Point(628, 65);
+            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(113, 48);
+            button3.TabIndex = 32;
+            button3.Text = "DELETE";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = SystemColors.ButtonHighlight;
+            button4.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.ForeColor = Color.FromArgb(116, 86, 120);
+            button4.Location = new Point(814, 65);
+            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(113, 48);
+            button4.TabIndex = 33;
+            button4.Text = "BACK";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = SystemColors.ButtonHighlight;
+            button5.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.ForeColor = Color.FromArgb(116, 86, 120);
+            button5.Location = new Point(977, 65);
+            button5.Margin = new Padding(3, 4, 3, 4);
+            button5.Name = "button5";
+            button5.Size = new Size(113, 48);
+            button5.TabIndex = 34;
+            button5.Text = "CLEAR";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(116, 86, 174);
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(button2);
+            panel1.Location = new Point(9, 500);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1377, 158);
+            panel1.TabIndex = 35;
+            // 
             // frmProducts
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1408, 672);
+            ClientSize = new Size(1392, 672);
+            Controls.Add(panel1);
             Controls.Add(txtSearch);
-            Controls.Add(btnBack);
             Controls.Add(btnSearch);
             Controls.Add(gbDetailInfo);
             Controls.Add(lbTitle);
-            Controls.Add(btnDelete);
             Controls.Add(gbGeneralInfo);
-            Controls.Add(btnAdd);
-            Controls.Add(btnUpdate);
             Name = "frmProducts";
             StartPosition = FormStartPosition.CenterScreen;
             Load += frmProducts_Load;
@@ -417,6 +438,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvProductList).EndInit();
             gbDetailInfo.ResumeLayout(false);
             gbDetailInfo.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -436,10 +458,6 @@
         private Label lbTitle;
         private Button btnSearch;
         private TextBox txtQuantity;
-        private Button btnBack;
-        private Button btnDelete;
-        private Button btnUpdate;
-        private Button btnAdd;
         private TextBox txtSearch;
         private MaskedTextBox mtxtDIscountID;
         private MaskedTextBox mtxtCategoryID;
@@ -455,7 +473,12 @@
         private TextBox txtBar;
         private Label label3;
         private TextBox txtSize;
-        private Button btnClear;
+        private Button button5;
+        private Button button2;
+        private Button button1;
+        private Button button3;
+        private Button button4;
+        private Panel panel1;
         //Tri
     }
 }

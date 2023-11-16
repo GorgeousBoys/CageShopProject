@@ -14,5 +14,6 @@ namespace Repository.Repository
         void AddOrder(Order order);
         void UpdateOrder(Order order);
         void DeleteOrder(Order order);
+        IEnumerable<Order> GetAllOrders();
     }
 }

@@ -19,7 +19,7 @@ namespace SalesWinApp
         IOrderDetailRepository orderDetailRepository = new OrderDetailRepository();
         BindingSource bindingSource;
         public User user { get; set; }
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Close();
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
 
         private void memberManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -29,7 +29,7 @@ namespace SalesWinApp
                 f.StartPosition = FormStartPosition.CenterScreen;
                 f.checkMember = user;
                 f.Show();
-                
+
             }
             else
             {
@@ -55,10 +55,19 @@ namespace SalesWinApp
         }
         private void orderManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmOrders f = new frmOrders();
-            f.StartPosition = FormStartPosition.CenterScreen;
-            f.checkMember = user;
-            f.Show();
+            if (user.Email.Equals("admin@gmail.com"))
+            {
+                frmOrders f = new frmOrders();
+                f.StartPosition = FormStartPosition.CenterScreen;
+                f.checkMember = user;
+                f.Show();
+
+            }
+            else
+            {
+                productManagementToolStripMenuItem.Enabled = false;
+                MessageBox.Show("Your role does not support this function", "Normal user role");
+            }
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -164,7 +173,8 @@ namespace SalesWinApp
                 IEnumerable<Product> products = productRepository.FilterByMaterial(material);
 
                 LoadProducts(products);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -210,7 +220,8 @@ namespace SalesWinApp
                 if (bar.Length > 0) { txtBar.Text = bar; }
                 IEnumerable<Product> products = productRepository.FilterByBar(bar);
                 LoadProducts(products);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -224,7 +235,8 @@ namespace SalesWinApp
                 decimal max = decimal.Parse(txtMax.Text);
                 IEnumerable<Product> products = productRepository.FilterByPrice(min, max);
                 LoadProducts(products);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -252,5 +264,18 @@ namespace SalesWinApp
             dgvCage.DataSource = null;
             dgvCage.DataSource = bindingSource;
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Hide the current form (frmMain)
+            this.Hide();
+
+            // Create an instance of the login form (assuming it's named frmLogin)
+            frmLogin loginForm = new frmLogin();
+
+            // Show the login form
+            loginForm.Show();
+        }
+
     }
 }
